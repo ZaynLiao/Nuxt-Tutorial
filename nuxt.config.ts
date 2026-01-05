@@ -24,14 +24,50 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   nitro: {
+    preset: "cloudflare-pages",
     prerender: {
       autoSubfolderIndex: false,
+    },
+  },
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 1000,
+      sourcemap: false,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes("shiki")) {
+              return "shiki";
+            }
+          },
+        },
+      },
     },
   },
   modules: [
     "@nuxt/icon",
     "@nuxt/ui",
-    ["nuxt-shiki", { defaultTheme: "github-dark", defaultLang: "vue" }],
+    [
+      "nuxt-shiki",
+      {
+        defaultTheme: "github-dark",
+        defaultLang: "vue",
+        bundledLangs: [
+          "vue",
+          "typescript",
+          "javascript",
+          "bash",
+          "sh",
+          "shell",
+          "json",
+          "html",
+          "css",
+          "yaml",
+          "xml",
+          "sql",
+        ],
+      },
+    ],
   ],
   css: ["~/assets/css/main.css"],
   ui: {

@@ -18,7 +18,7 @@
                 <NuxtButton icon="heroicons:magnifying-glass" color="neutral" variant="ghost" aria-label="搜尋"
                     class="hover:bg-slate-800/50 text-slate-400 hover:text-white" />
                 <div class="w-px h-4 bg-slate-800 mx-1 hidden sm:block"></div>
-                <NuxtButton to="https://github.com/nuxt/nuxt" target="_blank" icon="uil:github" color="neutral"
+                <NuxtButton to="https://github.com/nuxt/nuxt" target="_blank" icon="simple-icons:github" color="neutral"
                     variant="ghost" aria-label="GitHub" class="hover:bg-slate-800/50 text-slate-400 hover:text-white" />
             </div>
         </div>

@@ -16,8 +16,8 @@
         <!-- Header -->
         <header class="relative space-y-6">
             <div v-if="badges" class="flex flex-wrap gap-3">
-                <NuxtBadge v-for="b in badges" :key="b.label" :color="b.color as any || 'neutral'" size="md"
-                    class="px-3 py-1">
+                <NuxtBadge v-for="b in badges" :key="b.label" :color="b.color as 'primary' | 'neutral' || 'neutral'"
+                    size="md" class="px-3 py-1">
                     {{ b.label }}
                 </NuxtBadge>
             </div>

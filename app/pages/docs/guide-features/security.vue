@@ -78,7 +78,7 @@ export default defineEventHandler(async (event) => {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="p-4 rounded-xl bg-red-500/10 border border-red-500/20">
                     <div class="flex items-center gap-2 mb-2 text-red-400 font-bold">
-                        <UIcon name="heroicons:x-circle" class="w-5 h-5" />
+                        <Icon name="heroicons:x-circle" class="w-5 h-5" />
                         <span>危險做法 (Don't)</span>
                     </div>
                     <pre class="text-xs text-slate-300 font-mono overflow-x-auto">
@@ -92,7 +92,7 @@ runtimeConfig: {
 
                 <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
                     <div class="flex items-center gap-2 mb-2 text-emerald-400 font-bold">
-                        <UIcon name="heroicons:check-circle" class="w-5 h-5" />
+                        <Icon name="heroicons:check-circle" class="w-5 h-5" />
                         <span>正確做法 (Do)</span>
                     </div>
                     <pre class="text-xs text-slate-300 font-mono overflow-x-auto">

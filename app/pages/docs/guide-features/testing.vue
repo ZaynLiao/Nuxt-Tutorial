@@ -28,19 +28,19 @@
             </p>
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                 <li class="flex items-center gap-3 p-4 rounded-xl bg-slate-950 border border-slate-800/50">
-                    <UIcon name="heroicons:shield-check" class="w-6 h-6 text-emerald-400" />
+                    <Icon name="heroicons:shield-check" class="w-6 h-6 text-emerald-400" />
                     <span class="text-slate-300">防止回歸錯誤 (Regressions)</span>
                 </li>
                 <li class="flex items-center gap-3 p-4 rounded-xl bg-slate-950 border border-slate-800/50">
-                    <UIcon name="heroicons:document-text" class="w-6 h-6 text-blue-400" />
+                    <Icon name="heroicons:document-text" class="w-6 h-6 text-blue-400" />
                     <span class="text-slate-300">作為活的文件 (Documentation)</span>
                 </li>
                 <li class="flex items-center gap-3 p-4 rounded-xl bg-slate-950 border border-slate-800/50">
-                    <UIcon name="heroicons:rocket-launch" class="w-6 h-6 text-purple-400" />
+                    <Icon name="heroicons:rocket-launch" class="w-6 h-6 text-purple-400" />
                     <span class="text-slate-300">更有信心地重構程式碼</span>
                 </li>
                 <li class="flex items-center gap-3 p-4 rounded-xl bg-slate-950 border border-slate-800/50">
-                    <UIcon name="heroicons:bug-ant" class="w-6 h-6 text-red-400" />
+                    <Icon name="heroicons:bug-ant" class="w-6 h-6 text-red-400" />
                     <span class="text-slate-300">提早發現潛在 Bug</span>
                 </li>
             </ul>

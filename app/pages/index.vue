@@ -21,7 +21,7 @@
                 <p class="text-slate-400 text-lg mb-10">
                     無論你是 Vue 的初學者，還是想從 Nuxt 2/3 升級的老手，這裡都有適合你的內容。
                 </p>
-                <NuxtLink to="/docs/installation"
+                <NuxtLink to="/docs/guide-getting-started/installation"
                     class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-emerald-600 rounded-full hover:bg-emerald-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/40">
                     建立你的第一個專案
                     <Icon name="heroicons:rocket-launch" class="w-6 h-6 ml-2" />

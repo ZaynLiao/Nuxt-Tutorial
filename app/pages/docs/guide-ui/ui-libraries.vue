@@ -30,21 +30,21 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 text-center">
                     <div class="mb-2 flex justify-center">
-                        <UIcon name="heroicons:moon" class="w-8 h-8 text-emerald-400" />
+                        <Icon name="heroicons:moon" class="w-8 h-8 text-emerald-400" />
                     </div>
                     <h4 class="text-white font-medium text-sm">Dark Mode</h4>
                     <p class="text-xs text-slate-500 mt-1">開箱即用的深色模式支援</p>
                 </div>
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 text-center">
                     <div class="mb-2 flex justify-center">
-                        <UIcon name="heroicons:keyboard" class="w-8 h-8 text-blue-400" />
+                        <Icon name="heroicons:keyboard" class="w-8 h-8 text-blue-400" />
                     </div>
                     <h4 class="text-white font-medium text-sm">Keyboard</h4>
                     <p class="text-xs text-slate-500 mt-1">完整的鍵盤導航支援</p>
                 </div>
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 text-center">
                     <div class="mb-2 flex justify-center">
-                        <UIcon name="heroicons:paint-brush" class="w-8 h-8 text-purple-400" />
+                        <Icon name="heroicons:paint-brush" class="w-8 h-8 text-purple-400" />
                     </div>
                     <h4 class="text-white font-medium text-sm">Themable</h4>
                     <p class="text-xs text-slate-500 mt-1">透過 App Config 全域設定</p>
@@ -78,24 +78,23 @@
             <div class="p-6 rounded-xl bg-slate-900/50 border border-slate-800/50">
                 <div class="flex flex-wrap gap-8 justify-center mb-8">
                     <div class="text-center">
-                        <UIcon name="heroicons:home" class="w-8 h-8 text-emerald-400 mb-2" />
+                        <Icon name="heroicons:home" class="w-8 h-8 text-emerald-400 mb-2" />
                         <div class="text-xs font-mono text-slate-500">heroicons:home</div>
                     </div>
                     <div class="text-center">
-                        <UIcon name="logos:vue" class="w-8 h-8 mb-2" />
+                        <Icon name="logos:vue" class="w-8 h-8 mb-2" />
                         <div class="text-xs font-mono text-slate-500">logos:vue</div>
                     </div>
                     <div class="text-center">
-                        <UIcon name="ph:rocket-duotone" class="w-8 h-8 text-purple-400 mb-2" />
+                        <Icon name="ph:rocket-duotone" class="w-8 h-8 text-purple-400 mb-2" />
                         <div class="text-xs font-mono text-slate-500">ph:rocket-duotone</div>
                     </div>
                 </div>
 
                 <AppCodeBlock language="vue" :code="`<template>
-  <!-- 使用 UIcon 元件 (Nuxt UI 封裝) -->
-  <UIcon name=&quot;heroicons:home&quot; class=&quot;w-6 h-6 text-emerald-500&quot; />
+  <!-- 使用 Icon 元件 -->
+  <Icon name=&quot;heroicons:home&quot; class=&quot;w-6 h-6 text-emerald-500&quot; />
   
-  <!-- 或者直接使用 Icon 元件 -->
   <Icon name=&quot;logos:nuxt-icon&quot; size=&quot;24&quot; />
 </template>`" filename="components/IconDemo.vue" />
             </div>

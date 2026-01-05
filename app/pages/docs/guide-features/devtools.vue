@@ -34,7 +34,7 @@
                 <div class="flex items-center gap-4 mb-4">
                     <div
                         class="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center border border-slate-800">
-                        <UIcon name="logos:nuxt-icon" class="w-6 h-6" />
+                        <Icon name="logos:nuxt-icon" class="w-6 h-6" />
                     </div>
                     <div>
                         <h3 class="text-white font-medium">Zero Config</h3>
@@ -55,7 +55,7 @@
                 <div
                     class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/50 hover:border-emerald-500/30 transition-colors">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="heroicons:document-duplicate" class="w-6 h-6 text-emerald-400" />
+                        <Icon name="heroicons:document-duplicate" class="w-6 h-6 text-emerald-400" />
                         <h3 class="text-white font-medium">Pages & Routing</h3>
                     </div>
                     <p class="text-sm text-slate-400">
@@ -67,7 +67,7 @@
                 <div
                     class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/50 hover:border-emerald-500/30 transition-colors">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="heroicons:cube" class="w-6 h-6 text-blue-400" />
+                        <Icon name="heroicons:cube" class="w-6 h-6 text-blue-400" />
                         <h3 class="text-white font-medium">Components</h3>
                     </div>
                     <p class="text-sm text-slate-400">
@@ -79,7 +79,7 @@
                 <div
                     class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/50 hover:border-emerald-500/30 transition-colors">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="heroicons:bolt" class="w-6 h-6 text-yellow-400" />
+                        <Icon name="heroicons:bolt" class="w-6 h-6 text-yellow-400" />
                         <h3 class="text-white font-medium">Imports & Modules</h3>
                     </div>
                     <p class="text-sm text-slate-400">
@@ -91,7 +91,7 @@
                 <div
                     class="p-5 rounded-xl bg-slate-900/50 border border-slate-800/50 hover:border-emerald-500/30 transition-colors">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="heroicons:server" class="w-6 h-6 text-purple-400" />
+                        <Icon name="heroicons:server" class="w-6 h-6 text-purple-400" />
                         <h3 class="text-white font-medium">Server Routes</h3>
                     </div>
                     <p class="text-sm text-slate-400">

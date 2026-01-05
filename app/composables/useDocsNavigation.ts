@@ -1,11 +1,9 @@
-import { sidebarGroups } from "~/utils/navigation";
-
 export const useDocsNavigation = () => {
   const route = useRoute();
 
   // Flatten all links from sidebar groups
   const allLinks = computed(() => {
-    return sidebarGroups.flatMap((group) => group.links);
+    return sidebarGroups.flatMap((group) => group.items);
   });
 
   // Find current index

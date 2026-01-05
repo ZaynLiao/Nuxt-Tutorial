@@ -91,15 +91,15 @@
 
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <li class="flex items-center gap-3 p-3 rounded-lg bg-slate-950 border border-slate-800/50">
-                    <UIcon name="heroicons:check" class="w-5 h-5 text-emerald-400" />
+                    <Icon name="heroicons:check" class="w-5 h-5 text-emerald-400" />
                     <span class="text-slate-300 text-sm">自動下載字型檔 (Self-hosting)</span>
                 </li>
                 <li class="flex items-center gap-3 p-3 rounded-lg bg-slate-950 border border-slate-800/50">
-                    <UIcon name="heroicons:check" class="w-5 h-5 text-emerald-400" />
+                    <Icon name="heroicons:check" class="w-5 h-5 text-emerald-400" />
                     <span class="text-slate-300 text-sm">自動注入 preload 標籤</span>
                 </li>
                 <li class="flex items-center gap-3 p-3 rounded-lg bg-slate-950 border border-slate-800/50">
-                    <UIcon name="heroicons:check" class="w-5 h-5 text-emerald-400" />
+                    <Icon name="heroicons:check" class="w-5 h-5 text-emerald-400" />
                     <span class="text-slate-300 text-sm">生成 fallback 字型以減少 CLS</span>
                 </li>
             </ul>

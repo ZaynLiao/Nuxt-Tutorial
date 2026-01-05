@@ -31,7 +31,7 @@
             <div class="space-y-4">
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 flex items-start gap-4">
                     <div class="mt-1 p-2 rounded-lg bg-purple-500/10 text-purple-400">
-                        <UIcon name="heroicons:server" class="w-5 h-5" />
+                        <Icon name="heroicons:server" class="w-5 h-5" />
                     </div>
                     <div>
                         <h3 class="text-white font-medium mb-1">1. Server Phase (Nitro)</h3>
@@ -43,7 +43,7 @@
 
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 flex items-start gap-4">
                     <div class="mt-1 p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
-                        <UIcon name="heroicons:play" class="w-5 h-5" />
+                        <Icon name="heroicons:play" class="w-5 h-5" />
                     </div>
                     <div>
                         <h3 class="text-white font-medium mb-1">2. Nuxt App Initialization</h3>
@@ -55,7 +55,7 @@
 
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 flex items-start gap-4">
                     <div class="mt-1 p-2 rounded-lg bg-blue-500/10 text-blue-400">
-                        <UIcon name="logos:vue" class="w-5 h-5" />
+                        <Icon name="logos:vue" class="w-5 h-5" />
                     </div>
                     <div>
                         <h3 class="text-white font-medium mb-1">3. Vue Component Lifecycle</h3>
@@ -135,7 +135,7 @@
 
             <div class="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
                 <div class="flex items-start gap-3">
-                    <UIcon name="heroicons:exclamation-triangle" class="w-5 h-5 text-yellow-400 mt-0.5" />
+                    <Icon name="heroicons:exclamation-triangle" class="w-5 h-5 text-yellow-400 mt-0.5" />
                     <div>
                         <h4 class="text-yellow-400 font-medium text-sm">避免 Hydration Mismatch</h4>
                         <p class="text-slate-400 text-xs mt-1">

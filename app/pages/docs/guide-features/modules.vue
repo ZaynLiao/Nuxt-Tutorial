@@ -63,7 +63,7 @@
                 <div
                     class="p-8 rounded-3xl bg-slate-950 border border-slate-800/50 hover:border-emerald-500/30 transition-colors group">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="logos:tailwindcss-icon" class="w-8 h-8" />
+                        <Icon name="logos:tailwindcss-icon" class="w-8 h-8" />
                         <h3 class="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">
                             Tailwind CSS</h3>
                     </div>
@@ -76,7 +76,7 @@
                 <div
                     class="p-8 rounded-3xl bg-slate-950 border border-slate-800/50 hover:border-emerald-500/30 transition-colors group">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="logos:pinia" class="w-8 h-8" />
+                        <Icon name="logos:pinia" class="w-8 h-8" />
                         <h3 class="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">
                             Pinia</h3>
                     </div>
@@ -89,7 +89,7 @@
                 <div
                     class="p-8 rounded-3xl bg-slate-950 border border-slate-800/50 hover:border-emerald-500/30 transition-colors group">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="heroicons:photo" class="w-8 h-8 text-blue-400" />
+                        <Icon name="heroicons:photo" class="w-8 h-8 text-blue-400" />
                         <h3 class="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">Nuxt
                             Image</h3>
                     </div>
@@ -102,7 +102,7 @@
                 <div
                     class="p-8 rounded-3xl bg-slate-950 border border-slate-800/50 hover:border-emerald-500/30 transition-colors group">
                     <div class="flex items-center gap-3 mb-3">
-                        <UIcon name="heroicons:globe-alt" class="w-8 h-8 text-green-400" />
+                        <Icon name="heroicons:globe-alt" class="w-8 h-8 text-green-400" />
                         <h3 class="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">Nuxt
                             SEO</h3>
                     </div>
@@ -139,7 +139,7 @@
             <NuxtLink to="https://nuxt.com/modules" target="_blank"
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-colors">
                 <span>瀏覽 Nuxt Modules</span>
-                <UIcon name="heroicons:arrow-top-right-on-square" />
+                <Icon name="heroicons:arrow-top-right-on-square" />
             </NuxtLink>
         </div>
 

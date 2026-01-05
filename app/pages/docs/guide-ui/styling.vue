@@ -32,7 +32,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div class="p-5 rounded-xl bg-slate-950 border border-slate-800/50">
                     <h3 class="text-white font-medium mb-2 flex items-center gap-2">
-                        <UIcon name="heroicons:bolt" class="w-5 h-5 text-yellow-400" />
+                        <Icon name="heroicons:bolt" class="w-5 h-5 text-yellow-400" />
                         Zero Configuration
                     </h3>
                     <p class="text-sm text-slate-400">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="p-5 rounded-xl bg-slate-950 border border-slate-800/50">
                     <h3 class="text-white font-medium mb-2 flex items-center gap-2">
-                        <UIcon name="heroicons:cpu-chip" class="w-5 h-5 text-blue-400" />
+                        <Icon name="heroicons:cpu-chip" class="w-5 h-5 text-blue-400" />
                         Native Engine
                     </h3>
                     <p class="text-sm text-slate-400">
@@ -79,7 +79,7 @@
             <div class="space-y-4">
                 <div class="flex items-start gap-4 p-4 rounded-lg bg-slate-900/50 border border-slate-800/50">
                     <div class="mt-1 p-1.5 rounded bg-emerald-500/10 text-emerald-400">
-                        <UIcon name="heroicons:check" class="w-4 h-4" />
+                        <Icon name="heroicons:check" class="w-4 h-4" />
                     </div>
                     <div>
                         <h4 class="text-white font-medium text-sm">Utility-First</h4>
@@ -89,7 +89,7 @@
 
                 <div class="flex items-start gap-4 p-4 rounded-lg bg-slate-900/50 border border-slate-800/50">
                     <div class="mt-1 p-1.5 rounded bg-emerald-500/10 text-emerald-400">
-                        <UIcon name="heroicons:check" class="w-4 h-4" />
+                        <Icon name="heroicons:check" class="w-4 h-4" />
                     </div>
                     <div>
                         <h4 class="text-white font-medium text-sm">Component Abstraction</h4>
