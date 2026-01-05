@@ -23,6 +23,9 @@ export default defineNuxtConfig({
     strict: true,
   },
   devtools: { enabled: true },
+  nitro: {
+    preset: "cloudflare-pages",
+  },
   modules: [
     "@nuxt/icon",
     "@nuxt/ui",
