@@ -56,10 +56,10 @@
                             <!-- Page Content (Slot) -->
                             <div class="flex-1 p-4 bg-slate-950/50 relative group">
                                 <div
-                                    class="absolute inset-0 border-2 border-dashed border-emerald-500/30 m-2 rounded-lg flex items-center justify-center bg-emerald-500/5 group-hover:bg-emerald-500/10 transition-colors">
+                                    class="absolute inset-0 border-2 border-dashed border-emerald-500/30 m-2 rounded-lg flex flex-col items-center justify-center bg-emerald-500/5 group-hover:bg-emerald-500/10 transition-colors">
+                                    <Icon name="heroicons:arrow-down-tray"
+                                        class="w-8 h-8 text-emerald-500 mb-2 mx-auto text-xl" />
                                     <div class="text-center">
-                                        <Icon name="heroicons:arrow-down-tray"
-                                            class="w-8 h-8 text-emerald-500 mb-2 mx-auto" />
                                         <span class="text-emerald-400 font-bold font-mono">&lt;slot /&gt;</span>
                                         <p class="text-xs text-emerald-300/70 mt-1">Page Content Injected Here</p>
                                     </div>
