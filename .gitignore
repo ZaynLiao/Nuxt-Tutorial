@@ -1,0 +1,33 @@
+# Nuxt 開發與構建輸出 (自動生成的暫存檔)
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node 相關 (套件庫)
+node_modules
+
+# 日志文件
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 環境變數 (機密資訊，絕對不可上傳)
+.env
+.env.*
+# 只有範例檔可以上傳，讓隊友知道要填哪些欄位
+!.env.example
+
+# 系統與 IDE 暫存
+.DS_Store
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
