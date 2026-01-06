@@ -191,7 +191,7 @@ export const sidebarGroups: NavGroup[] = [
   },
   {
     id: "devops",
-    title: "工程與部署",
+    title: "工程部署",
     icon: "heroicons:wrench-screwdriver",
     items: [
       {

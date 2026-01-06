@@ -1,3 +1,11 @@
+<script setup lang="ts">
+    const { currentGroup } = useDocsNavigation()
+
+    // 判斷是否為「目前群組」
+    const isActive = (groupId?: string) => {
+        return currentGroup.value?.id === groupId
+    }
+</script>
 <template>
     <header
         class="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-md shadow-lg shadow-emerald-900/5">
@@ -15,24 +23,14 @@
             </NuxtLink>
 
             <!-- Navigation -->
-            <nav class="hidden md:flex items-center gap-1">
-                <NuxtLink to="/docs/1-getting-started/installation"
-                    class="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">
-                    基礎入門
-                </NuxtLink>
-                <NuxtLink to="/docs/2-core-concepts/data-fetching"
-                    class="px-4 py-2 text-sm font-bold text-slate-200 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors flex items-center gap-1.5 group">
-                    <Icon name="heroicons:star-solid"
-                        class="w-4 h-4 text-emerald-400 group-hover:text-yellow-400 transition-colors" />
-                    核心修練
-                </NuxtLink>
-                <NuxtLink to="/docs/3-architecture/route-middleware"
-                    class="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">
-                    進階架構
-                </NuxtLink>
-                <NuxtLink to="/docs/4-devops/typescript"
-                    class="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">
-                    工程筆記
+            <nav class="hidden md:flex items-center gap-2">
+                <NuxtLink v-for="group in sidebarGroups" :key="group.id" :to="group.items[0]?.to"
+                    class="relative px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-300" :class="[
+                        isActive(group.id)
+                            ? 'bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 shadow-sm shadow-emerald-900/20'
+                            : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/50'
+                    ]">
+                    {{ group.title }}
                 </NuxtLink>
             </nav>
 
