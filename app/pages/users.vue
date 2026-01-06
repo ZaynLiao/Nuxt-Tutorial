@@ -122,7 +122,7 @@
 
             <!-- Footer Navigation -->
             <div class="flex justify-center pt-12 border-t border-slate-800/50">
-                <NuxtLink to="/docs/data-fetching"
+                <NuxtLink to="/docs/2-core-concepts/data-fetching"
                     class="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-emerald-500/50 hover:bg-slate-800 transition-all">
                     <Icon name="heroicons:arrow-left" size="16"
                         class="group-hover:-translate-x-0.5 transition-transform" />

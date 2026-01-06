@@ -1,17 +1,20 @@
 import "vue-router";
 
-export interface NavItem {
-  label: string;
-  to: string;
-  icon: string;
-  description?: string;
-}
+declare global {
+  interface NavItem {
+    label: string;
+    to: string;
+    icon: string;
+    description?: string;
+    badges?: { label: string; color?: string }[];
+  }
 
-export interface NavGroup {
-  id?: string;
-  title: string;
-  icon?: string;
-  items: NavItem[];
+  interface NavGroup {
+    id?: string;
+    title: string;
+    icon?: string;
+    items: NavItem[];
+  }
 }
 
 declare module "vue-router" {

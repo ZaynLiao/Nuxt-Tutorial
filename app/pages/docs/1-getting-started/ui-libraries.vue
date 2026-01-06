@@ -17,15 +17,21 @@
 </script>
 
 <template>
-    <TutorialPage title="UI 生態 (UI Ecosystem)"
+    <TutorialPage title="UI 生態系 (UI Ecosystem)"
         description="Nuxt 擁有豐富的 UI 生態系，讓開發者能專注於邏輯而非重複造輪子。本章介紹三個核心模組：Nuxt UI、Nuxt Icon 與 Nuxt Fonts。"
         :badges="[{ label: 'Nuxt UI', color: 'primary' }, { label: 'Icons', color: 'neutral' }]">
 
         <!-- Section 1: Nuxt UI -->
         <TutorialSection id="nuxt-ui" title="Nuxt UI" icon="logos:nuxt-icon" separator>
             <p class="text-slate-400 leading-relaxed mb-6">
-                Nuxt UI 是官方推薦的 UI 元件庫，基於 Headless UI 與 Tailwind CSS。它提供了一套美觀、無障礙且可高度客製化的元件。
+                Nuxt UI 是官方推薦的 UI 元件庫。它基於 Headless UI 與 Tailwind CSS，提供了一套美觀、無障礙且可高度客製化的元件。
             </p>
+
+            <AppWindow type="code" title="Install Nuxt UI" :no-padding="true" class="mb-8">
+                <div class="p-4 font-mono text-sm text-slate-300">
+                    <span class="text-emerald-400">$</span> npx nuxi@latest module add ui
+                </div>
+            </AppWindow>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 text-center">
@@ -75,6 +81,12 @@
                 <code class="text-emerald-400">@nuxt/icon</code> 模組讓您可以存取超過 100,000 個圖標 (Iconify)。
             </p>
 
+            <AppWindow type="code" title="Install Icons" :no-padding="true" class="mb-8">
+                <div class="p-4 font-mono text-sm text-slate-300">
+                    <span class="text-emerald-400">$</span> npx nuxi@latest module add icon
+                </div>
+            </AppWindow>
+
             <div class="p-6 rounded-xl bg-slate-900/50 border border-slate-800/50">
                 <div class="flex flex-wrap gap-8 justify-center mb-8">
                     <div class="text-center">
@@ -106,6 +118,12 @@
                 <code class="text-emerald-400">@nuxt/fonts</code> 模組會自動下載並優化您使用的 Web Fonts，消除 Layout Shift (CLS)
                 並提升載入速度。
             </p>
+
+            <AppWindow type="code" title="Install Fonts" :no-padding="true" class="mb-8">
+                <div class="p-4 font-mono text-sm text-slate-300">
+                    <span class="text-emerald-400">$</span> npx nuxi@latest module add fonts
+                </div>
+            </AppWindow>
 
             <AppCodeBlock language="css" :code="`/* assets/css/main.css */
 @theme {

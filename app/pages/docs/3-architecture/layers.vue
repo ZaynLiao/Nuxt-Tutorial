@@ -38,7 +38,7 @@
                     <p class="text-xs text-slate-500">共用元件、設定</p>
                 </div>
 
-                <UIcon name="heroicons:arrow-up" class="w-6 h-6 text-emerald-500 rotate-0 md:rotate-90" />
+                <Icon name="heroicons:arrow-up" class="w-6 h-6 text-emerald-500 rotate-0 md:rotate-90" />
 
                 <div class="text-center">
                     <div
@@ -98,7 +98,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/50">
                     <h4 class="text-white font-medium mb-2 flex items-center gap-2">
-                        <UIcon name="heroicons:swatch" class="w-5 h-5 text-purple-400" />
+                        <Icon name="heroicons:swatch" class="w-5 h-5 text-purple-400" />
                         UI Kit 分發
                     </h4>
                     <p class="text-sm text-slate-400">
@@ -108,7 +108,7 @@
 
                 <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/50">
                     <h4 class="text-white font-medium mb-2 flex items-center gap-2">
-                        <UIcon name="heroicons:language" class="w-5 h-5 text-blue-400" />
+                        <Icon name="heroicons:language" class="w-5 h-5 text-blue-400" />
                         多語系網站
                     </h4>
                     <p class="text-sm text-slate-400">

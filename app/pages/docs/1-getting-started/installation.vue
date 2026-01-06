@@ -39,7 +39,7 @@
 </script>
 
 <template>
-    <TutorialPage title="安裝與啟動" description="跟隨本指南，在幾分鐘內建立一個現代化、高效能的 Nuxt 4 應用程式。我們強烈建議使用 pnpm 以獲得最佳體驗。"
+    <TutorialPage title="安裝指南" description="跟隨本指南，在幾分鐘內建立一個現代化、高效能的 Nuxt 4 應用程式。我們強烈建議使用 pnpm 以獲得最佳體驗。"
         :badges="[{ label: 'Core', color: 'primary' }, { label: 'Setup', color: 'neutral' }]">
 
         <!-- 1. Prerequisites -->

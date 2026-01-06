@@ -1,8 +1,6 @@
 <script setup lang="ts">
-    import type { NuxtError } from '#app'
-
     const props = defineProps<{
-        error: NuxtError
+        error: { statusCode: number; statusMessage?: string; }
     }>()
 
     const handleError = () => clearError({ redirect: '/' })
@@ -14,7 +12,7 @@
         <div class="text-center relative z-10">
             <h1 class="text-9xl font-bold text-transparent bg-clip-text bg-linear-to-b from-white to-slate-500">{{
                 error.statusCode }}</h1>
-            <p class="mt-8 text-3xl font-bold text-white">{{ error.message }}</p>
+            <p class="mt-8 text-3xl font-bold text-white">{{ error.statusMessage }}</p>
             <p class="mt-4 text-lg text-slate-400">抱歉，發生了一些錯誤。</p>
 
             <div class="mt-12">

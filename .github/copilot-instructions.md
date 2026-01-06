@@ -20,8 +20,7 @@
     - 僅允許在 `main.css` 中使用 `@theme` 進行 Tailwind 設定。
     - 優先使用 Tailwind 內建色票 (e.g., `emerald`, `slate`)。
   - **嚴格禁止 Arbitrary Values**:
-    - 禁止使用 `w-[100px]`, `blur-[100px]`, `shadow-[...]`, `bg-[...]` 等中括號語法。
-    -**嚴格禁止**: 複雜的 Gradients (e.g., `bg-[radial-gradient(...)]`) 禁止直接寫在 Template 中。
+    - 禁止使用 `w-[100px]`, `blur-[100px]`, `shadow-[...]`, `bg-[...]` 等中括號語法。 -**嚴格禁止**: 複雜的 Gradients (e.g., `bg-[radial-gradient(...)]`) 禁止直接寫在 Template 中。
     - 必須使用 Tailwind 預設 Utility (e.g., `blur-3xl`, `w-96`) 或自定義的主題 Utility。
   - **嚴格禁止 Inline Styles**:
     - 禁止使用 `style="..."` 屬性。所有樣式必須透過 Tailwind Utility Classes 實現。
@@ -125,6 +124,11 @@
 
 ### 5.1 教學心法
 
+- **Leveling Up Strategy (打怪升級策略)**: 嚴格遵循四階段學習路徑，避免碎片化學習：
+  - **Stage 1: 基礎入門 (Getting Started)**: 專注於「跑起來，看得到東西」。包含安裝、目錄結構、路由與基礎 UI。目標是讓使用者快速獲得視覺回饋。
+  - **Stage 2: 核心修練 (Core Concepts) ✨ [關鍵]**: Nuxt 的靈魂所在。包含資料獲取 (Data Fetching)、伺服器路由 (Server Routes)、狀態管理。必須確保使用者在此階段建立正確的觀念（如 Hydration）。
+  - **Stage 3: 進階架構 (Architecture)**: 處理複雜需求。包含 Middleware、Plugins、SEO 與 Nuxt Image。
+  - **Stage 4: 工程與部署 (DevOps)**: 從開發走向生產。包含 TypeScript、測試、資安與部署。
 - **Why before How**: 不要只給程式碼。先解釋「為什麼我們要解決這個問題」，再展示「如何解決」。
 - **漸進式揭露 (Progressive Disclosure)**: 先展示最簡單的用法，再逐步加入參數與進階設定。
 - **類比教學 (Analogy)**: 使用生活化的比喻來解釋抽象概念 (e.g., "Middleware 就像是大樓的警衛...")。

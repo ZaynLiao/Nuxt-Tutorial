@@ -33,12 +33,12 @@
                 <h4 class="text-white font-medium mb-2 text-sm">最佳實踐</h4>
                 <ul class="space-y-2 text-sm text-slate-400">
                     <li class="flex items-center gap-2">
-                        <UIcon name="heroicons:check" class="w-4 h-4 text-emerald-400" />
+                        <Icon name="heroicons:check" class="w-4 h-4 text-emerald-400" />
                         <span>檔案與函數名稱應以 <code class="text-slate-300">use</code> 開頭 (e.g., <code
                                 class="text-slate-300">useUser.ts</code>)。</span>
                     </li>
                     <li class="flex items-center gap-2">
-                        <UIcon name="heroicons:check" class="w-4 h-4 text-emerald-400" />
+                        <Icon name="heroicons:check" class="w-4 h-4 text-emerald-400" />
                         <span>優先使用 Named Export 以利重構與測試。</span>
                     </li>
                 </ul>
@@ -119,7 +119,7 @@ export const formatCurrency = (amount: number): string => {
 
             <div class="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg mb-6">
                 <div class="flex items-start gap-3">
-                    <UIcon name="heroicons:exclamation-triangle" class="w-5 h-5 text-yellow-400 mt-0.5" />
+                    <Icon name="heroicons:exclamation-triangle" class="w-5 h-5 text-yellow-400 mt-0.5" />
                     <div>
                         <h4 class="text-yellow-400 font-medium text-sm">巢狀目錄掃描</h4>
                         <p class="text-slate-400 text-xs mt-1">

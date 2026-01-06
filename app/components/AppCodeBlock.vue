@@ -1,6 +1,4 @@
 <script setup lang="ts">
-    import type { BundledLanguage } from 'shiki'
-
     // 直接解構並給預設值，Vue 3.5 之後會自動處理響應
     const {
         code,

@@ -55,7 +55,7 @@
 
                 <div class="p-4 rounded-xl bg-slate-950 border border-slate-800/50 flex items-start gap-4">
                     <div class="mt-1 p-2 rounded-lg bg-blue-500/10 text-blue-400">
-                        <Icon name="logos:vue" class="w-5 h-5" />
+                        <Icon name="heroicons:cube" class="w-5 h-5" />
                     </div>
                     <div>
                         <h3 class="text-white font-medium mb-1">3. Vue Component Lifecycle</h3>
@@ -147,6 +147,26 @@
                     </div>
                 </div>
             </div>
+        </TutorialSection>
+
+        <!-- Section 4: Nitro Hooks -->
+        <TutorialSection id="nitro-hooks" title="Nitro Hooks" icon="heroicons:server-stack">
+            <p class="text-slate-400 mb-6">
+                Nitro 也有自己的生命週期 Hooks (位於 Server 端)，主要用於擴充伺服器功能或攔截請求。
+            </p>
+
+            <AppCodeBlock language="typescript" :code="`// server/plugins/nitro.ts
+export default defineNitroPlugin((nitroApp) => {
+  // 攔截所有請求
+  nitroApp.hooks.hook('request', (event) => {
+    console.log('Incoming request:', event.path)
+  })
+
+  // 在回應發送前
+  nitroApp.hooks.hook('beforeResponse', (event) => {
+    // 可以添加自定義 Headers
+  })
+})`" filename="server/plugins/nitro.ts" />
         </TutorialSection>
 
     </TutorialPage>

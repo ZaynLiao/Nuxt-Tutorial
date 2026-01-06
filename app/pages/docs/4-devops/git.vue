@@ -134,7 +134,7 @@ git pull origin main`" filename="Terminal" />
                 <!-- Stash -->
                 <div>
                     <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                        <UIcon name="heroicons:archive-box" class="w-6 h-6 text-yellow-400" />
+                        <Icon name="heroicons:archive-box" class="w-6 h-6 text-yellow-400" />
                         暫存工作 (Stash)
                     </h3>
                     <p class="text-slate-400 mb-4">
@@ -153,7 +153,7 @@ git stash pop`" filename="Terminal" />
                 <!-- Reset -->
                 <div>
                     <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                        <UIcon name="heroicons:arrow-uturn-left" class="w-6 h-6 text-red-400" />
+                        <Icon name="heroicons:arrow-uturn-left" class="w-6 h-6 text-red-400" />
                         時光倒流 (Reset)
                     </h3>
                     <p class="text-slate-400 mb-4">
@@ -169,7 +169,7 @@ git reset --hard HEAD~1`" filename="Terminal" />
                 <!-- Cherry Pick -->
                 <div>
                     <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                        <UIcon name="heroicons:cursor-arrow-rays" class="w-6 h-6 text-purple-400" />
+                        <Icon name="heroicons:cursor-arrow-rays" class="w-6 h-6 text-purple-400" />
                         摘櫻桃 (Cherry-pick)
                     </h3>
                     <p class="text-slate-400 mb-4">
@@ -182,7 +182,7 @@ git cherry-pick <commit-hash>`" filename="Terminal" />
                 <!-- Rebase -->
                 <div>
                     <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                        <UIcon name="heroicons:arrows-right-left" class="w-6 h-6 text-blue-400" />
+                        <Icon name="heroicons:arrows-right-left" class="w-6 h-6 text-blue-400" />
                         變基 (Rebase)
                     </h3>
                     <p class="text-slate-400 mb-4">

@@ -1,6 +1,18 @@
 export const useDocsNavigation = () => {
   const route = useRoute();
 
+  // Find current group
+  const currentGroup = computed(() => {
+    return sidebarGroups.find((group) =>
+      group.items.some((item) => item.to === route.path)
+    );
+  });
+
+  // Find current page item
+  const currentPage = computed(() => {
+    return currentGroup.value?.items.find((item) => item.to === route.path);
+  });
+
   // Flatten all links from sidebar groups
   const allLinks = computed(() => {
     return sidebarGroups.flatMap((group) => group.items);
@@ -8,6 +20,7 @@ export const useDocsNavigation = () => {
 
   // Find current index
   const currentIndex = computed(() => {
+    // Logic to handle trailing slashes if necessary, but simple match for now
     return allLinks.value.findIndex((link) => link.to === route.path);
   });
 
@@ -32,5 +45,7 @@ export const useDocsNavigation = () => {
   return {
     prev,
     next,
+    currentGroup,
+    currentPage,
   };
 };

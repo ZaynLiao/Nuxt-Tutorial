@@ -73,4 +73,13 @@ export default defineNuxtConfig({
   ui: {
     prefix: "Nuxt",
   },
+
+  imports: {
+    presets: [
+      {
+        from: "shiki",
+        imports: ["BundledLanguage"],
+      },
+    ],
+  },
 });

@@ -1,32 +1,56 @@
 <script setup lang="ts">
 
-    defineProps<{
-        title: string
-        description: string
+    const props = defineProps<{
+        title?: string
+        description?: string
         badges?: { label: string, color?: string }[]
         sections?: { id: string, title: string }[]
     }>()
 
     const slots = useSlots()
-    const { prev, next } = useDocsNavigation()
+    const { prev, next, currentGroup, currentPage } = useDocsNavigation()
+
+    // Priority: Props > Navigation Data > Default
+    const displayTitle = computed(() => props.title || currentPage.value?.label || '')
+    const displayDesc = computed(() => props.description || currentPage.value?.description || '')
+    const displayBadges = computed(() => props.badges || currentPage.value?.badges)
+
+    // Automated SEO
+    useSeoMeta({
+        title: displayTitle,
+        ogTitle: displayTitle,
+        description: displayDesc,
+        ogDescription: displayDesc,
+    })
 </script>
 
 <template>
-    <div class="relative space-y-16 py-8 lg:py-12">
+    <div class="relative space-y-16 py-8 lg:py-8">
         <!-- Header -->
         <header class="relative space-y-6">
-            <div v-if="badges" class="flex flex-wrap gap-3">
-                <NuxtBadge v-for="b in badges" :key="b.label" :color="b.color as 'primary' | 'neutral' || 'neutral'"
-                    size="md" class="px-3 py-1">
+            <!-- Breadcrumbs / Group Info -->
+            <div v-if="currentGroup" class="flex items-center gap-2 text-sm font-medium text-emerald-400 mb-6">
+                <Icon v-if="currentGroup.icon" :name="currentGroup.icon" size="16" />
+                <span>{{ currentGroup.title }}</span>
+                <Icon name="heroicons:chevron-right" size="14" class="text-emerald-500/50" />
+            </div>
+
+            <div v-if="displayBadges" class="flex flex-wrap gap-3">
+                <NuxtBadge v-for="b in displayBadges" :key="b.label"
+                    :color="b.color as 'primary' | 'neutral' || 'neutral'" size="md" class="px-3 py-1">
                     {{ b.label }}
                 </NuxtBadge>
             </div>
-            <h1
-                class="text-2xl sm:text-3xl font-bold tracking-tight bg-linear-to-br from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                {{ title }}
+
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white flex items-center gap-4">
+                <Icon v-if="currentPage?.icon" :name="currentPage.icon" size="40" class="text-emerald-400 shrink-0" />
+                <span class="bg-linear-to-br from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                    {{ displayTitle }}
+                </span>
             </h1>
-            <p class="text-slate-400 text-base sm:text-base leading-relaxed max-w-3xl">
-                {{ description }}
+
+            <p class="text-slate-400 text-md sm:text-md leading-relaxed max-w-3xl">
+                {{ displayDesc }}
             </p>
         </header>
 
@@ -120,8 +144,15 @@
                             class="group-hover:-translate-x-1 transition-transform" />
                         <span>Previous</span>
                     </div>
-                    <div class="text-lg font-bold text-slate-200 group-hover:text-white transition-colors">
-                        {{ prev.label }}
+
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="p-2 rounded-lg bg-slate-800 text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-colors">
+                            <Icon :name="prev.icon" size="20" />
+                        </div>
+                        <div class="text-lg font-bold text-slate-200 group-hover:text-white transition-colors">
+                            {{ prev.label }}
+                        </div>
                     </div>
                 </NuxtLink>
                 <div v-else class="hidden sm:block"></div>
@@ -135,8 +166,15 @@
                         <Icon name="heroicons:arrow-long-right" size="16"
                             class="group-hover:translate-x-1 transition-transform" />
                     </div>
-                    <div class="text-lg font-bold text-slate-200 group-hover:text-white transition-colors">
-                        {{ next.label }}
+
+                    <div class="flex flex-row-reverse items-center gap-3">
+                        <div
+                            class="p-2 rounded-lg bg-slate-800 text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-colors">
+                            <Icon :name="next.icon" size="20" />
+                        </div>
+                        <div class="text-lg font-bold text-slate-200 group-hover:text-white transition-colors">
+                            {{ next.label }}
+                        </div>
                     </div>
                 </NuxtLink>
             </nav>

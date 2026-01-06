@@ -4,7 +4,9 @@
         toc: [
             { id: 'concept', label: 'Nitro 引擎' },
             { id: 'create-api', label: '建立 API' },
+            { id: 'http-methods', label: 'HTTP 方法' },
             { id: 'utilities', label: '請求處理工具' },
+            { id: 'error-handling', label: '錯誤處理' },
             { id: 'type-safety', label: '型別安全' }
         ]
     })
@@ -151,6 +153,55 @@
             </div>
         </TutorialSection>
 
+        <!-- 2.5 HTTP Methods -->
+        <TutorialSection id="http-methods" title="HTTP 方法 (Methods)" icon="heroicons:arrows-right-left" separator>
+            <p>
+                Nuxt 允許你透過檔案後綴來限制 API 支援的 HTTP 方法，這讓路由定義更語意化。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <h4 class="text-white font-bold mb-4 flex items-center gap-2">
+                        <Icon name="heroicons:document" class="text-slate-500" />
+                        檔案命名規則
+                    </h4>
+                    <ul class="space-y-3">
+                        <li
+                            class="flex items-center justify-between p-3 rounded bg-slate-950 border border-slate-800/50">
+                            <code class="text-slate-300 font-mono text-sm">users.get.ts</code>
+                            <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded">GET
+                                ONLY</span>
+                        </li>
+                        <li
+                            class="flex items-center justify-between p-3 rounded bg-slate-950 border border-slate-800/50">
+                            <code class="text-slate-300 font-mono text-sm">users.post.ts</code>
+                            <span class="text-xs font-bold text-sky-400 bg-sky-500/10 px-2 py-1 rounded">POST
+                                ONLY</span>
+                        </li>
+                        <li
+                            class="flex items-center justify-between p-3 rounded bg-slate-950 border border-slate-800/50">
+                            <code class="text-slate-300 font-mono text-sm">users.put.ts</code>
+                            <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-2 py-1 rounded">PUT
+                                ONLY</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <h4 class="text-white font-bold mb-4 flex items-center gap-2">
+                        <Icon name="heroicons:code-bracket" class="text-slate-500" />
+                        範例程式碼
+                    </h4>
+                    <AppCodeBlock code="// server/api/auth.post.ts
+export default defineEventHandler(async (event) => {
+  // 這個處理函式只會回應 POST 請求
+  const body = await readBody(event)
+  return { status: 'logged_in' }
+})" lang="ts" filename="server/api/auth.post.ts" />
+                </div>
+            </div>
+        </TutorialSection>
+
         <!-- 3. Utilities -->
         <TutorialSection id="utilities" title="請求處理工具" icon="heroicons:wrench-screwdriver" separator>
             <p>
@@ -224,6 +275,45 @@
   
   return { success: true }
 })" lang="ts" filename="server/api/submit.post.ts" />
+            </div>
+        </TutorialSection>
+
+        <!-- 3.5 Error Handling -->
+        <TutorialSection id="error-handling" title="錯誤處理" icon="heroicons:exclamation-triangle" separator>
+            <p>
+                在伺服器端，我們應該使用 <code class="text-emerald-400">createError</code> 來拋出異常。
+                Nuxt 會自動將這些錯誤轉換為標準的 JSON 回應，並設定正確的 HTTP 狀態碼。
+            </p>
+
+            <AppCodeBlock code="export default defineEventHandler((event) => {
+  const id = getRouterParam(event, 'id')
+
+  if (!id) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'ID is required',
+      data: {
+        code: 'MISSING_PARAM',
+        details: 'The user ID parameter is missing from the URL.'
+      }
+    })
+  }
+
+  return { id }
+})" lang="ts" filename="server/api/user/[id].ts" />
+
+            <div class="mt-4 p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm flex gap-4">
+                <div class="p-2 rounded-lg bg-red-500/10 text-red-400 h-fit">
+                    <Icon name="heroicons:bug-ant" class="w-5 h-5" />
+                </div>
+                <div>
+                    <strong class="text-white block mb-1">為什麼不用 throw new Error()?</strong>
+                    <p class="text-slate-400 leading-relaxed">
+                        普通的 <code class="text-slate-300">throw new Error(...)</code> 預設會回傳 500 Internal Server
+                        Error，並且不會包含詳細的錯誤資訊給客戶端。
+                        使用 <code class="text-emerald-400">createError</code> 可以精確控制回傳給前端的狀態碼與訊息，這對於 API 開發至關重要。
+                    </p>
+                </div>
             </div>
         </TutorialSection>
 

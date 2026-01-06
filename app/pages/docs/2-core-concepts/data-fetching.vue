@@ -5,6 +5,7 @@
       { id: 'why-usefetch', label: '為什麼需要 useFetch？' },
       { id: 'basic-usage', label: '基本用法' },
       { id: 'advanced-features', label: '進階特性' },
+      { id: 'useasyncdata', label: 'useAsyncData' },
       { id: 'fetch-vs-usefetch', label: '$fetch vs useFetch' },
       { id: 'live-demo', label: '實戰演練' }
     ]
@@ -23,6 +24,15 @@
 // status: 請求狀態 'idle' | 'pending' | 'success' | 'error'
 // error: 錯誤物件
 // refresh: 重新執行請求的函式`
+
+  const asyncDataCode = `// 當你需要執行非 fetch 的異步操作 (例如 CMS SDK 或 GraphQL)
+const { data } = await useAsyncData(
+  'unique-key-for-caching', // [重要] 必須提供唯一的 key
+  async () => {
+    const cmsData = await myCmsClient.getPosts()
+    return cmsData.filter(post => post.published)
+  }
+)`
 
   const lazyCode = `<script setup>
 // 啟用 lazy: true，不會阻塞頁面導航
@@ -380,6 +390,39 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
       </div>
     </TutorialSection>
 
+    <!-- 3.5 useAsyncData -->
+    <TutorialSection id="useasyncdata" title="useAsyncData 的使用時機" icon="heroicons:circle-stack" separator>
+      <div class="space-y-6">
+        <p>
+          <code class="text-emerald-400">useFetch</code> 其實是 <code class="text-emerald-400">useAsyncData</code> 加上 <code
+            class="text-emerald-400">$fetch</code> 的語法糖。
+          但在某些情況下，你必須直接使用 <code class="text-emerald-400">useAsyncData</code>：
+        </p>
+
+        <ul class="space-y-2 text-slate-400 ml-1">
+          <li class="flex items-start gap-3">
+            <Icon name="heroicons:code-bracket" class="w-5 h-5 text-emerald-500 mt-0.5" />
+            <span>整合第三方 SDK (Firebase, CMS Clients, GraphQL)。</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="heroicons:arrows-right-left" class="w-5 h-5 text-emerald-500 mt-0.5" />
+            <span>需要串聯多個請求後才回傳單一結果。</span>
+          </li>
+        </ul>
+
+        <AppCodeBlock :code="asyncDataCode" lang="ts" />
+
+        <div class="p-4 rounded-lg bg-amber-500/10 border border-amber-500/20 flex gap-3">
+          <Icon name="heroicons:exclamation-triangle" class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+          <div class="text-sm text-amber-200/80">
+            <strong class="text-amber-400 block mb-1">關於 Key 的重要性</strong>
+            在使用 <code class="font-mono">useAsyncData</code> 時，務必提供一個唯一的 key。Nuxt 依賴這個 key 在 Server 與 Client 之間傳遞資料快取
+            (Payload)。若 key 重複，可能導致資料汙染或水合錯誤。
+          </div>
+        </div>
+      </div>
+    </TutorialSection>
+
     <!-- 4. $fetch vs useFetch -->
     <TutorialSection id="fetch-vs-usefetch" title="$fetch vs useFetch" icon="heroicons:arrows-right-left">
       <p>Nuxt 提供了兩個長得很像的工具，初學者常混淆。請記住以下原則：</p>
@@ -400,6 +443,13 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
               <div>
                 <strong class="text-slate-200 block">頁面初始化資料</strong>
                 <span class="text-sm text-slate-400">進入頁面時就需要看到的資料 (SSR)。</span>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <Icon name="heroicons:check-circle" class="w-6 h-6 text-emerald-500 shrink-0" />
+              <div>
+                <strong class="text-slate-200 block">自動去重 (Deduplication)</strong>
+                <span class="text-sm text-slate-400">避免 Server 與 Client 重複發送請求。</span>
               </div>
             </div>
             <div class="flex gap-3">
