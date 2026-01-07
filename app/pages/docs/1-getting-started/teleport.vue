@@ -18,18 +18,18 @@
 </script>
 
 <template>
-    <TutorialPage title="Teleport"
+    <DocsPage title="Teleport"
         description="Teleport 是 Vue 3 的內建元件，允許你將元件的 DOM 結構「傳送」到 DOM Tree 的其他位置（例如 body 標籤底部），這對於 Modal、Tooltip 或 Toast 通知非常有用。"
         :badges="[{ label: 'DOM Portal', color: 'primary' }, { label: 'UI Overlay', color: 'neutral' }]">
 
         <!-- 1. Concept -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:paper-airplane" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:paper-airplane" separator>
             <p>
                 想像一個「任意門」。你在元件 A 裡面寫了一段 HTML，但你希望它實際出現在網頁的最外層（通常是 <code class="text-emerald-400">&lt;body&gt;</code>）。
                 這就是 <code class="text-emerald-400">&lt;Teleport&gt;</code> 的功能。
             </p>
 
-            <AppWindow title="DOM Structure" icon="heroicons:code-bracket" class="w-full">
+            <UiWindow title="DOM Structure" icon="heroicons:code-bracket" class="w-full">
                 <div class="p-6 bg-slate-950 flex flex-col gap-4">
                     <!-- Body -->
                     <div class="border border-slate-700 rounded p-4 relative">
@@ -65,11 +65,11 @@
                         </div>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. The Problem -->
-        <TutorialSection id="problem" title="為什麼需要它？" icon="heroicons:question-mark-circle" separator>
+        <DocsSection id="problem" title="為什麼需要它？" icon="heroicons:question-mark-circle" separator>
             <p>
                 如果沒有 Teleport，當你在一個 <code class="text-red-400">overflow: hidden</code> 或 <code
                     class="text-red-400">z-index</code> 較低的父元件中開啟 Modal 時，
@@ -112,16 +112,16 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Usage -->
-        <TutorialSection id="usage" title="基本用法" icon="heroicons:code-bracket" separator>
+        <DocsSection id="usage" title="基本用法" icon="heroicons:code-bracket" separator>
             <p>
                 使用 <code class="text-emerald-400">to</code> prop 指定目標選擇器 (通常是 <code
                     class="text-emerald-400">body</code>)。
             </p>
 
-            <AppCodeBlock code="<template>
+            <UiCodeBlock code="<template>
   <button @click=&quot;open = true&quot;>開啟 Modal</button>
 
   <!-- 將內容傳送到 body 標籤的最後面 -->
@@ -134,24 +134,24 @@
     </div>
   </Teleport>
 </template>" lang="vue" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. SSR Caveat -->
-        <TutorialSection id="ssr" title="SSR 注意事項" icon="heroicons:exclamation-triangle">
+        <DocsSection id="ssr" title="SSR 注意事項" icon="heroicons:exclamation-triangle">
             <p>
                 <code class="text-emerald-400">&lt;Teleport&gt;</code> 只能在客戶端運作（因為伺服器端沒有 DOM）。
                 Nuxt 會自動處理這個問題，但為了保險起見，建議將 Teleport 包裹在 <code class="text-emerald-400">&lt;ClientOnly&gt;</code> 中，
                 或者確保目標元素在掛載時已經存在。
             </p>
 
-            <AppCodeBlock code="<template>
+            <UiCodeBlock code="<template>
   <ClientOnly>
     <Teleport to=&quot;body&quot;>
       <Modal />
     </Teleport>
   </ClientOnly>
 </template>" lang="vue" />
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

@@ -74,7 +74,7 @@
                             class="w-4 h-4 shrink-0" />
                         <span>{{ r.file }}</span>
                         <span v-if="matchedRoute.route.file === r.file"
-                            class="ml-auto text-[10px] bg-emerald-500 text-emerald-950 px-1.5 rounded font-bold">MATCH</span>
+                            class="ml-auto text-xs bg-emerald-500 text-emerald-950 px-1.5 rounded font-bold">MATCH</span>
                     </div>
                 </div>
             </div>

@@ -83,7 +83,7 @@
                                 <span class="text-sm font-medium text-slate-300 group-hover:text-white">Home</span>
                             </div>
                             <span
-                                class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-500 border border-slate-700">Public</span>
+                                class="text-xs px-1.5 py-0.5 rounded bg-slate-800 text-slate-500 border border-slate-700">Public</span>
                         </button>
 
                         <button @click="navigate('/login')" :disabled="isNavigating"
@@ -95,7 +95,7 @@
                                 <span class="text-sm font-medium text-slate-300 group-hover:text-white">Login</span>
                             </div>
                             <span
-                                class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-500 border border-slate-700">Guest
+                                class="text-xs px-1.5 py-0.5 rounded bg-slate-800 text-slate-500 border border-slate-700">Guest
                                 Only</span>
                         </button>
 
@@ -108,7 +108,7 @@
                                 <span class="text-sm font-medium text-slate-300 group-hover:text-white">Dashboard</span>
                             </div>
                             <span
-                                class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Protected</span>
+                                class="text-xs px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Protected</span>
                         </button>
                     </div>
                 </div>
@@ -117,7 +117,8 @@
                     <strong class="text-emerald-400 block mb-1">Middleware Logic:</strong>
                     <ul class="list-disc list-inside space-y-1">
                         <li>If accessing <code class="text-amber-400">/dashboard</code> without login → Redirect to
-                            <code class="text-slate-300">/login</code></li>
+                            <code class="text-slate-300">/login</code>
+                        </li>
                         <li>If accessing <code class="text-slate-300">/login</code> while logged in → Redirect to <code
                                 class="text-amber-400">/dashboard</code></li>
                     </ul>
@@ -129,7 +130,7 @@
                 <div class="flex items-center justify-between px-4 py-2 border-b border-slate-800 bg-slate-900/30">
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Middleware Logs</span>
                     <button @click="clearLogs"
-                        class="text-[10px] text-slate-500 hover:text-white transition-colors">Clear</button>
+                        class="text-xs text-slate-500 hover:text-white transition-colors">Clear</button>
                 </div>
                 <div class="flex-1 overflow-y-auto p-4 space-y-3 font-mono text-xs">
                     <div v-if="logs.length === 0"

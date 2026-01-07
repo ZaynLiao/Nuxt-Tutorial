@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <AppTopBar />
+    <LayoutTopBar />
     <div class="flex max-w-7xl mx-auto min-h-dvh">
         <DocsSidebar />
 

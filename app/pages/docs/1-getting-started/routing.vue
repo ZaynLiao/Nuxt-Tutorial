@@ -18,19 +18,19 @@
 </script>
 
 <template>
-    <TutorialPage title="路由系統" description="Nuxt 摒棄了繁瑣的路由設定檔。你只需要在 pages/ 目錄下建立檔案，路由就會自動生成。"
+    <DocsPage title="路由系統" description="Nuxt 摒棄了繁瑣的路由設定檔。你只需要在 pages/ 目錄下建立檔案，路由就會自動生成。"
         :badges="[{ label: 'Core', color: 'primary' }, { label: 'Routing', color: 'neutral' }]">
 
         <!-- 1. File System Routing -->
-        <TutorialSection id="fs-routing" title="檔案系統路由" icon="heroicons:map" separator>
+        <DocsSection id="fs-routing" title="檔案系統路由" icon="heroicons:map" separator>
             <p>
                 Nuxt 會掃描 <code class="text-emerald-400">app/pages/</code> 目錄下的所有 Vue 檔案，並自動為它們建立路由配置。
             </p>
 
             <div class="grid lg:grid-cols-2 gap-8">
-                <AppWindow title="File Structure" icon="heroicons:folder-open" class="h-full">
+                <UiWindow title="File Structure" icon="heroicons:folder-open" class="h-full">
                     <div class="p-2">
-                        <AppFileTree :files="[
+                        <UiFileTree :files="[
                             {
                                 name: 'pages/',
                                 icon: 'heroicons:folder-open',
@@ -43,7 +43,7 @@
                             }
                         ]" />
                     </div>
-                </AppWindow>
+                </UiWindow>
 
                 <div class="flex flex-col justify-center gap-4">
                     <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
@@ -73,21 +73,21 @@
                     試著在網址列輸入不同的路徑 (例如 <code class="text-emerald-400">/users/123</code> 或 <code
                         class="text-emerald-400">/posts/hello-world</code>)，觀察 Nuxt 如何匹配檔案並提取參數。
                 </p>
-                <RouteMatcher />
+                <DemoRouteMatcher />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2. Dynamic Routes -->
-        <TutorialSection id="dynamic-routes" title="動態路由" icon="heroicons:variable" separator>
+        <DocsSection id="dynamic-routes" title="動態路由" icon="heroicons:variable" separator>
             <p>
                 當你需要為不同的 ID 或 Slug 呈現相同的頁面版型時（例如產品頁、文章頁），可以使用方括號 <code class="text-emerald-400">[]</code> 來定義動態參數。
             </p>
 
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="space-y-4">
-                    <AppWindow title="Dynamic File" icon="heroicons:folder-open">
+                    <UiWindow title="Dynamic File" icon="heroicons:folder-open">
                         <div class="p-2">
-                            <AppFileTree :files="[
+                            <UiFileTree :files="[
                                 {
                                     name: 'pages/',
                                     icon: 'heroicons:folder-open',
@@ -105,14 +105,14 @@
                                 }
                             ]" />
                         </div>
-                    </AppWindow>
+                    </UiWindow>
 
                     <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
                         <h4 class="text-sm font-bold text-slate-300 mb-2">如何取得參數？</h4>
                         <p class="text-xs text-slate-400 mb-3">
                             在元件中，使用 <code class="text-emerald-400">useRoute()</code> Composable。
                         </p>
-                        <AppCodeBlock code="<script setup>
+                        <UiCodeBlock code="<script setup>
 const route = useRoute()
 console.log(route.params.id)
 </script>" lang="vue" filename="pages/users/[id].vue" />
@@ -151,18 +151,18 @@ console.log(route.params.id)
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Nested Routes -->
-        <TutorialSection id="nested-routes" title="巢狀路由" icon="heroicons:square-3-stack-3d" separator>
+        <DocsSection id="nested-routes" title="巢狀路由" icon="heroicons:square-3-stack-3d" separator>
             <p>
                 Nuxt 支援巢狀路由 (Nested Routes)，這對於建立具有多層級導覽的應用程式（如後台管理系統）非常有用。
             </p>
 
             <div class="grid lg:grid-cols-2 gap-8 items-center">
-                <AppWindow title="Nested Structure" icon="heroicons:folder-open">
+                <UiWindow title="Nested Structure" icon="heroicons:folder-open">
                     <div class="p-2">
-                        <AppFileTree :files="[
+                        <UiFileTree :files="[
                             {
                                 name: 'pages/',
                                 icon: 'heroicons:folder-open',
@@ -182,7 +182,7 @@ console.log(route.params.id)
                             }
                         ]" />
                     </div>
-                </AppWindow>
+                </UiWindow>
 
                 <div class="space-y-4">
                     <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
@@ -205,10 +205,10 @@ console.log(route.params.id)
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Navigation -->
-        <TutorialSection id="navigation" title="導覽與連結" icon="heroicons:link">
+        <DocsSection id="navigation" title="導覽與連結" icon="heroicons:link">
             <p>
                 在 Nuxt 應用程式中切換頁面，請務必使用 <code class="text-emerald-400">&lt;NuxtLink&gt;</code> 元件，而不是標準的 <code
                     class="text-slate-400">&lt;a&gt;</code> 標籤。
@@ -223,7 +223,7 @@ console.log(route.params.id)
                         </div>
                         <h3 class="font-bold text-emerald-400">使用 NuxtLink</h3>
                     </div>
-                    <AppCodeBlock code='<NuxtLink to="/about">
+                    <UiCodeBlock code='<NuxtLink to="/about">
   關於我們
 </NuxtLink>' lang="vue" :show-filename="false" />
                     <ul class="mt-4 space-y-2 text-sm text-emerald-200/70">
@@ -246,7 +246,7 @@ console.log(route.params.id)
                         </div>
                         <h3 class="font-bold text-red-400">避免使用 a 標籤</h3>
                     </div>
-                    <AppCodeBlock code='<a href="/about">
+                    <UiCodeBlock code='<a href="/about">
   關於我們
 </a>' lang="vue" :show-filename="false" />
                     <ul class="mt-4 space-y-2 text-sm text-red-200/70">
@@ -261,7 +261,7 @@ console.log(route.params.id)
                     </ul>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

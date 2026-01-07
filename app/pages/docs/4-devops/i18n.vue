@@ -18,23 +18,23 @@
 </script>
 
 <template>
-    <TutorialPage title="多語言 (i18n)"
+    <DocsPage title="多語言 (i18n)"
         description="在全球化的時代，支援多語言是必備功能。Nuxt 官方提供了 @nuxtjs/i18n 模組，讓國際化 (Internationalization) 變得簡單且強大。"
         :badges="[{ label: 'Localization', color: 'primary' }, { label: 'SEO Ready', color: 'neutral' }]">
 
         <!-- Section 1: Setup -->
-        <TutorialSection id="setup" title="安裝與設定" icon="heroicons:wrench-screwdriver" separator>
+        <DocsSection id="setup" title="安裝與設定" icon="heroicons:wrench-screwdriver" separator>
             <p class="text-slate-400 mb-6">
                 首先安裝 <code class="text-emerald-400">@nuxtjs/i18n</code> 模組。
             </p>
 
-            <AppCodeBlock language="bash" :code="`pnpm add @nuxtjs/i18n`" filename="Terminal" />
+            <UiCodeBlock language="bash" :code="`pnpm add @nuxtjs/i18n`" filename="Terminal" />
 
             <p class="text-slate-400 my-4">
                 在 <code class="text-emerald-400">nuxt.config.ts</code> 中進行配置：
             </p>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtConfig({
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
   
   i18n: {
@@ -53,10 +53,10 @@
     }
   }
 })`" filename="nuxt.config.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: Usage -->
-        <TutorialSection id="usage" title="基本用法" icon="heroicons:language" separator>
+        <DocsSection id="usage" title="基本用法" icon="heroicons:language" separator>
             <p class="text-slate-400 mb-6">
                 在 Vue 元件中，使用 <code class="text-emerald-400">$t</code> 函數來顯示翻譯內容。
             </p>
@@ -64,14 +64,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <div class="text-xs font-mono text-slate-500 mb-2">locales/zh.json</div>
-                    <AppCodeBlock language="json" :code="`{
+                    <UiCodeBlock language="json" :code="`{
   &quot;welcome&quot;: &quot;歡迎來到 Nuxt&quot;,
   &quot;about&quot;: &quot;關於我們&quot;
 }`" filename="JSON" />
                 </div>
                 <div>
                     <div class="text-xs font-mono text-slate-500 mb-2">app.vue</div>
-                    <AppCodeBlock language="vue" :code="`<template>
+                    <UiCodeBlock language="vue" :code="`<template>
   <h1>{{ $t('welcome') }}</h1>
   
   <!-- 切換語言按鈕 -->
@@ -85,10 +85,10 @@ const { locale, setLocale } = useI18n()
 </script>`" filename="Vue" />
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Routing -->
-        <TutorialSection id="routing" title="路由策略" icon="heroicons:map" separator>
+        <DocsSection id="routing" title="路由策略" icon="heroicons:map" separator>
             <p class="text-slate-400 mb-6">
                 <code class="text-emerald-400">@nuxtjs/i18n</code> 會自動為您產生多語言路由。
             </p>
@@ -126,10 +126,10 @@ const { locale, setLocale } = useI18n()
                     </tbody>
                 </table>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: SEO -->
-        <TutorialSection id="seo" title="SEO 支援" icon="heroicons:globe-alt" separator>
+        <DocsSection id="seo" title="SEO 支援" icon="heroicons:globe-alt" separator>
             <p class="text-slate-400 mb-6">
                 模組會自動為每個頁面注入正確的 <code class="text-slate-300">hreflang</code> 標籤，這對於多語言網站的 SEO 至關重要。
             </p>
@@ -141,7 +141,7 @@ const { locale, setLocale } = useI18n()
             &lt;link rel="alternate" href="https://example.com/en" hreflang="en-US" /&gt;
             &lt;link rel="canonical" href="https://example.com/" /&gt;</pre>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

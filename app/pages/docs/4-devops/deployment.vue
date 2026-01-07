@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <TutorialPage title="部署到 Cloudflare"
+    <DocsPage title="部署到 Cloudflare"
         description="Cloudflare Pages 是目前部署 Nuxt 應用程式的最佳選擇之一。它提供了全球 CDN 加速、免費的 HTTPS 與極致的 Edge 運算效能。"
         :badges="[{ label: 'Cloudflare', color: 'primary' }, { label: 'Edge Computing', color: 'neutral' }]">
 
         <!-- Section 1: Why Cloudflare -->
-        <TutorialSection id="why-cloudflare" title="為什麼選擇 Cloudflare？" icon="heroicons:globe-asia-australia" separator>
+        <DocsSection id="why-cloudflare" title="為什麼選擇 Cloudflare？" icon="heroicons:globe-asia-australia" separator>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="p-6 rounded-3xl bg-slate-950 border border-slate-800/50">
                     <Icon name="heroicons:bolt" class="w-8 h-8 text-yellow-400 mb-4" />
@@ -49,16 +49,16 @@
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: Configuration -->
-        <TutorialSection id="configuration" title="專案設定" icon="heroicons:cog-6-tooth" separator>
+        <DocsSection id="configuration" title="專案設定" icon="heroicons:cog-6-tooth" separator>
             <p class="text-slate-400 mb-6">
                 雖然 Cloudflare 通常能自動偵測 Nuxt，但為了確保最佳相容性，我們建議在 <code class="text-slate-300">nuxt.config.ts</code> 中明確指定
                 Preset。
             </p>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtConfig({
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtConfig({
   nitro: {
     // 明確指定使用 Cloudflare Pages 預設配置
     preset: 'cloudflare-pages'
@@ -73,10 +73,10 @@
                     您可以在專案根目錄建立 <code class="text-slate-300">.nvmrc</code> 檔案來指定版本。
                 </p>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Git Deployment -->
-        <TutorialSection id="deploy-git" title="Git 自動部署" icon="heroicons:rocket-launch" separator>
+        <DocsSection id="deploy-git" title="Git 自動部署" icon="heroicons:rocket-launch" separator>
             <p class="text-slate-400 mb-6">
                 這是最推薦的部署方式。您只需要在 Cloudflare Dashboard 點擊幾下即可完成。
             </p>
@@ -121,10 +121,10 @@
                     <li class="pl-2">點擊 <strong>Save and Deploy</strong>。</li>
                 </ol>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: Troubleshooting -->
-        <TutorialSection id="troubleshooting" title="常見問題排除" icon="heroicons:exclamation-triangle" separator>
+        <DocsSection id="troubleshooting" title="常見問題排除" icon="heroicons:exclamation-triangle" separator>
             <div class="space-y-4">
                 <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/50">
                     <h4 class="text-white font-medium mb-2 flex items-center gap-2">
@@ -158,7 +158,7 @@
                     </ul>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

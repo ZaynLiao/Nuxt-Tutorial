@@ -39,11 +39,11 @@
 </script>
 
 <template>
-    <TutorialPage title="安裝指南" description="跟隨本指南，在幾分鐘內建立一個現代化、高效能的 Nuxt 4 應用程式。我們強烈建議使用 pnpm 以獲得最佳體驗。"
+    <DocsPage title="安裝指南" description="跟隨本指南，在幾分鐘內建立一個現代化、高效能的 Nuxt 4 應用程式。我們強烈建議使用 pnpm 以獲得最佳體驗。"
         :badges="[{ label: 'Core', color: 'primary' }, { label: 'Setup', color: 'neutral' }]">
 
         <!-- 1. Prerequisites -->
-        <TutorialSection id="prerequisites" title="環境準備" icon="heroicons:clipboard-document-check" separator>
+        <DocsSection id="prerequisites" title="環境準備" icon="heroicons:clipboard-document-check" separator>
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Node.js -->
                 <div
@@ -74,10 +74,10 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2. Why Nuxt 4 -->
-        <TutorialSection id="why-nuxt4" title="為什麼選擇 Nuxt 4？" icon="heroicons:sparkles" iconColor="text-amber-400"
+        <DocsSection id="why-nuxt4" title="為什麼選擇 Nuxt 4？" icon="heroicons:sparkles" iconColor="text-amber-400"
             separator>
             <div class="flex flex-col gap-6">
                 <p class="leading-relaxed">
@@ -85,7 +85,7 @@
                     它將應用程式源碼集中於 <code class="text-emerald-400">app/</code> 目錄，讓專案根目錄更加乾淨。
                 </p>
 
-                <AppWindow title="Project Structure Evolution" icon="heroicons:folder-open" class="w-full">
+                <UiWindow title="Project Structure Evolution" icon="heroicons:folder-open" class="w-full">
                     <div class="grid grid-cols-2 divide-x divide-slate-800">
                         <!-- Nuxt 3 -->
                         <div class="p-6 space-y-4">
@@ -117,7 +117,7 @@
                             <div class="text-center text-xs font-bold text-emerald-500 uppercase tracking-wider mb-4">
                                 Nuxt 4 (Modern)
                             </div>
-                            <AppFileTree :files="[
+                            <UiFileTree :files="[
                                 {
                                     name: 'app/',
                                     icon: 'heroicons:folder-open',
@@ -133,13 +133,13 @@
                             ]" />
                         </div>
                     </div>
-                </AppWindow>
+                </UiWindow>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Init Project -->
-        <TutorialSection id="init-project" title="初始化專案" icon="heroicons:command-line" separator>
-            <AppWindow :no-padding="true" type="code" title="Terminal">
+        <DocsSection id="init-project" title="初始化專案" icon="heroicons:command-line" separator>
+            <UiWindow :no-padding="true" type="code" title="Terminal">
                 <template #header>
                     <div class="flex border-r border-slate-800">
                         <button v-for="pm in ['pnpm', 'npm', 'yarn']" :key="pm" @click="activeTab = pm as any"
@@ -175,11 +175,11 @@
                         </div>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 4. Project Structure Config -->
-        <TutorialSection id="project-structure" title="關鍵設定" icon="heroicons:cog-6-tooth" separator>
+        <DocsSection id="project-structure" title="關鍵設定" icon="heroicons:cog-6-tooth" separator>
             <p>
                 為了啟用 Nuxt 4 的目錄結構，你必須在 <code class="text-emerald-400">nuxt.config.ts</code> 中明確宣告。
             </p>
@@ -188,7 +188,7 @@
                 <div
                     class="absolute -inset-1 bg-linear-to-r from-emerald-500/20 to-sky-500/20 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000">
                 </div>
-                <AppCodeBlock code="export default defineNuxtConfig({
+                <UiCodeBlock code="export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4
   }
@@ -202,10 +202,10 @@
                     目前 Nuxt 4 仍處於過渡期。這個設定告訴 Nuxt 掃描 <code class="font-mono">app/</code> 目錄而非根目錄，讓你能提早享受未來的專案架構。
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 5. Development -->
-        <TutorialSection id="development" title="啟動開發" icon="heroicons:rocket-launch">
+        <DocsSection id="development" title="啟動開發" icon="heroicons:rocket-launch">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-4">
                     <p class="leading-relaxed">
@@ -220,7 +220,7 @@
                     </div>
                 </div>
 
-                <AppWindow title="Browser Preview" class="w-full shadow-2xl shadow-emerald-900/20">
+                <UiWindow title="Browser Preview" class="w-full shadow-2xl shadow-emerald-900/20">
                     <div
                         class="h-48 flex flex-col items-center justify-center bg-slate-900/50 relative overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
@@ -234,9 +234,9 @@
                             <div class="w-3 h-3 rounded-full bg-emerald-500/20 animate-pulse delay-150"></div>
                         </div>
                     </div>
-                </AppWindow>
+                </UiWindow>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

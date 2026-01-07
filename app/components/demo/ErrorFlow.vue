@@ -129,14 +129,14 @@
                     <!-- Connecting Lines -->
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-px h-8 bg-slate-800">
                         <div class="absolute inset-0 bg-emerald-500 transition-all duration-500"
-                            :style="{ height: activePath.includes('start') ? '100%' : '0%' }"></div>
+                            :class="activePath.includes('start') ? 'h-full' : 'h-0'"></div>
                     </div>
 
                     <!-- Left: API -->
                     <div class="flex flex-col items-center gap-4">
                         <div class="w-px h-8 bg-slate-800 relative">
                             <div class="absolute top-0 left-0 w-full bg-emerald-500 transition-all duration-500"
-                                :style="{ height: activePath.includes('api') ? '100%' : '0%' }"></div>
+                                :class="activePath.includes('api') ? 'h-full' : 'h-0'"></div>
                         </div>
                         <div class="px-6 py-4 rounded-xl border transition-all duration-500 w-full text-center"
                             :class="activePath.includes('api') ? 'bg-slate-800 border-slate-600 text-white shadow-lg' : 'bg-slate-900 border-slate-800 text-slate-500'">
@@ -149,7 +149,7 @@
                     <div class="flex flex-col items-center gap-4">
                         <div class="w-px h-8 bg-slate-800 relative">
                             <div class="absolute top-0 left-0 w-full bg-emerald-500 transition-all duration-500"
-                                :style="{ height: activePath.includes('page') ? '100%' : '0%' }"></div>
+                                :class="activePath.includes('page') ? 'h-full' : 'h-0'"></div>
                         </div>
                         <div class="px-6 py-4 rounded-xl border transition-all duration-500 w-full text-center"
                             :class="activePath.includes('page') ? 'bg-slate-800 border-slate-600 text-white shadow-lg' : 'bg-slate-900 border-slate-800 text-slate-500'">
@@ -165,7 +165,7 @@
                     <div class="flex flex-col items-center gap-4">
                         <div class="w-px h-8 bg-slate-800 relative">
                             <div class="absolute top-0 left-0 w-full bg-emerald-500 transition-all duration-500"
-                                :style="{ height: activePath.includes('error_page') ? '100%' : '0%' }"></div>
+                                :class="activePath.includes('error_page') ? 'h-full' : 'h-0'"></div>
                         </div>
                         <div class="px-6 py-4 rounded-xl border-2 border-dashed transition-all duration-500 w-full text-center relative overflow-hidden"
                             :class="activePath.includes('error_page') ? 'bg-red-500/10 border-red-500 text-red-400 shadow-lg shadow-red-500/20' : 'bg-slate-900/50 border-slate-800 text-slate-600'">
@@ -180,7 +180,7 @@
                     <div class="flex flex-col items-center gap-4">
                         <div class="w-px h-8 bg-slate-800 relative">
                             <div class="absolute top-0 left-0 w-full bg-emerald-500 transition-all duration-500"
-                                :style="{ height: activePath.includes('boundary') ? '100%' : '0%' }"></div>
+                                :class="activePath.includes('boundary') ? 'h-full' : 'h-0'"></div>
                         </div>
                         <div class="px-6 py-4 rounded-xl border-2 border-dashed transition-all duration-500 w-full text-center"
                             :class="activePath.includes('boundary') ? 'bg-sky-500/10 border-sky-500 text-sky-400 shadow-lg shadow-sky-500/20' : 'bg-slate-900/50 border-slate-800 text-slate-600'">

@@ -54,30 +54,30 @@
 </script>
 
 <template>
-    <TutorialPage title="Nuxt Image"
+    <DocsPage title="Nuxt Image"
         description="圖片通常是網頁載入速度的瓶頸。Nuxt Image 提供了一套自動化的解決方案，能即時調整圖片大小、壓縮並轉換格式，大幅提升 Core Web Vitals 分數。"
         :badges="[{ label: 'Performance', color: 'emerald' }, { label: 'UX', color: 'primary' }]">
 
         <!-- 1. Installation -->
-        <TutorialSection id="installation" title="安裝與設定" icon="heroicons:arrow-down-tray" separator>
+        <DocsSection id="installation" title="安裝與設定" icon="heroicons:arrow-down-tray" separator>
             <p class="text-slate-400 mb-4">
                 Nuxt Image 是一個官方模組，安裝非常簡單。請在終端機執行以下指令：
             </p>
 
             <div class="space-y-4">
-                <AppCodeBlock filename="Terminal" :code="installCode" lang="sh" />
+                <UiCodeBlock filename="Terminal" :code="installCode" lang="sh" />
 
                 <p class="text-slate-400 text-sm">
                     安裝完成後，系統會自動更新 <code class="text-slate-300">package.json</code>。接著，您需要在 <code
                         class="text-slate-300">nuxt.config.ts</code> 中註冊模組並進行全域設定：
                 </p>
 
-                <AppCodeBlock filename="nuxt.config.ts" :code="configCode" lang="typescript" />
+                <UiCodeBlock filename="nuxt.config.ts" :code="configCode" lang="typescript" />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2. Basic Usage -->
-        <TutorialSection id="basic-usage" title="基本用法" icon="heroicons:code-bracket" separator>
+        <DocsSection id="basic-usage" title="基本用法" icon="heroicons:code-bracket" separator>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                     <p class="text-slate-400 mb-4">
@@ -101,12 +101,12 @@
                     </ul>
                 </div>
 
-                <AppCodeBlock filename="app.vue" :code="usageCode" lang="vue" />
+                <UiCodeBlock filename="app.vue" :code="usageCode" lang="vue" />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Features Visualization -->
-        <TutorialSection id="features" title="核心功能" icon="heroicons:sparkles" separator>
+        <DocsSection id="features" title="核心功能" icon="heroicons:sparkles" separator>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Feature 1: Format -->
                 <div
@@ -145,10 +145,10 @@
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Providers -->
-        <TutorialSection id="providers" title="圖片服務商 (Providers)" icon="heroicons:server-stack">
+        <DocsSection id="providers" title="圖片服務商 (Providers)" icon="heroicons:server-stack">
             <p class="text-slate-400 mb-6">
                 Nuxt Image 支援多種圖片來源與 CDN。除了預設的本地 IPX 處理器外，也支援第三方服務。
             </p>
@@ -171,8 +171,8 @@
                 </div>
             </div>
 
-            <AppCodeBlock filename="nuxt.config.ts" :code="providerCode" lang="typescript" />
-        </TutorialSection>
+            <UiCodeBlock filename="nuxt.config.ts" :code="providerCode" lang="typescript" />
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

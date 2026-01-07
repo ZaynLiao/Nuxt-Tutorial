@@ -20,12 +20,12 @@
 </script>
 
 <template>
-    <TutorialPage title="自動引入 (Auto-imports)"
+    <DocsPage title="自動引入 (Auto-imports)"
         description="Nuxt 的核心魔法之一。只要將檔案放入指定目錄 (components, composables, utils)，就能在全專案直接使用，完全不需要手動 import。"
         :badges="[{ label: 'DX Friendly', color: 'primary' }, { label: 'Tree Shaking', color: 'neutral' }]">
 
         <!-- 1. Concept -->
-        <TutorialSection id="concept" title="自動引入機制" icon="heroicons:sparkles" separator>
+        <DocsSection id="concept" title="自動引入機制" icon="heroicons:sparkles" separator>
             <p>
                 在傳統 Vue 專案中，你必須手動引入每個用到的元件和函式。
                 Nuxt 自動化了這個過程，掃描 <code class="text-emerald-400">components/</code>、<code
@@ -36,7 +36,7 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
                     <div class="text-xs font-bold text-slate-500 uppercase mb-4">Standard Vue</div>
-                    <AppCodeBlock code="<script setup>
+                    <UiCodeBlock code="<script setup>
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import AppHeader from './components/AppHeader.vue'
@@ -51,7 +51,7 @@ const route = useRoute()
                         <Icon name="heroicons:check-badge" class="w-6 h-6 text-emerald-500" />
                     </div>
                     <div class="text-xs font-bold text-emerald-500 uppercase mb-4">Nuxt Way</div>
-                    <AppCodeBlock code="<script setup>
+                    <UiCodeBlock code="<script setup>
 // Vue API, Vue Router 與 Components
 // 全部自動引入！
 
@@ -69,18 +69,18 @@ const route = useRoute()
                         class="text-emerald-400">ref</code> 時，VS Code 能知道它是什麼並提供自動補全。
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2. Components Naming Convention -->
-        <TutorialSection id="components" title="元件 (Components)" icon="heroicons:cube" separator>
+        <DocsSection id="components" title="元件 (Components)" icon="heroicons:cube" separator>
             <p>
                 Nuxt 會根據<strong>目錄層級</strong>自動組合元件名稱，使用 PascalCase (大駝峰) 格式。
                 這有助於避免命名衝突，並讓元件來源一目瞭然。
             </p>
 
-            <AppWindow title="Directory to Component Name" icon="heroicons:folder-open" class="w-full">
+            <UiWindow title="Directory to Component Name" icon="heroicons:folder-open" class="w-full">
                 <div class="p-6 bg-slate-950">
-                    <AppFileTree :files="[
+                    <UiFileTree :files="[
                         {
                             name: 'components/',
                             icon: 'heroicons:folder-open',
@@ -107,7 +107,7 @@ const route = useRoute()
                         }
                     ]" />
                 </div>
-            </AppWindow>
+            </UiWindow>
 
             <div class="mt-4 p-4 bg-blue-950/20 border border-blue-500/20 rounded-lg flex items-start gap-3">
                 <Icon name="heroicons:information-circle" class="w-5 h-5 text-blue-400 mt-0.5" />
@@ -118,10 +118,10 @@ const route = useRoute()
                 /&gt;</code>。
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Composables -->
-        <TutorialSection id="composables" title="組合式函數 (Composables)" icon="heroicons:cube-transparent" separator>
+        <DocsSection id="composables" title="組合式函數 (Composables)" icon="heroicons:cube-transparent" separator>
             <p>
                 Nuxt 自動引入 <code class="text-emerald-400">composables/</code> 目錄下的所有 Top-level 匯出。
                 這是放置商業邏輯與狀態邏輯的最佳場所。
@@ -129,8 +129,8 @@ const route = useRoute()
 
             <div class="grid lg:grid-cols-2 gap-8">
                 <!-- File Structure -->
-                <AppWindow title="File Structure" icon="heroicons:folder-open" class="h-full">
-                    <AppFileTree :files="[
+                <UiWindow title="File Structure" icon="heroicons:folder-open" class="h-full">
+                    <UiFileTree :files="[
                         {
                             name: 'composables/',
                             icon: 'heroicons:folder-open',
@@ -148,17 +148,17 @@ const route = useRoute()
                             ]
                         }
                     ]" />
-                </AppWindow>
+                </UiWindow>
 
                 <!-- Usage -->
                 <div class="space-y-4">
-                    <AppCodeBlock code="// composables/useUser.ts
+                    <UiCodeBlock code="// composables/useUser.ts
 export const useUser = () => {
     const user = useState('user', () => null)
     return { user }
 }" lang="ts" filename="composables/useUser.ts" />
 
-                    <AppCodeBlock code="// app.vue
+                    <UiCodeBlock code="// app.vue
 // 直接使用，免 import
 const { user } = useUser()" lang="vue" filename="app.vue" />
 
@@ -171,10 +171,10 @@ const { user } = useUser()" lang="vue" filename="app.vue" />
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Utils -->
-        <TutorialSection id="utils" title="工具函式 (Utils)" icon="heroicons:wrench-screwdriver" separator>
+        <DocsSection id="utils" title="工具函式 (Utils)" icon="heroicons:wrench-screwdriver" separator>
             <p>
                 <code class="text-emerald-400">utils/</code> 目錄運作方式與 <code class="text-emerald-400">composables/</code>
                 相似，但用途不同。
@@ -207,7 +207,7 @@ const { user } = useUser()" lang="vue" filename="app.vue" />
                 </div>
             </div>
 
-            <AppCodeBlock code="// utils/format.ts
+            <UiCodeBlock code="// utils/format.ts
 export const formatPrice = (price: number) => {
   return '$' + price.toFixed(2)
 }
@@ -215,17 +215,17 @@ export const formatPrice = (price: number) => {
 // app.vue
 // 自動引入
 const price = formatPrice(100)" lang="ts" class="mt-4" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 5. Lazy Loading -->
-        <TutorialSection id="lazy" title="動態載入 (Lazy)" icon="heroicons:bolt" separator>
+        <DocsSection id="lazy" title="動態載入 (Lazy)" icon="heroicons:bolt" separator>
             <p>
                 只要在元件名稱前加上 <code class="text-emerald-400">Lazy</code> 前綴，Nuxt 就會自動將該元件打包成獨立的 chunk，
                 並在<strong>需要顯示時</strong>才透過網路下載。這對於彈窗 (Modal)、側邊欄或捲動後才看到的內容非常有用。
             </p>
 
             <div class="grid md:grid-cols-2 gap-6 items-center">
-                <AppCodeBlock code="<template>
+                <UiCodeBlock code="<template>
   <!-- 只有當 show 為 true 時 -->
   <!-- 瀏覽器才會下載 Modal 的程式碼 -->
   <LazyModal v-if=&quot;show&quot; />
@@ -258,22 +258,22 @@ const price = formatPrice(100)" lang="ts" class="mt-4" />
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Explicit Imports -->
-        <TutorialSection id="explicit" title="顯式引入" icon="heroicons:code-bracket">
+        <DocsSection id="explicit" title="顯式引入" icon="heroicons:code-bracket">
             <p>
                 雖然自動引入很方便，但在某些情況下（例如 JSX/TSX 或動態元件），你可能需要手動引入。
                 你可以從 <code class="text-emerald-400">#components</code> 虛擬模組中引入。
             </p>
 
-            <AppCodeBlock code="<script setup lang=&quot;ts&quot;>
+            <UiCodeBlock code="<script setup lang=&quot;ts&quot;>
 // 顯式引入 (通常不需要，除非是為了取得元件型別或在非 Vue 檔使用)
 import { AppHeader, LazyModal } from '#components'
 
 const MyComponent = resolveComponent('AppHeader')
 </script>" lang="ts" />
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

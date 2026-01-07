@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <TutorialPage title="樣式系統 (Styling)"
+    <DocsPage title="樣式系統 (Styling)"
         description="Nuxt 4 與 Tailwind CSS v4 完美整合，提供了極致的開發體驗。本章將介紹如何建立可維護的 CSS 架構，以及如何善用現代 CSS 特性。"
         :badges="[{ label: 'Tailwind CSS v4', color: 'primary' }, { label: 'CSS', color: 'neutral' }]">
 
         <!-- Section 1: Tailwind CSS v4 -->
-        <TutorialSection id="tailwind" title="Tailwind CSS v4" icon="logos:tailwindcss-icon" separator>
+        <DocsSection id="tailwind" title="Tailwind CSS v4" icon="logos:tailwindcss-icon" separator>
             <p class="text-slate-400 leading-relaxed mb-6">
                 Nuxt 4 專案預設支援 Tailwind CSS v4。與 v3 不同，v4 是一個從頭重寫的引擎，速度更快且無需 <code
                     class="text-slate-300">tailwind.config.js</code>。
@@ -54,7 +54,7 @@
                 在 <code class="text-emerald-400">assets/css/main.css</code> 中設定主題：
             </p>
 
-            <AppCodeBlock language="css" :code="`@import 'tailwindcss';
+            <UiCodeBlock language="css" :code="`@import 'tailwindcss';
 
 @theme {
   /* 自定義顏色 */
@@ -68,10 +68,10 @@
     to { opacity: 1; }
   }
 }`" filename="assets/css/main.css" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: CSS Architecture -->
-        <TutorialSection id="css-architecture" title="CSS 架構" icon="heroicons:building-library" separator>
+        <DocsSection id="css-architecture" title="CSS 架構" icon="heroicons:building-library" separator>
             <p class="text-slate-400 mb-6">
                 在 Nuxt 專案中，我們建議將全域樣式保持在最低限度。
             </p>
@@ -98,15 +98,15 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Scoped Styles -->
-        <TutorialSection id="scoped-styles" title="元件樣式 (Scoped Styles)" icon="heroicons:code-bracket-square" separator>
+        <DocsSection id="scoped-styles" title="元件樣式 (Scoped Styles)" icon="heroicons:code-bracket-square" separator>
             <p class="text-slate-400 mb-6">
                 當你需要撰寫無法用 Tailwind 表達的複雜樣式時，請使用 <code class="text-emerald-400">&lt;style scoped&gt;</code>。
             </p>
 
-            <AppCodeBlock language="vue" :code="`<template>
+            <UiCodeBlock language="vue" :code="`<template>
   <div class=&quot;card&quot;>
     <slot />
   </div>
@@ -123,7 +123,7 @@
   clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
 }
 </style>`" filename="components/SpecialCard.vue" />
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

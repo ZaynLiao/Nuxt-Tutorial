@@ -38,16 +38,16 @@ definePageMeta({
 </script>
 
 <template>
-    <TutorialPage title="路由中間件" description="中間件就像是大樓的警衛。在使用者真正進入某個頁面之前，中間件會先攔截請求，檢查是否有「通行證」，或者將其引導至正確的方向。"
+    <DocsPage title="路由中間件" description="中間件就像是大樓的警衛。在使用者真正進入某個頁面之前，中間件會先攔截請求，檢查是否有「通行證」，或者將其引導至正確的方向。"
         :badges="[{ label: 'Core', color: 'primary' }, { label: 'Logic', color: 'neutral' }]">
 
         <!-- 1. Concept Flow -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:arrows-right-left" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:arrows-right-left" separator>
             <p>
                 中間件在<strong>路由切換 (Route Change)</strong> 時觸發。它可以在客戶端 (Client-side Navigation) 或伺服器端 (SSR) 執行。
             </p>
 
-            <AppWindow title="Navigation Flow" icon="heroicons:map" class="w-full">
+            <UiWindow title="Navigation Flow" icon="heroicons:map" class="w-full">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-6 p-10 relative bg-slate-950/50">
                     <!-- Step 1: User -->
                     <div class="flex flex-col items-center gap-4 z-10 relative group">
@@ -104,16 +104,16 @@ definePageMeta({
                         <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Page</span>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. Types -->
-        <TutorialSection id="types" title="中間件類型" icon="heroicons:swatch" separator>
+        <DocsSection id="types" title="中間件類型" icon="heroicons:swatch" separator>
             <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Visual: File Structure -->
-                <AppWindow title="Middleware Structure" icon="heroicons:folder-open" class="h-full">
+                <UiWindow title="Middleware Structure" icon="heroicons:folder-open" class="h-full">
                     <div class="p-4">
-                        <AppFileTree :files="[
+                        <UiFileTree :files="[
                             {
                                 name: 'middleware/',
                                 icon: 'heroicons:folder-open',
@@ -133,7 +133,7 @@ definePageMeta({
                             }
                         ]" />
                     </div>
-                </AppWindow>
+                </UiWindow>
 
                 <!-- Explanations -->
                 <div class="flex flex-col gap-4 justify-center">
@@ -178,10 +178,10 @@ definePageMeta({
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Auth Example -->
-        <TutorialSection id="auth-example" title="實戰：權限驗證" icon="heroicons:lock-closed" separator>
+        <DocsSection id="auth-example" title="實戰：權限驗證" icon="heroicons:lock-closed" separator>
             <p>
                 這是最常見的使用場景。我們建立一個 <code class="text-emerald-400">auth</code> 中間件來保護後台頁面。
             </p>
@@ -199,7 +199,7 @@ definePageMeta({
                                 1</div>
                             <h4 class="text-lg font-bold text-white">建立中間件檔案</h4>
                         </div>
-                        <AppCodeBlock :code="authMiddlewareCode" lang="ts" filename="app/middleware/auth.ts" />
+                        <UiCodeBlock :code="authMiddlewareCode" lang="ts" filename="app/middleware/auth.ts" />
                     </div>
                 </div>
 
@@ -215,7 +215,7 @@ definePageMeta({
                                 2</div>
                             <h4 class="text-lg font-bold text-white">在頁面中使用</h4>
                         </div>
-                        <AppCodeBlock :code="pageUsageCode" lang="vue" filename="app/pages/dashboard.vue" />
+                        <UiCodeBlock :code="pageUsageCode" lang="vue" filename="app/pages/dashboard.vue" />
                     </div>
                 </div>
             </div>
@@ -229,12 +229,12 @@ definePageMeta({
                 <p class="text-sm text-slate-400 mb-6">
                     試著切換下方的「登入狀態」，並嘗試訪問受保護的 Dashboard 頁面。觀察中間件如何攔截並重導向。
                 </p>
-                <MiddlewarePlayground />
+                <DemoMiddlewarePlayground />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Return Values -->
-        <TutorialSection id="return-values" title="控制導航行為" icon="heroicons:traffic-light">
+        <DocsSection id="return-values" title="控制導航行為" icon="heroicons:traffic-light">
             <p>
                 中間件的回傳值決定了使用者的去向。
             </p>
@@ -275,7 +275,7 @@ definePageMeta({
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

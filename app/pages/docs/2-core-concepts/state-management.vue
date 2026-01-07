@@ -18,11 +18,11 @@
 </script>
 
 <template>
-    <TutorialPage title="狀態管理" description="在 SSR 框架中，狀態管理比純 SPA 複雜。Nuxt 提供了 useState 組合式函數，解決了伺服器端與客戶端狀態同步的難題。"
+    <DocsPage title="狀態管理" description="在 SSR 框架中，狀態管理比純 SPA 複雜。Nuxt 提供了 useState 組合式函數，解決了伺服器端與客戶端狀態同步的難題。"
         :badges="[{ label: 'Core', color: 'primary' }, { label: 'State', color: 'neutral' }]">
 
         <!-- 1. Why useState -->
-        <TutorialSection id="why-usestate" title="為什麼需要 useState?" icon="heroicons:question-mark-circle" separator>
+        <DocsSection id="why-usestate" title="為什麼需要 useState?" icon="heroicons:question-mark-circle" separator>
             <p>
                 你可能會問：「為什麼不能直接用 Vue 的 <code class="text-emerald-400">ref</code>？」
                 <br>答案在於 **SSR (伺服器端渲染)** 的運作機制。
@@ -78,18 +78,18 @@
                     試著操作下方的按鈕。你會發現 <code class="text-emerald-400">ref</code> (Local) 只會影響單一元件，
                     而 <code class="text-emerald-400">useState</code> (Shared) 則會同步更新所有使用該 Key 的元件。
                 </p>
-                <StateDemo />
+                <DemoState />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2. Basic Usage -->
-        <TutorialSection id="basic-usage" title="基本用法" icon="heroicons:code-bracket" separator>
+        <DocsSection id="basic-usage" title="基本用法" icon="heroicons:code-bracket" separator>
             <p>
                 <code class="text-emerald-400">useState</code> 接受兩個參數：一個唯一的 key (字串) 和一個初始化函數。
             </p>
 
             <div class="grid lg:grid-cols-2 gap-8">
-                <AppCodeBlock code="<script setup>
+                <UiCodeBlock code="<script setup>
 // 'counter' 是全域唯一的 key
 const count = useState('counter', () => 0)
 
@@ -138,10 +138,10 @@ const increment = () => {
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Shared State -->
-        <TutorialSection id="shared-state" title="跨元件共享" icon="heroicons:share" separator>
+        <DocsSection id="shared-state" title="跨元件共享" icon="heroicons:share" separator>
             <p>
                 結合 <code class="text-emerald-400">Composables</code> 與 <code
                     class="text-emerald-400">useState</code>，我們可以建立輕量級的全域狀態管理系統。
@@ -155,7 +155,7 @@ const increment = () => {
                     </div>
                     <div class="pl-6">
                         <h4 class="text-lg font-bold text-white mb-2">1. 定義 Composable</h4>
-                        <AppCodeBlock code="// app/composables/useColor.ts
+                        <UiCodeBlock code="// app/composables/useColor.ts
 export const useColor = () => {
   return useState('color', () => 'pink')
 }" lang="ts" filename="app/composables/useColor.ts" />
@@ -170,10 +170,10 @@ export const useColor = () => {
                     <div class="pl-6">
                         <h4 class="text-lg font-bold text-white mb-2">2. 在任何元件中使用</h4>
                         <div class="grid md:grid-cols-2 gap-4">
-                            <AppCodeBlock code="<script setup>
+                            <UiCodeBlock code="<script setup>
 const color = useColor() // 'pink'
 </script>" lang="vue" filename="ComponentA.vue" />
-                            <AppCodeBlock code="<script setup>
+                            <UiCodeBlock code="<script setup>
 const color = useColor()
 // 修改會同步到 ComponentA
 color.value = 'blue' 
@@ -182,10 +182,10 @@ color.value = 'blue'
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Pinia -->
-        <TutorialSection id="pinia" title="進階：Pinia" icon="logos:pinia">
+        <DocsSection id="pinia" title="進階：Pinia" icon="logos:pinia">
             <div class="flex flex-col md:flex-row gap-8 items-center">
                 <div class="flex-1 space-y-4">
                     <p class="leading-relaxed">
@@ -224,7 +224,7 @@ color.value = 'blue'
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

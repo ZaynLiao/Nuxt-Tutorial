@@ -93,7 +93,7 @@
                 </h2>
 
                 <div
-                    class="relative group rounded-2xl border border-slate-800 bg-slate-950/30 p-8 sm:p-12 transition-all duration-500 hover:border-emerald-500/30 hover:shadow-glow">
+                    class="relative group rounded-2xl border border-slate-800 bg-slate-950/30 p-8 sm:p-12 transition-all duration-500 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-500/20">
                     <div class="absolute top-4 right-4 z-10">
                         <NuxtBadge color="neutral" variant="solid" size="xs"
                             class="bg-slate-800/80 backdrop-blur text-slate-300 border border-slate-700">Live Render
@@ -137,7 +137,7 @@
                 class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-12 mt-12 border-t border-slate-800/50">
                 <!-- Prev Link -->
                 <NuxtLink v-if="prev" :to="prev.to"
-                    class="group relative flex flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-900/30 p-6 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-900/60 hover:shadow-glow hover:-translate-y-1">
+                    class="group relative flex flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-900/30 p-6 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-900/60 hover:shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-1">
                     <div
                         class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 group-hover:text-emerald-400 transition-colors">
                         <Icon name="heroicons:arrow-long-left" size="16"
@@ -159,7 +159,7 @@
 
                 <!-- Next Link -->
                 <NuxtLink v-if="next" :to="next.to"
-                    class="group relative flex flex-col gap-3 items-end rounded-2xl border border-slate-800 bg-slate-900/30 p-6 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-900/60 hover:shadow-glow hover:-translate-y-1 text-right">
+                    class="group relative flex flex-col gap-3 items-end rounded-2xl border border-slate-800 bg-slate-900/30 p-6 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-900/60 hover:shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-1 text-right">
                     <div
                         class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 group-hover:text-emerald-400 transition-colors">
                         <span>Next</span>

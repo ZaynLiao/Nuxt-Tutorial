@@ -26,7 +26,7 @@
         if (logs.value.length > 5) logs.value.pop()
 
         setTimeout(() => {
-            toasts.value = toasts.value.filter(t => t.id !== id)
+            toasts.value = toasts.value.filter((t: { id: number }) => t.id !== id)
         }, 3000)
     }
 
@@ -46,7 +46,7 @@
                     <div class="w-3 h-3 rounded-full bg-emerald-500/20 border border-emerald-500/50"></div>
                 </div>
                 <div
-                    class="ml-4 flex-1 bg-slate-950 h-6 rounded border border-slate-800 flex items-center px-3 text-[10px] text-slate-500 font-mono">
+                    class="ml-4 flex-1 bg-slate-950 h-6 rounded border border-slate-800 flex items-center px-3 text-xs text-slate-500 font-mono">
                     localhost:3000
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         leave-active-class="transition duration-200 ease-in"
                         leave-from-class="translate-x-0 opacity-100" leave-to-class="translate-x-full opacity-0">
                         <div v-for="toast in toasts" :key="toast.id"
-                            class="px-4 py-3 rounded-lg shadow-lg border backdrop-blur-md flex items-center gap-3 min-w-[200px]"
+                            class="px-4 py-3 rounded-lg shadow-lg border backdrop-blur-md flex items-center gap-3 min-w-52"
                             :class="{
                                 'bg-emerald-950/80 border-emerald-500/30 text-emerald-400': toast.type === 'success',
                                 'bg-red-950/80 border-red-500/30 text-red-400': toast.type === 'error',
@@ -104,7 +104,7 @@
                     <span class="text-xs font-bold text-slate-500 uppercase">plugins/toast.ts</span>
                     <Icon name="logos:typescript-icon" class="w-3 h-3 opacity-50" />
                 </div>
-                <pre class="font-mono text-[10px] leading-relaxed text-slate-300 overflow-x-auto">export default defineNuxtPlugin(() => {
+                <pre class="font-mono text-xs leading-relaxed text-slate-300 overflow-x-auto">export default defineNuxtPlugin(() => {
   return {
     provide: {
       toast: {
@@ -121,9 +121,9 @@
                 <div class="flex items-center justify-between px-4 py-2 border-b border-slate-800 bg-slate-900/30">
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Console</span>
                     <button @click="clearLogs"
-                        class="text-[10px] text-slate-500 hover:text-white transition-colors">Clear</button>
+                        class="text-xs text-slate-500 hover:text-white transition-colors">Clear</button>
                 </div>
-                <div class="flex-1 p-4 font-mono text-[10px] space-y-2 overflow-y-auto">
+                <div class="flex-1 p-4 font-mono text-xs space-y-2 overflow-y-auto">
                     <div v-if="logs.length === 0" class="text-slate-700 italic">No events yet...</div>
                     <div v-for="(log, i) in logs" :key="i"
                         class="text-emerald-400/80 border-l-2 border-emerald-500/20 pl-2">

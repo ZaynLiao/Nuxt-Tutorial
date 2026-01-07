@@ -18,17 +18,16 @@
 </script>
 
 <template>
-    <TutorialPage title="渲染模式 (Rendering Modes)"
-        description="Nuxt 4 不僅僅是 SSR 框架。透過強大的 Nitro 引擎，您可以為應用程式中的「每一個路由」單獨設定渲染策略。"
+    <DocsPage title="渲染模式 (Rendering Modes)" description="Nuxt 4 不僅僅是 SSR 框架。透過強大的 Nitro 引擎，您可以為應用程式中的「每一個路由」單獨設定渲染策略。"
         :badges="[{ label: 'Performance', color: 'primary' }, { label: 'Hybrid', color: 'primary' }]">
 
         <!-- Section 1: Universal Rendering -->
-        <TutorialSection id="universal" title="通用渲染 (Universal Rendering)" icon="heroicons:globe-alt" separator>
+        <DocsSection id="universal" title="通用渲染 (Universal Rendering)" icon="heroicons:globe-alt" separator>
             <p class="text-slate-400 mb-6">
                 這是 Nuxt 的預設模式。頁面首先在伺服器端渲染 (SSR) 產生 HTML，傳送給瀏覽器以利 SEO 與首屏顯示，接著在客戶端進行「水合 (Hydration)」變為互動式應用。
             </p>
 
-            <AppWindow title="Request Flow: SSR" icon="heroicons:arrow-path" class="mb-6">
+            <UiWindow title="Request Flow: SSR" icon="heroicons:arrow-path" class="mb-6">
                 <div class="p-8 bg-slate-950/50 flex flex-col md:flex-row items-center justify-between gap-4">
                     <!-- Step 1 -->
                     <div class="flex flex-col items-center gap-2">
@@ -41,7 +40,7 @@
                     <!-- Arrow -->
                     <div class="flex-1 h-px bg-slate-700 relative w-full md:w-auto">
                         <div class="absolute inset-0 flex items-center justify-center -top-3">
-                            <span class="text-[10px] bg-slate-900 px-2 text-slate-400">Request</span>
+                            <span class="text-xs bg-slate-900 px-2 text-slate-400">Request</span>
                         </div>
                         <Icon name="heroicons:chevron-right"
                             class="absolute right-0 top-1/2 -translate-y-1/2 text-slate-700 w-4 h-4" />
@@ -50,7 +49,7 @@
                     <!-- Step 2 -->
                     <div class="flex flex-col items-center gap-2">
                         <div
-                            class="w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                            class="w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shadow-xl shadow-emerald-500/20">
                             <Icon name="heroicons:server" class="w-8 h-8" />
                         </div>
                         <span class="text-xs font-bold text-emerald-500">Nuxt Server</span>
@@ -59,7 +58,7 @@
                     <!-- Arrow -->
                     <div class="flex-1 h-px bg-slate-700 relative w-full md:w-auto">
                         <div class="absolute inset-0 flex items-center justify-center -top-3">
-                            <span class="text-[10px] bg-slate-900 px-2 text-slate-400">Full HTML</span>
+                            <span class="text-xs bg-slate-900 px-2 text-slate-400">Full HTML</span>
                         </div>
                         <Icon name="heroicons:chevron-left"
                             class="absolute left-0 top-1/2 -translate-y-1/2 text-slate-700 w-4 h-4 md:hidden" />
@@ -76,7 +75,7 @@
                         <span class="text-xs font-bold text-blue-500">Hydration</span>
                     </div>
                 </div>
-            </AppWindow>
+            </UiWindow>
 
             <div class="p-6 rounded-3xl bg-slate-950 border border-slate-800/50">
                 <h4 class="font-bold text-emerald-400 mb-2">優點</h4>
@@ -86,16 +85,16 @@
                     <li>保留完整的互動性 (Vue 的功能在水合後完全可用)。</li>
                 </ul>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: Client-Side Rendering -->
-        <TutorialSection id="client-side" title="客戶端渲染 (CSR)" icon="heroicons:computer-desktop" separator>
+        <DocsSection id="client-side" title="客戶端渲染 (CSR)" icon="heroicons:computer-desktop" separator>
             <p class="text-slate-400 mb-6">
                 就像傳統的 Vue SPA。伺服器只回傳一個空的 HTML shell，所有的內容都由 JavaScript 在瀏覽器中渲染。
                 適用於不需要 SEO 的後台管理系統或高度互動的儀表板。
             </p>
 
-            <AppWindow title="Request Flow: CSR" icon="heroicons:code-bracket" class="mb-6">
+            <UiWindow title="Request Flow: CSR" icon="heroicons:code-bracket" class="mb-6">
                 <div class="p-8 bg-slate-950/50 flex flex-col md:flex-row items-center justify-between gap-4">
                     <!-- Step 1 -->
                     <div class="flex flex-col items-center gap-2">
@@ -108,7 +107,7 @@
                     <!-- Arrow -->
                     <div class="flex-1 h-px bg-slate-700 relative w-full md:w-auto">
                         <div class="absolute inset-0 flex items-center justify-center -top-3">
-                            <span class="text-[10px] bg-slate-900 px-2 text-slate-400">Request</span>
+                            <span class="text-xs bg-slate-900 px-2 text-slate-400">Request</span>
                         </div>
                         <Icon name="heroicons:chevron-right"
                             class="absolute right-0 top-1/2 -translate-y-1/2 text-slate-700 w-4 h-4" />
@@ -125,9 +124,9 @@
 
                     <!-- Arrow -->
                     <div
-                        class="flex-1 h-px bg-slate-700 relative w-full md:w-auto border-t border-dashed border-slate-600 bg-transparent">
+                        class="flex-1 h-px bg-slate-700 relative w-full md:w-auto border-t border-dashed border-slate-600">
                         <div class="absolute inset-0 flex items-center justify-center -top-5">
-                            <span class="text-[10px] text-slate-500">Download JS...</span>
+                            <span class="text-xs text-slate-500">Download JS...</span>
                         </div>
                         <Icon name="heroicons:chevron-right"
                             class="absolute right-0 top-1/2 -translate-y-1/2 text-slate-700 w-4 h-4" />
@@ -142,32 +141,31 @@
                         <span class="text-xs font-bold text-white">Render</span>
                     </div>
                 </div>
-            </AppWindow>
+            </UiWindow>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtConfig({
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtConfig({
   // 全域關閉 SSR
   ssr: false
 })`" filename="nuxt.config.ts" />
 
             <p class="text-slate-400 my-4 text-sm">或者針對特定頁面：</p>
 
-            <AppCodeBlock language="typescript" :code="`definePageMeta({
+            <UiCodeBlock language="typescript" :code="`definePageMeta({
   ssr: false
 })`" filename="app/pages/admin.vue" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Hybrid Rendering -->
-        <TutorialSection id="hybrid" title="混合渲染 (Hybrid Rendering)" icon="heroicons:beaker" separator>
+        <DocsSection id="hybrid" title="混合渲染 (Hybrid Rendering)" icon="heroicons:beaker" separator>
             <p class="text-slate-400 mb-6">
                 這是 Nuxt 4 最強大的功能。您可以結合 SSR、CSR、SSG、SWR 於同一個專案中。
                 例如：首頁使用 SSR (SEO)，後台使用 CSR (互動)，部落格文章使用 ISR (快取)。
             </p>
 
-            <AppWindow title="Strategy: SWR (Stale-While-Revalidate)" icon="heroicons:clock" class="mb-6">
+            <UiWindow title="Strategy: SWR (Stale-While-Revalidate)" icon="heroicons:clock" class="mb-6">
                 <div class="p-8 bg-slate-950/50 relative overflow-hidden">
                     <!-- Background Animation -->
-                    <div
-                        class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05),transparent)]">
+                    <div class="absolute inset-0">
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
@@ -215,7 +213,7 @@
                         </div>
                     </div>
                 </div>
-            </AppWindow>
+            </UiWindow>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div
@@ -240,15 +238,15 @@
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: Route Rules -->
-        <TutorialSection id="route-rules" title="路由規則設定" icon="heroicons:adjustments-vertical" separator>
+        <DocsSection id="route-rules" title="路由規則設定" icon="heroicons:adjustments-vertical" separator>
             <p class="text-slate-400 mb-6">
                 透過 <code class="text-emerald-400">routeRules</code>，您可以精細控制每個路徑的渲染行為。
             </p>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtConfig({
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtConfig({
   routeRules: {
     // 首頁：在建置時預渲染 (SSG)
     '/': { prerender: true },
@@ -266,7 +264,7 @@
     '/old-page': { redirect: '/new-page' }
   }
 })`" filename="nuxt.config.ts" />
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

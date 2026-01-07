@@ -52,18 +52,18 @@ export default defineNuxtPlugin((nuxtApp) => {
 </script>
 
 <template>
-    <TutorialPage title="插件系統"
+    <DocsPage title="插件系統"
         description="Nuxt 的插件系統允許你在 Vue 應用程式初始化時執行自定義邏輯。這是整合第三方套件（如 Google Analytics、i18n）或注入全域 Helper 的最佳場所。"
         :badges="[{ label: 'Initialization', color: 'primary' }, { label: 'Integration', color: 'neutral' }]">
 
         <!-- 1. Concept: Lifecycle -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:puzzle-piece" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:puzzle-piece" separator>
             <p>
                 Nuxt 會自動讀取 <code class="text-emerald-400">plugins/</code> 目錄下的檔案，並在應用程式建立時執行它們。
                 插件是連接 Nuxt 核心與外部邏輯的橋樑。
             </p>
 
-            <AppWindow title="Initialization Lifecycle" icon="heroicons:clock" class="w-full">
+            <UiWindow title="Initialization Lifecycle" icon="heroicons:clock" class="w-full">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-6 p-10 relative bg-slate-950/50">
                     <!-- Step 1: App Created -->
                     <div class="flex flex-col items-center gap-4 z-10 relative group">
@@ -94,8 +94,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                             <!-- Label -->
                             <div
                                 class="absolute top-0 inset-x-0 bg-emerald-500/10 py-1 flex justify-center border-b border-emerald-500/20">
-                                <span
-                                    class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Run</span>
+                                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Run</span>
                             </div>
                             <Icon name="heroicons:puzzle-piece" class="w-10 h-10 text-emerald-400 mt-5" />
                         </div>
@@ -121,20 +120,20 @@ export default defineNuxtPlugin((nuxtApp) => {
                         <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Mounted</span>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. Execution Mode -->
-        <TutorialSection id="execution" title="執行模式" icon="heroicons:cpu-chip" separator>
+        <DocsSection id="execution" title="執行模式" icon="heroicons:cpu-chip" separator>
             <p>
                 你可以透過檔案名稱後綴來控制插件的執行環境。
             </p>
 
             <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Visual: File Structure -->
-                <AppWindow title="Plugins Directory" icon="heroicons:folder-open" class="h-full">
+                <UiWindow title="Plugins Directory" icon="heroicons:folder-open" class="h-full">
                     <div class="p-4">
-                        <AppFileTree :files="[
+                        <UiFileTree :files="[
                             {
                                 name: 'plugins/',
                                 icon: 'heroicons:folder-open',
@@ -147,7 +146,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                             }
                         ]" />
                     </div>
-                </AppWindow>
+                </UiWindow>
 
                 <!-- Explanations -->
                 <div class="flex flex-col gap-4 justify-center">
@@ -156,7 +155,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                         class="p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30 transition-all group">
                         <h3 class="font-bold text-white mb-2 flex items-center gap-2">
                             <span
-                                class="w-2 h-2 rounded-full bg-emerald-500 group-hover:shadow-[0_0_8px_rgba(16,185,129,0.5)] transition-shadow"></span>
+                                class="w-2 h-2 rounded-full bg-emerald-500 group-hover:shadow-lg group-hover:shadow-emerald-500/50 transition-shadow"></span>
                             Universal (預設)
                         </h3>
                         <p class="text-sm text-slate-400 pl-4 leading-relaxed">
@@ -168,7 +167,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                         class="p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-sky-500/30 transition-all group">
                         <h3 class="font-bold text-white mb-2 flex items-center gap-2">
                             <span
-                                class="w-2 h-2 rounded-full bg-sky-500 group-hover:shadow-[0_0_8px_rgba(14,165,233,0.5)] transition-shadow"></span>
+                                class="w-2 h-2 rounded-full bg-sky-500 group-hover:shadow-lg group-hover:shadow-sky-500/50 transition-shadow"></span>
                             Client Only
                         </h3>
                         <p class="text-sm text-slate-400 pl-4 leading-relaxed">
@@ -181,7 +180,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                         class="p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 transition-all group">
                         <h3 class="font-bold text-white mb-2 flex items-center gap-2">
                             <span
-                                class="w-2 h-2 rounded-full bg-amber-500 group-hover:shadow-[0_0_8px_rgba(245,158,11,0.5)] transition-shadow"></span>
+                                class="w-2 h-2 rounded-full bg-amber-500 group-hover:shadow-lg group-hover:shadow-amber-500/50 transition-shadow"></span>
                             Server Only
                         </h3>
                         <p class="text-sm text-slate-400 pl-4 leading-relaxed">
@@ -190,10 +189,10 @@ export default defineNuxtPlugin((nuxtApp) => {
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Provide Helpers -->
-        <TutorialSection id="provide" title="注入 Helper" icon="heroicons:sparkles" separator>
+        <DocsSection id="provide" title="注入 Helper" icon="heroicons:sparkles" separator>
             <p>
                 你可以透過回傳 <code class="text-emerald-400">provide</code> 物件，將 Helper 函式注入到整個應用程式中。
                 Nuxt 會自動為其加上 <code class="text-white">$</code> 前綴。
@@ -212,7 +211,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                                 1</div>
                             <h4 class="text-lg font-bold text-white">定義插件</h4>
                         </div>
-                        <AppCodeBlock :code="providePluginCode" lang="ts" filename="plugins/hello.ts" />
+                        <UiCodeBlock :code="providePluginCode" lang="ts" filename="plugins/hello.ts" />
                     </div>
                 </div>
 
@@ -228,7 +227,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                                 2</div>
                             <h4 class="text-lg font-bold text-white">在元件中使用</h4>
                         </div>
-                        <AppCodeBlock :code="provideUsageCode" lang="vue" filename="app.vue" />
+                        <UiCodeBlock :code="provideUsageCode" lang="vue" filename="app.vue" />
                     </div>
                 </div>
             </div>
@@ -243,19 +242,19 @@ export default defineNuxtPlugin((nuxtApp) => {
                     這個範例模擬了一個 <code class="text-emerald-400">$toast</code> 插件。
                     點擊按鈕，觀察插件如何被呼叫並在介面上顯示通知。
                 </p>
-                <PluginsDemo />
+                <DemoPlugins />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Vue Plugins -->
-        <TutorialSection id="vue-plugins" title="整合 Vue 插件" icon="logos:vue">
+        <DocsSection id="vue-plugins" title="整合 Vue 插件" icon="logos:vue">
             <p>
                 如果你需要使用傳統的 Vue 插件（如 i18n, Vuetify, Element Plus），可以在 Nuxt 插件中存取 <code
                     class="text-emerald-400">vueApp</code> 實例。
             </p>
 
             <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-                <AppCodeBlock :code="vuePluginCode" lang="ts" filename="plugins/i18n.ts" />
+                <UiCodeBlock :code="vuePluginCode" lang="ts" filename="plugins/i18n.ts" />
                 <div
                     class="mt-4 flex items-start gap-3 text-sm text-slate-400 bg-slate-950/50 p-4 rounded-lg border border-slate-800/50">
                     <Icon name="heroicons:information-circle" class="w-5 h-5 text-emerald-400 shrink-0" />
@@ -265,7 +264,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

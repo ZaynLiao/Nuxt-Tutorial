@@ -1,12 +1,12 @@
 <script setup lang="ts">
     useHead({
-        titleTemplate: (titleChunk) => (titleChunk ? `${titleChunk} - Nuxt 教學` : 'Nuxt 教學')
+        titleTemplate: (titleChunk) => (titleChunk ? `${titleChunk} - Nuxt-Tutorial` : 'Nuxt-Tutorial')
     })
 </script>
 
 <template>
-    <NuxtLoadingIndicator color="var(--color-emerald-500)" />
-    <AppBackground />
+    <NuxtLoadingIndicator />
+    <LayoutBackground />
     <NuxtLayout>
         <NuxtPage />
     </NuxtLayout>

@@ -18,17 +18,17 @@
 </script>
 
 <template>
-    <TutorialPage title="佈局系統" description="Layouts 是 Nuxt 應用程式的骨架。它們允許你定義跨頁面共用的結構（如導覽列、側邊欄、頁尾），避免在每個頁面重複撰寫相同的程式碼。"
+    <DocsPage title="佈局系統" description="Layouts 是 Nuxt 應用程式的骨架。它們允許你定義跨頁面共用的結構（如導覽列、側邊欄、頁尾），避免在每個頁面重複撰寫相同的程式碼。"
         :badges="[{ label: 'UI Architecture', color: 'primary' }, { label: 'DRY Principle', color: 'neutral' }]">
 
         <!-- 1. Concept: Anatomy of a Layout -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:cube-transparent" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:cube-transparent" separator>
             <p>
                 佈局 (Layout) 是一個<strong>包覆器 (Wrapper)</strong>。它將頁面內容 (Page Content) 包裹在共用的 UI 結構中。
                 關鍵在於 <code class="text-emerald-400">&lt;slot /&gt;</code>，這是頁面內容被注入的地方。
             </p>
 
-            <AppWindow title="Layout Anatomy" icon="heroicons:eye" class="w-full">
+            <UiWindow title="Layout Anatomy" icon="heroicons:eye" class="w-full">
                 <div class="p-8 bg-slate-950 flex justify-center">
                     <!-- Visual Representation -->
                     <div
@@ -74,20 +74,20 @@
                         </div>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. Directory Structure -->
-        <TutorialSection id="structure" title="目錄結構" icon="heroicons:folder" separator>
+        <DocsSection id="structure" title="目錄結構" icon="heroicons:folder" separator>
             <p>
                 Nuxt 會自動掃描 <code class="text-emerald-400">layouts/</code> 目錄。
                 <code class="text-white">default.vue</code> 是預設佈局，會自動應用於所有未指定佈局的頁面。
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
-                <AppWindow title="File Structure" type="code" class="h-full">
+                <UiWindow title="File Structure" type="code" class="h-full">
                     <div class="p-2">
-                        <AppFileTree :files="[
+                        <UiFileTree :files="[
                             {
                                 name: 'app/',
                                 icon: 'heroicons:folder-open',
@@ -107,7 +107,7 @@
                             }
                         ]" />
                     </div>
-                </AppWindow>
+                </UiWindow>
 
                 <div class="space-y-4">
                     <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
@@ -133,10 +133,10 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Usage -->
-        <TutorialSection id="usage" title="使用方式" icon="heroicons:code-bracket" separator>
+        <DocsSection id="usage" title="使用方式" icon="heroicons:code-bracket" separator>
             <p>
                 在頁面元件中使用 <code class="text-emerald-400">definePageMeta</code> 來指定該頁面要使用的佈局。
             </p>
@@ -147,7 +147,7 @@
                     <div class="flex items-center justify-between px-2">
                         <span class="text-xs font-bold text-slate-500 uppercase">layouts/auth.vue</span>
                     </div>
-                    <AppCodeBlock code="<template>
+                    <UiCodeBlock code="<template>
   <div class=&quot;h-screen flex items-center justify-center bg-slate-900&quot;>
     <div class=&quot;w-full max-w-md p-8 bg-slate-800 rounded-xl&quot;>
       <!-- 這裡插入登入表單 -->
@@ -162,7 +162,7 @@
                     <div class="flex items-center justify-between px-2">
                         <span class="text-xs font-bold text-emerald-500 uppercase">pages/login.vue</span>
                     </div>
-                    <AppCodeBlock code="<script setup>
+                    <UiCodeBlock code="<script setup>
 definePageMeta({
   layout: 'auth'
 })
@@ -176,19 +176,19 @@ definePageMeta({
 </template>" lang="vue" filename="pages/login.vue" />
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Dynamic Switching -->
-        <TutorialSection id="dynamic" title="動態切換" icon="heroicons:arrow-path">
+        <DocsSection id="dynamic" title="動態切換" icon="heroicons:arrow-path">
             <p class="mb-6">
                 有時你需要根據使用者狀態（例如是否登入）來動態改變佈局。
                 可以使用 <code class="text-emerald-400">setPageLayout</code> 函式。
                 試著點擊下方的按鈕，觀察佈局如何即時切換：
             </p>
 
-            <LayoutSwitcher class="mb-8" />
+            <DemoLayoutSwitcher class="mb-8" />
 
-            <AppCodeBlock code="<script setup>
+            <UiCodeBlock code="<script setup>
 const user = useUser()
 
 function toggleLayout() {
@@ -215,7 +215,7 @@ function toggleLayout() {
                         如果你需要完全控制佈局的渲染位置，可以使用 <code class="text-emerald-400">&lt;NuxtLayout&gt;</code> 元件。
                         這在處理巢狀佈局或複雜的轉場動畫時非常有用。
                     </p>
-                    <AppCodeBlock code="<template>
+                    <UiCodeBlock code="<template>
   <NuxtLayout name=&quot;custom&quot;>
     <template #header>...</template>
     <SomeComponent />
@@ -223,7 +223,7 @@ function toggleLayout() {
 </template>" lang="vue" class="mt-2" />
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

@@ -18,19 +18,18 @@
 </script>
 
 <template>
-    <TutorialPage title="SEO 設定"
-        description="Nuxt 天生對 SEO 友善。透過 SSR，搜尋引擎可以完美讀取你的內容。而 useSeoMeta 則讓管理 Meta Tags 變得前所未有的簡單。"
+    <DocsPage title="SEO 設定" description="Nuxt 天生對 SEO 友善。透過 SSR，搜尋引擎可以完美讀取你的內容。而 useSeoMeta 則讓管理 Meta Tags 變得前所未有的簡單。"
         :badges="[{ label: 'Core', color: 'primary' }, { label: 'Marketing', color: 'neutral' }]">
 
         <!-- 1. useSeoMeta -->
-        <TutorialSection id="use-seo-meta" title="基礎: useSeoMeta" icon="heroicons:magnifying-glass" separator>
+        <DocsSection id="use-seo-meta" title="基礎: useSeoMeta" icon="heroicons:magnifying-glass" separator>
             <p class="mb-6">
                 這是 Nuxt 推薦的設定方式。它提供了<strong>型別安全 (Type-safe)</strong> 的介面，讓你不需要記憶繁瑣的 HTML meta 標籤名稱。
                 Nuxt 會自動將這些 JavaScript 物件轉換為標準的 HTML <code
                     class="bg-slate-800 px-1 py-0.5 rounded text-slate-300">&lt;meta&gt;</code> 標籤。
             </p>
 
-            <AppCodeBlock code="<script setup>
+            <UiCodeBlock code="<script setup>
 useSeoMeta({
   title: '我的 Nuxt 應用',
   ogTitle: '我的 Nuxt 應用 - 社群版標題',
@@ -41,22 +40,22 @@ useSeoMeta({
 })
 </script>" lang="vue" filename="app.vue" />
 
-            <div class="mt-8 p-1 rounded-2xl bg-gradient-to-br from-emerald-500/20 via-slate-800 to-slate-900">
+            <div class="mt-8 p-1 rounded-2xl bg-linear-to-br from-emerald-500/20 via-slate-800 to-slate-900">
                 <div class="rounded-xl bg-slate-950/80 backdrop-blur p-6 sm:p-8">
                     <div class="flex items-center gap-2 mb-6 text-emerald-400">
                         <Icon name="heroicons:sparkles" class="w-5 h-5" />
                         <span class="font-bold text-sm tracking-wider uppercase">Interactive Playground</span>
                     </div>
-                    <SeoPreview />
+                    <DemoSeoPreview />
                     <p class="mt-4 text-center text-slate-500 text-sm">
                         👆 試著修改左側內容，觀察右側 Open Graph 預覽卡的變化
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2. OG Explained -->
-        <TutorialSection id="og-explained" title="Open Graph (OG) 詳解" icon="heroicons:share" separator>
+        <DocsSection id="og-explained" title="Open Graph (OG) 詳解" icon="heroicons:share" separator>
             <p class="mb-6">
                 <strong>Open Graph (OG)</strong> 是一種網路協定，決定了當你的網頁被分享到 Facebook、LINE、Discord 或 Slack 時，會顯示什麼樣的「卡片」。
                 <span class="text-emerald-400">如果沒有設定 OG，你的連結在社群軟體中可能只會顯示一串冷冰冰的網址。</span>
@@ -105,7 +104,7 @@ useSeoMeta({
                 <!-- Visual Representation -->
                 <div class="relative group">
                     <div
-                        class="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all">
+                        class="absolute inset-0 bg-linear-to-tr from-indigo-500/20 to-purple-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all">
                     </div>
                     <div
                         class="relative h-full rounded-xl bg-slate-900 border border-slate-700 overflow-hidden flex flex-col shadow-2xl">
@@ -115,7 +114,7 @@ useSeoMeta({
                             <div class="absolute inset-0 bg-grid-white/[0.05]"></div>
                             <span class="text-slate-500 font-mono text-xs z-10">og:image (1200x630)</span>
                             <div
-                                class="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/50 text-[10px] text-white backdrop-blur">
+                                class="absolute top-2 right-2 px-2 py-0.5 rounded bg-black/50 text-xs text-white backdrop-blur">
                                 1.91:1
                             </div>
                         </div>
@@ -135,10 +134,10 @@ useSeoMeta({
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Dynamic SEO -->
-        <TutorialSection id="dynamic-seo" title="動態 SEO" icon="heroicons:variable" separator>
+        <DocsSection id="dynamic-seo" title="動態 SEO" icon="heroicons:variable" separator>
             <p class="mb-6">
                 在實際專案中，SEO 資訊通常來自 API (例如文章標題、產品名稱)。
                 不管是 <code class="text-emerald-400">useSeoMeta</code> 還是 <code class="text-emerald-400">useHead</code>
@@ -146,7 +145,7 @@ useSeoMeta({
             </p>
 
             <div class="grid lg:grid-cols-2 gap-8">
-                <AppCodeBlock code="<script setup>
+                <UiCodeBlock code="<script setup>
 // 1. 從 API 取得資料
 const { data: article } = await useFetch('/api/article/1')
 
@@ -175,11 +174,11 @@ useSeoMeta({
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Advanced Head (Restructured) -->
-        <TutorialSection id="advanced-head" title="進階: useHead" icon="heroicons:code-bracket-square">
-            <AppWindow title="useSeoMeta vs useHead" class="mb-8">
+        <DocsSection id="advanced-head" title="進階: useHead" icon="heroicons:code-bracket-square">
+            <UiWindow title="useSeoMeta vs useHead" class="mb-8">
                 <ul class="divide-y divide-slate-800 text-sm">
                     <li class="p-4 flex gap-4 hover:bg-slate-800/50 transition-colors">
                         <div class="w-32 shrink-0 font-bold text-emerald-400">useSeoMeta</div>
@@ -197,7 +196,7 @@ useSeoMeta({
                         </div>
                     </li>
                 </ul>
-            </AppWindow>
+            </UiWindow>
 
             <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <Icon name="heroicons:beaker" class="w-5 h-5 text-blue-400" />
@@ -209,7 +208,7 @@ useSeoMeta({
                 <div>
                     <h4 class="text-sm font-bold text-slate-300 mb-2">1. 載入外部腳本 (Script) 與樣式 (Link)</h4>
                     <p class="text-sm text-slate-400 mb-3">例如：載入 Google Analytics、字型檔、或 Canonical URL。</p>
-                    <AppCodeBlock code="useHead({
+                    <UiCodeBlock code="useHead({
   // 設定 HTML 屬性 (如語言)
   htmlAttrs: { lang: 'zh-TW' },
   // 載入外部 Script
@@ -232,7 +231,7 @@ useSeoMeta({
                 <div>
                     <h4 class="text-sm font-bold text-slate-300 mb-2">2. 結構化資料 (JSON-LD)</h4>
                     <p class="text-sm text-slate-400 mb-3">這對 Google 搜尋結果的 Rich Snippets 非常重要。</p>
-                    <AppCodeBlock code="useHead({
+                    <UiCodeBlock code="useHead({
   script: [
     {
       type: 'application/ld+json',
@@ -248,7 +247,7 @@ useSeoMeta({
 })" lang="ts" />
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

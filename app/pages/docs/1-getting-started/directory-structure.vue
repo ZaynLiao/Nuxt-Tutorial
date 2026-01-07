@@ -189,23 +189,24 @@
 </script>
 
 <template>
-    <TutorialPage title="目錄結構" description="Nuxt 4 採用了全新的目錄架構，將應用程式邏輯集中於 app/，實現了更清晰的關注點分離 (Separation of Concerns)。"
+    <DocsPage title="目錄結構" description="Nuxt 4 採用了全新的目錄架構，將應用程式邏輯集中於 app/，實現了更清晰的關注點分離 (Separation of Concerns)。"
         :badges="[{ label: 'Core', color: 'primary' }, { label: 'Architecture', color: 'neutral' }]">
 
         <!-- Interactive Explorer -->
-        <TutorialSection id="explorer" title="結構探索" icon="heroicons:map" separator>
+        <DocsSection id="explorer" title="結構探索" icon="heroicons:map" separator>
             <p class="mb-6">
                 點擊下方的目錄樹，查看每個資料夾的詳細職責與使用規範。
             </p>
 
-            <div class="grid lg:grid-cols-12 gap-6 h-[600px]">
+            <div class="grid lg:grid-cols-12 gap-6 h-150">
                 <!-- Left: Tree View -->
                 <div class="lg:col-span-5 h-full">
-                    <AppWindow title="Project Explorer" icon="heroicons:folder-open" class="h-full flex flex-col">
-                        <div class="flex-1 overflow-y-auto p-2 custom-scrollbar">
-                            <AppFileTree :files="directories" v-model="activeId" interactive />
+                    <UiWindow title="Project Explorer" icon="heroicons:folder-open" class="h-full flex flex-col">
+                        <div
+                            class="flex-1 overflow-y-auto p-2 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-700 [&::-webkit-scrollbar-thumb]:rounded-sm hover:[&::-webkit-scrollbar-thumb]:bg-slate-600">
+                            <UiFileTree :files="directories" v-model="activeId" interactive />
                         </div>
-                    </AppWindow>
+                    </UiWindow>
                 </div>
 
                 <!-- Right: Detail View -->
@@ -306,10 +307,10 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Aliases Section -->
-        <TutorialSection id="aliases" title="路徑別名 (Aliases)" icon="heroicons:at-symbol">
+        <DocsSection id="aliases" title="路徑別名 (Aliases)" icon="heroicons:at-symbol">
             <p>
                 為了避免使用冗長的相對路徑 (如 <code class="text-slate-500">../../components/Button.vue</code>)，Nuxt 提供了預設別名。
             </p>
@@ -349,26 +350,7 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>
-
-<style scoped>
-    .custom-scrollbar::-webkit-scrollbar {
-        width: 4px;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 2px;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #475569;
-    }
-</style>

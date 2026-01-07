@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <TutorialPage title="Nuxt Layers"
+    <DocsPage title="Nuxt Layers"
         description="Nuxt Layers 是一個強大的架構功能，允許您將一個 Nuxt 應用程式「繼承」自另一個 Nuxt 應用程式。這使得程式碼共用、主題製作與微前端架構變得前所未有的簡單。"
         :badges="[{ label: 'Architecture', color: 'primary' }, { label: 'Reusability', color: 'neutral' }]">
 
         <!-- Section 1: Concept -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:square-3-stack-3d" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:square-3-stack-3d" separator>
             <p class="text-slate-400 leading-relaxed mb-6">
                 想像一下，您可以建立一個包含基礎 UI 元件、共用 Utils 和設定的 "Base App"，然後讓其他多個專案都繼承這個 Base App。
             </p>
@@ -48,16 +48,16 @@
                     <p class="text-xs text-slate-500">繼承並覆寫</p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: Structure -->
-        <TutorialSection id="structure" title="目錄結構" icon="heroicons:folder-open" separator>
+        <DocsSection id="structure" title="目錄結構" icon="heroicons:folder-open" separator>
             <p class="text-slate-400 mb-6">
                 Layer 本質上就是一個標準的 Nuxt 專案。它可以包含 <code class="text-slate-300">nuxt.config.ts</code>、<code
                     class="text-slate-300">components/</code>、<code class="text-slate-300">composables/</code> 等所有目錄。
             </p>
 
-            <AppCodeBlock language="bash" :code="`my-app/
+            <UiCodeBlock language="bash" :code="`my-app/
 ├── nuxt.config.ts  # 繼承 base-layer
 ├── app/
 │   └── pages/
@@ -68,16 +68,16 @@
         └── app/
             └── components/
                 └── AppButton.vue`" filename="Directory Structure" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Config -->
-        <TutorialSection id="config" title="設定與繼承" icon="heroicons:cog-6-tooth" separator>
+        <DocsSection id="config" title="設定與繼承" icon="heroicons:cog-6-tooth" separator>
             <p class="text-slate-400 mb-6">
                 在 <code class="text-emerald-400">nuxt.config.ts</code> 中使用 <code class="text-emerald-400">extends</code>
                 屬性來繼承 Layer。
             </p>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtConfig({
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtConfig({
   // 可以是本地路徑、npm 套件或 GitHub Repo
   extends: [
     '../base-layer',
@@ -91,10 +91,10 @@
     }
   }
 })`" filename="nuxt.config.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: Use Cases -->
-        <TutorialSection id="use-cases" title="使用場景" icon="heroicons:light-bulb" separator>
+        <DocsSection id="use-cases" title="使用場景" icon="heroicons:light-bulb" separator>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/50">
                     <h4 class="text-white font-medium mb-2 flex items-center gap-2">
@@ -116,7 +116,7 @@
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

@@ -18,11 +18,11 @@
 </script>
 
 <template>
-    <TutorialPage title="測試 (Testing)" description="穩健的應用程式建立在可靠的測試之上。Nuxt 提供了官方的測試工具 @nuxt/test-utils，讓測試變得簡單而強大。"
+    <DocsPage title="測試 (Testing)" description="穩健的應用程式建立在可靠的測試之上。Nuxt 提供了官方的測試工具 @nuxt/test-utils，讓測試變得簡單而強大。"
         :badges="[{ label: 'Quality Assurance', color: 'primary' }, { label: 'Vitest', color: 'primary' }]">
 
         <!-- Section 1: Why Testing -->
-        <TutorialSection id="why-testing" title="為什麼要測試？" icon="heroicons:check-badge" separator>
+        <DocsSection id="why-testing" title="為什麼要測試？" icon="heroicons:check-badge" separator>
             <p class="text-slate-400 leading-relaxed">
                 隨著專案規模擴大，手動測試每一個功能變得不可能。自動化測試可以：
             </p>
@@ -44,22 +44,22 @@
                     <span class="text-slate-300">提早發現潛在 Bug</span>
                 </li>
             </ul>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: Setup -->
-        <TutorialSection id="setup" title="環境建置" icon="heroicons:wrench-screwdriver" separator>
+        <DocsSection id="setup" title="環境建置" icon="heroicons:wrench-screwdriver" separator>
             <p class="text-slate-400 mb-6">
                 我們使用 <strong>Vitest</strong> 作為測試執行器，並搭配 <strong>@nuxt/test-utils</strong> 來存取 Nuxt 的運行環境 (Runtime
                 Environment)。
             </p>
 
-            <AppCodeBlock title="Terminal"
+            <UiCodeBlock title="Terminal"
                 code="pnpm add -D vitest @nuxt/test-utils happy-dom @vue/test-utils playwright-core" lang="bash"
                 filename="Terminal" />
 
             <p class="text-slate-400 my-6">接著，在專案根目錄建立 <code class="text-emerald-400">vitest.config.ts</code>：</p>
 
-            <AppCodeBlock code="import { defineVitestConfig } from '@nuxt/test-utils/config'
+            <UiCodeBlock code="import { defineVitestConfig } from '@nuxt/test-utils/config'
 
 export default defineVitestConfig({
   // 任何額外的 Vitest 設定
@@ -68,18 +68,18 @@ export default defineVitestConfig({
     // 可以在這裡設定 coverage, reporters 等
   }
 })" lang="ts" filename="vitest.config.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Unit Testing -->
-        <TutorialSection id="unit-testing" title="單元測試 (Unit Testing)" icon="heroicons:beaker" separator>
+        <DocsSection id="unit-testing" title="單元測試 (Unit Testing)" icon="heroicons:beaker" separator>
             <p class="text-slate-400 mb-6">
                 單元測試主要針對獨立的邏輯進行驗證，例如 <code class="text-emerald-400">utils</code> 或 <code
                     class="text-emerald-400">composables</code>。
             </p>
 
             <div class="space-y-6">
-                <AppWindow title="tests/utils.test.ts" type="code" class="mb-4">
-                    <AppCodeBlock code="import { describe, it, expect } from 'vitest'
+                <UiWindow title="tests/utils.test.ts" type="code" class="mb-4">
+                    <UiCodeBlock code="import { describe, it, expect } from 'vitest'
 import { formatCurrency } from '../app/utils/format'
 
 describe('Utils: formatCurrency', () => {
@@ -92,14 +92,14 @@ describe('Utils: formatCurrency', () => {
     expect(formatCurrency(0)).toBe('NT$0.00')
   })
 })" lang="ts" filename="tests/utils.test.ts" />
-                </AppWindow>
+                </UiWindow>
 
                 <p class="text-slate-400">
                     得益於 <code class="text-emerald-400">@nuxt/test-utils</code>，你甚至可以在測試中直接使用 Auto-imports：
                 </p>
 
-                <AppWindow title="tests/hello.test.ts" type="code">
-                    <AppCodeBlock code="import { describe, it, expect } from 'vitest'
+                <UiWindow title="tests/hello.test.ts" type="code">
+                    <UiCodeBlock code="import { describe, it, expect } from 'vitest'
 import { mockNuxtImport } from '@nuxt/test-utils/runtime'
 
 // 模擬 useRuntimeConfig
@@ -115,22 +115,22 @@ describe('Composables', () => {
     expect(config.public.apiBase).toBe('https://test-api.com')
   })
 })" lang="ts" filename="tests/hello.test.ts" />
-                </AppWindow>
+                </UiWindow>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: E2E Testing -->
-        <TutorialSection id="e2e-testing" title="端對端測試 (E2E)" icon="heroicons:play">
+        <DocsSection id="e2e-testing" title="端對端測試 (E2E)" icon="heroicons:play">
             <p class="text-slate-400 mb-6">
                 E2E 測試會啟動真實的瀏覽器，模擬使用者操作。我們先確保安裝了 Playwright 瀏覽器：
             </p>
-            <AppCodeBlock code="npx playwright install" lang="bash" filename="Terminal" />
+            <UiCodeBlock code="npx playwright install" lang="bash" filename="Terminal" />
 
             <p class="text-slate-400 my-6">
                 撰寫一個簡單的瀏覽器測試：
             </p>
 
-            <AppCodeBlock code="import { describe, it, expect } from 'vitest'
+            <UiCodeBlock code="import { describe, it, expect } from 'vitest'
 import { setup, createPage } from '@nuxt/test-utils/e2e'
 
 describe('Home Page', async () => {
@@ -151,7 +151,7 @@ describe('Home Page', async () => {
                     E2E 測試執行速度較慢，但能提供最高的信心保證。建議在 CI/CD 流程中執行。
                 </p>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

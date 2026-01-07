@@ -18,11 +18,11 @@
 </script>
 
 <template>
-    <TutorialPage title="靜態資源" description="Nuxt 提供了兩個目錄來管理靜態資源：public/ 與 assets/。了解它們的差異對於優化網站效能至關重要。"
+    <DocsPage title="靜態資源" description="Nuxt 提供了兩個目錄來管理靜態資源：public/ 與 assets/。了解它們的差異對於優化網站效能至關重要。"
         :badges="[{ label: 'Performance', color: 'primary' }, { label: 'Build Tool', color: 'neutral' }]">
 
         <!-- 1. Concept: Comparison -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:scale" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:scale" separator>
             <p>
                 簡單來說：如果你希望檔案被 Vite 處理（壓縮、雜湊命名、轉譯），請放在 <code class="text-emerald-400">assets/</code>。
                 如果你希望檔案保持原樣（如 robots.txt），請放在 <code class="text-white">public/</code>。
@@ -77,10 +77,10 @@
                     </ul>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2. Public Directory -->
-        <TutorialSection id="public" title="Public 目錄" icon="heroicons:globe-alt" separator>
+        <DocsSection id="public" title="Public 目錄" icon="heroicons:globe-alt" separator>
             <p>
                 放在這裡的檔案可以透過 <code class="text-white">/filename</code> 直接存取。
             </p>
@@ -122,16 +122,16 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Assets Directory -->
-        <TutorialSection id="assets" title="Assets 目錄" icon="heroicons:photo" separator>
+        <DocsSection id="assets" title="Assets 目錄" icon="heroicons:photo" separator>
             <p>
                 這裡的檔案需要透過 <code class="text-emerald-400">~/assets/</code> 路徑引用。
                 Vite 會將其轉換為帶有 Hash 的檔名，以利於瀏覽器快取。
             </p>
 
-            <AppWindow title="Vite Processing" icon="heroicons:cog" class="w-full">
+            <UiWindow title="Vite Processing" icon="heroicons:cog" class="w-full">
                 <div class="p-8 bg-slate-950 flex flex-col md:flex-row items-center justify-between gap-4">
                     <!-- Source -->
                     <div class="text-center">
@@ -160,10 +160,10 @@
                         <div class="text-xs font-mono text-emerald-400">_nuxt/logo.a1b2c3.png</div>
                     </div>
                 </div>
-            </AppWindow>
+            </UiWindow>
 
             <div class="mt-6">
-                <AppCodeBlock code="<template>
+                <UiCodeBlock code="<template>
   <!-- 引用 assets 目錄下的圖片 -->
   <img src=&quot;~/assets/img/logo.png&quot; alt=&quot;Logo&quot; />
   
@@ -171,10 +171,10 @@
   <div class=&quot;bg-[url('~/assets/bg.jpg')]&quot;></div>
 </template>" lang="vue" />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Image Optimization -->
-        <TutorialSection id="optimization" title="圖片優化" icon="heroicons:sparkles">
+        <DocsSection id="optimization" title="圖片優化" icon="heroicons:sparkles">
             <p>
                 建議使用 <a href="https://image.nuxt.com" target="_blank" class="text-emerald-400 hover:underline">Nuxt
                     Image</a>
@@ -221,7 +221,7 @@
             </div>
 
             <div class="mt-6">
-                <AppCodeBlock code="<template>
+                <UiCodeBlock code="<template>
   <NuxtImg 
     src=&quot;/photo.jpg&quot; 
     width=&quot;500&quot; 
@@ -231,7 +231,7 @@
   />
 </template>" lang="vue" />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

@@ -18,18 +18,18 @@
 </script>
 
 <template>
-    <TutorialPage title="ClientOnly 元件"
+    <DocsPage title="ClientOnly 元件"
         description="在 SSR 應用中，某些內容只能在瀏覽器端渲染（例如存取 localStorage、window 物件）。ClientOnly 幫助你隔離這些邏輯，避免水合錯誤 (Hydration Mismatch)。"
         :badges="[{ label: 'SSR Safety', color: 'primary' }, { label: 'Hydration', color: 'neutral' }]">
 
         <!-- 1. Concept: Hydration -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:arrow-path" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:arrow-path" separator>
             <p>
                 <strong>Hydration (水合)</strong> 是指 Vue 在瀏覽器端接管由伺服器渲染的靜態 HTML，並使其變為可互動的過程。
                 如果伺服器給的 HTML 與瀏覽器第一次渲染的結果不同，就會發生衝突。
             </p>
 
-            <AppWindow title="Hydration Process" icon="heroicons:clock" class="w-full">
+            <UiWindow title="Hydration Process" icon="heroicons:clock" class="w-full">
                 <div class="p-8 bg-slate-950 flex flex-col md:flex-row items-center justify-between gap-4">
                     <!-- Server -->
                     <div class="flex flex-col items-center gap-2">
@@ -58,11 +58,11 @@
                         <div class="text-xs font-bold text-emerald-500 uppercase">Client DOM</div>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. The Problem -->
-        <TutorialSection id="problem" title="Hydration Mismatch" icon="heroicons:exclamation-triangle" separator>
+        <DocsSection id="problem" title="Hydration Mismatch" icon="heroicons:exclamation-triangle" separator>
             <p>
                 當你在 template 中直接使用 <code class="text-red-400">window</code> 或 <code
                     class="text-red-400">localStorage</code> 時，
@@ -75,7 +75,7 @@
                         <Icon name="heroicons:x-circle" />
                         Bad Code
                     </h4>
-                    <AppCodeBlock code="<template>
+                    <UiCodeBlock code="<template>
   <!-- Server: Crash (window is undefined) -->
   <!-- Client: 1920 -->
   <div>Width: {{ window.innerWidth }}</div>
@@ -87,7 +87,7 @@
                         <Icon name="heroicons:x-circle" />
                         Bad Code
                     </h4>
-                    <AppCodeBlock code="<template>
+                    <UiCodeBlock code="<template>
   <!-- Server: Generate UUID A -->
   <!-- Client: Generate UUID B -->
   <!-- Result: Hydration Mismatch Error -->
@@ -95,25 +95,25 @@
 </template>" lang="vue" />
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. The Solution -->
-        <TutorialSection id="solution" title="使用 ClientOnly" icon="heroicons:shield-check" separator>
+        <DocsSection id="solution" title="使用 ClientOnly" icon="heroicons:shield-check" separator>
             <p>
                 <code class="text-emerald-400">&lt;ClientOnly&gt;</code> 告訴 Nuxt：「這段內容不要在伺服器端渲染，等到了瀏覽器再處理。」
             </p>
 
-            <AppCodeBlock code="<template>
+            <UiCodeBlock code="<template>
   <ClientOnly>
     <!-- 安全：只在瀏覽器執行 -->
     <div>Width: {{ window.innerWidth }}</div>
     <Comments />
   </ClientOnly>
 </template>" lang="vue" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Fallback -->
-        <TutorialSection id="fallback" title="Fallback 內容" icon="heroicons:arrow-path-rounded-square">
+        <DocsSection id="fallback" title="Fallback 內容" icon="heroicons:arrow-path-rounded-square">
             <p>
                 為了避免內容突然跳出來 (Layout Shift)，你可以使用 <code class="text-emerald-400">#fallback</code> slot
                 來指定在客戶端載入完成前要顯示的佔位內容（例如 Skeleton Loading）。
@@ -154,7 +154,7 @@
             </div>
 
             <div class="mt-6">
-                <AppCodeBlock code="<template>
+                <UiCodeBlock code="<template>
   <ClientOnly>
     <UserProfile />
     
@@ -165,7 +165,7 @@
   </ClientOnly>
 </template>" lang="vue" />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

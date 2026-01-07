@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <TutorialPage title="Composables 與 Utils"
+    <DocsPage title="Composables 與 Utils"
         description="在 Nuxt 開發中，我們經常需要提取共用邏輯。Nuxt 提供了兩個主要目錄：composables 與 utils，它們都具備自動引入 (Auto-import) 的特性，但用途卻大不相同。"
         :badges="[{ label: 'Logic Reuse', color: 'primary' }, { label: 'Auto-imports', color: 'neutral' }]">
 
         <!-- Section 1: Composables -->
-        <TutorialSection id="composables" title="Composables" icon="heroicons:cube-transparent" separator>
+        <DocsSection id="composables" title="Composables" icon="heroicons:cube-transparent" separator>
             <p class="text-slate-400 leading-relaxed mb-6">
                 <code class="text-emerald-400">composables/</code> 目錄用於存放<strong>有狀態 (Stateful)</strong> 的邏輯，通常涉及 Vue
                 的響應式系統 (Refs, Computed) 或生命週期 Hooks。
@@ -44,7 +44,7 @@
                 </ul>
             </div>
 
-            <AppCodeBlock language="typescript" :code="`// composables/useCounter.ts
+            <UiCodeBlock language="typescript" :code="`// composables/useCounter.ts
 export const useCounter = () => {
   const count = ref(0)
   
@@ -57,16 +57,16 @@ export const useCounter = () => {
     increment
   }
 }`" filename="composables/useCounter.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: Utils -->
-        <TutorialSection id="utils" title="Utils" icon="heroicons:wrench" separator>
+        <DocsSection id="utils" title="Utils" icon="heroicons:wrench" separator>
             <p class="text-slate-400 mb-6">
                 <code class="text-emerald-400">utils/</code> 目錄用於存放<strong>無狀態 (Stateless)</strong> 的輔助函數。這些函數通常是純函數
                 (Pure Functions)，輸入相同則輸出相同，不依賴外部狀態。
             </p>
 
-            <AppCodeBlock language="typescript" :code="`// utils/format.ts
+            <UiCodeBlock language="typescript" :code="`// utils/format.ts
 export const formatDate = (date: Date): string => {
   return new Intl.DateTimeFormat('zh-TW').format(date)
 }
@@ -77,10 +77,10 @@ export const formatCurrency = (amount: number): string => {
     currency: 'TWD' 
   }).format(amount)
 }`" filename="utils/format.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Difference -->
-        <TutorialSection id="difference" title="兩者差異" icon="heroicons:scale" separator>
+        <DocsSection id="difference" title="兩者差異" icon="heroicons:scale" separator>
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-sm text-slate-400">
                     <thead class="bg-slate-900/50 text-slate-200 font-medium">
@@ -109,10 +109,10 @@ export const formatCurrency = (amount: number): string => {
                     </tbody>
                 </table>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: Auto Imports -->
-        <TutorialSection id="auto-imports" title="自動引入機制" icon="heroicons:arrow-path" separator>
+        <DocsSection id="auto-imports" title="自動引入機制" icon="heroicons:arrow-path" separator>
             <p class="text-slate-400 mb-6">
                 Nuxt 會自動掃描這兩個目錄，並將導出的函數自動引入到您的頁面與元件中。
             </p>
@@ -132,12 +132,12 @@ export const formatCurrency = (amount: number): string => {
                 </div>
             </div>
 
-            <AppCodeBlock language="vue" :code="`<script setup>
+            <UiCodeBlock language="vue" :code="`<script setup>
 // 無需 import，直接使用！
 const { count, increment } = useCounter()
 const price = formatCurrency(1000)
 </script>`" filename="pages/index.vue" />
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

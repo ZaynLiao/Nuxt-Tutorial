@@ -24,7 +24,7 @@
                     class="group p-8 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/30 hover:bg-slate-900/90 hover:shadow-2xl hover:shadow-emerald-900/20 transition-all duration-300 relative overflow-hidden">
 
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute inset-0 bg-linear-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
 
                     <div class="relative z-10">
@@ -60,7 +60,7 @@
                     class="group p-8 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/30 hover:bg-slate-900/90 hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-300 relative overflow-hidden">
 
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
 
                     <div class="relative z-10">
@@ -96,7 +96,7 @@
                     class="group p-8 rounded-3xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/30 hover:bg-slate-900/90 hover:shadow-2xl hover:shadow-purple-900/20 transition-all duration-300 relative overflow-hidden">
 
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute inset-0 bg-linear-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
 
                     <div class="relative z-10">
@@ -126,16 +126,6 @@
                         </ul>
                     </div>
                 </NuxtLink>
-            </div>
-
-            <!-- Error Solving Note -->
-            <div class="mt-16 p-6 rounded-2xl bg-slate-800/30 border border-dashed border-slate-700 text-center">
-                <p class="text-slate-400 flex items-center justify-center gap-2">
-                    <Icon name="heroicons:lifebuoy" class="w-5 h-5 text-orange-400" />
-                    <span class="font-medium text-slate-300">遇到問題？</span>
-                    每個章節末尾都有 <span class="text-orange-300">常見錯誤排除 (Troubleshooting)</span> 與 <span
-                        class="text-orange-300">QA</span> 區塊。
-                </p>
             </div>
         </div>
     </section>

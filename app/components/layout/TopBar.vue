@@ -17,7 +17,7 @@
                     class="p-1.5 rounded-lg bg-linear-to-br from-emerald-500/20 to-emerald-600/20 ring-1 ring-white/10 group-hover:ring-emerald-500/50 transition-all">
                     <Icon name="logos:nuxt-icon" class="w-6 h-6" aria-label="Nuxt Logo" />
                 </div>
-                <span class="text-lg tracking-tight font-bold hidden sm:block">Nuxt Tutorial</span>
+                <span class="text-lg tracking-tight font-bold hidden sm:block">Nuxt-Tutorial</span>
                 <NuxtBadge color="primary" size="xs" class="font-bold ring-1 ring-emerald-500/20">v4
                 </NuxtBadge>
             </NuxtLink>

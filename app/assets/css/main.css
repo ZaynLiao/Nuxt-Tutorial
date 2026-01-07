@@ -1,74 +1,27 @@
 @import "tailwindcss";
-@import "@nuxt/ui";
 
 @theme {
-  --animate-bounce-slow: bounce-slow 3s infinite;
-  --animate-float: float 15s ease-in-out infinite alternate;
-  --animate-pulse-slow: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-pulse-slow-delayed: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) 2s
-    infinite;
+  --spacing-150: 37.5rem;
 
   --background-image-glow-primary: radial-gradient(
-    circle at 15% 50%,
-    rgba(16, 185, 129, 0.08),
-    transparent 25%
+    circle 800px at 0% 0%,
+    #10b98115,
+    transparent
   );
   --background-image-glow-secondary: radial-gradient(
-    circle at 85% 30%,
-    rgba(14, 165, 233, 0.08),
-    transparent 25%
+    circle 800px at 100% 100%,
+    #10b98115,
+    transparent
   );
+}
 
-  @keyframes bounce-slow {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes float {
-    0% {
-      transform: translate(0, 0) scale(1);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.4;
-    }
-    50% {
-      opacity: 0.2;
-      transform: translate(var(--move-x), var(--move-y)) scale(1.2);
-    }
-    90% {
-      opacity: 0.4;
-    }
-    100% {
-      transform: translate(calc(var(--move-x) * -1), calc(var(--move-y) * -1))
-        scale(1);
-      opacity: 0;
-    }
-  }
-
-  @keyframes pulse-slow {
-    0%,
-    100% {
-      opacity: 0.5;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
+body {
+  @apply bg-slate-950 text-slate-200 antialiased tracking-tight leading-relaxed;
 }
 
 html {
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-slate-950 text-slate-200 antialiased tracking-tight leading-relaxed;
 }
 
 /* Scrollbar */
@@ -87,6 +40,12 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-emerald-500/50;
+}
+
+/* 讓 LoadingIndicator 自動吃 Tailwind 的顏色，而不用在標籤寫死 */
+.nuxt-loading-indicator {
+  background: theme("colors.emerald.500") !important;
+  height: 3px !important;
 }
 
 .shiki {

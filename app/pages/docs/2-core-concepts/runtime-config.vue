@@ -19,18 +19,18 @@
 </script>
 
 <template>
-    <TutorialPage title="環境變數"
+    <DocsPage title="環境變數"
         description="在開發應用程式時，我們經常需要管理 API 金鑰、資料庫連線字串等敏感資訊。Nuxt 提供了 Runtime Config 來安全地管理這些環境變數，並支援在不同環境（開發/生產）中自動切換。"
         :badges="[{ label: 'Security', color: 'primary' }, { label: 'DevOps', color: 'neutral' }]">
 
         <!-- 1. Concept: The Security Wall -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:shield-check" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:shield-check" separator>
             <p>
                 Runtime Config 的核心目的是<strong>區分私有 (Private) 與公開 (Public) 資訊</strong>。
                 私有變數只能在伺服器端存取，永遠不會洩漏給瀏覽器。
             </p>
 
-            <AppWindow title="Security Boundary" icon="heroicons:lock-closed" class="w-full">
+            <UiWindow title="Security Boundary" icon="heroicons:lock-closed" class="w-full">
                 <div class="grid md:grid-cols-2 h-64 relative bg-slate-950">
                     <!-- Server Side (Safe) -->
                     <div class="relative p-6 border-r border-slate-800/50 bg-slate-900/20">
@@ -103,17 +103,17 @@
                         Hydration Boundary
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. Setup -->
-        <TutorialSection id="setup" title="設定變數" icon="heroicons:adjustments-horizontal" separator>
+        <DocsSection id="setup" title="設定變數" icon="heroicons:adjustments-horizontal" separator>
             <p>
                 在 <code class="text-emerald-400">nuxt.config.ts</code> 中定義。
                 根層級的屬性為<strong>私有</strong>，<code class="text-white">public</code> 物件內的屬性為<strong>公開</strong>。
             </p>
 
-            <AppCodeBlock code="export default defineNuxtConfig({
+            <UiCodeBlock code="export default defineNuxtConfig({
   runtimeConfig: {
     // [Private] 僅 Server 可見
     // 這裡的值可以設為空字串，等待環境變數覆寫
@@ -126,10 +126,10 @@
     }
   }
 })" lang="ts" filename="nuxt.config.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Usage -->
-        <TutorialSection id="usage" title="讀取變數" icon="heroicons:code-bracket" separator>
+        <DocsSection id="usage" title="讀取變數" icon="heroicons:code-bracket" separator>
             <p>
                 使用 <code class="text-emerald-400">useRuntimeConfig()</code> Composable 來存取設定。
                 Nuxt 會自動為這些變數提供型別支援。
@@ -140,7 +140,7 @@
                     <div class="flex items-center justify-between px-2">
                         <span class="text-xs font-bold text-emerald-500 uppercase">server/api/test.ts</span>
                     </div>
-                    <AppCodeBlock code="export default defineEventHandler((event) => {
+                    <UiCodeBlock code="export default defineEventHandler((event) => {
   const config = useRuntimeConfig()
   
   // Server 端可以存取所有變數
@@ -153,7 +153,7 @@
                     <div class="flex items-center justify-between px-2">
                         <span class="text-xs font-bold text-sky-500 uppercase">app.vue</span>
                     </div>
-                    <AppCodeBlock code="<script setup>
+                    <UiCodeBlock code="<script setup>
 const config = useRuntimeConfig()
 
 // Client 端只能存取 public 內的變數
@@ -164,10 +164,10 @@ console.log(config.apiSecret)
 </script>" lang="vue" />
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Env Override -->
-        <TutorialSection id="env" title="環境變數覆寫" icon="heroicons:arrow-path-rounded-square" separator>
+        <DocsSection id="env" title="環境變數覆寫" icon="heroicons:arrow-path-rounded-square" separator>
             <p>
                 在生產環境中，你不需要修改程式碼。Nuxt 會自動讀取符合 <code class="text-emerald-400">NUXT_</code> 命名規則的環境變數來覆寫設定。
                 這對於 CI/CD 部署非常重要。
@@ -202,7 +202,7 @@ console.log(config.apiSecret)
             </div>
 
             <div class="mt-4">
-                <AppCodeBlock filename=".env" code="NUXT_API_SECRET=sk_prod_123456789
+                <UiCodeBlock filename=".env" code="NUXT_API_SECRET=sk_prod_123456789
 NUXT_PUBLIC_API_BASE=https://api.production.com" lang="bash" />
             </div>
 
@@ -217,12 +217,12 @@ NUXT_PUBLIC_API_BASE=https://api.production.com" lang="bash" />
                     注意 <code class="text-red-400">apiSecret</code> 在 Client Context 中始終為 <code
                         class="text-slate-500">undefined</code>。
                 </p>
-                <RuntimeConfigDemo />
+                <DemoRuntimeConfig />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 5. Comparison -->
-        <TutorialSection id="comparison" title="Runtime vs App Config" icon="heroicons:scale">
+        <DocsSection id="comparison" title="Runtime vs App Config" icon="heroicons:scale">
             <p>
                 Nuxt 還有另一個設定檔 <code class="text-white">app.config.ts</code>。它們有什麼不同？
             </p>
@@ -276,7 +276,7 @@ NUXT_PUBLIC_API_BASE=https://api.production.com" lang="bash" />
                     </ul>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

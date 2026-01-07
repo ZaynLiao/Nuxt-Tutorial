@@ -1,4 +1,4 @@
-# Nuxt Tutorial (Nuxt 4 繁體中文教學)
+# Nuxt-Tutorial (Nuxt 4 繁體中文教學)
 
 ![Nuxt 4](https://img.shields.io/badge/Nuxt-4.0-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)
 ![Nuxt UI](https://img.shields.io/badge/Nuxt_UI-v4-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)

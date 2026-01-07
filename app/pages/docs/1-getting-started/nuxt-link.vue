@@ -19,18 +19,18 @@
 </script>
 
 <template>
-    <TutorialPage title="NuxtLink 導航"
+    <DocsPage title="NuxtLink 導航"
         description="NuxtLink 是 Nuxt 中用於頁面導航的核心元件，它取代了標準的 <a> 標籤，提供了 SPA 般的無刷新切換體驗與智慧型預取 (Prefetching) 功能。"
         :badges="[{ label: 'Routing', color: 'primary' }, { label: 'Performance', color: 'neutral' }]">
 
         <!-- 1. Concept: Smart Link -->
-        <TutorialSection id="concept" title="核心概念" icon="heroicons:link" separator>
+        <DocsSection id="concept" title="核心概念" icon="heroicons:link" separator>
             <p>
                 <code class="text-emerald-400">&lt;NuxtLink&gt;</code> 是一個智慧型元件。它會根據 <code class="text-white">to</code>
                 屬性的內容，自動決定最佳的渲染方式。
             </p>
 
-            <AppWindow title="Smart Decision Logic" icon="heroicons:cpu-chip" class="w-full">
+            <UiWindow title="Smart Decision Logic" icon="heroicons:cpu-chip" class="w-full">
                 <div class="p-8 bg-slate-950 flex flex-col items-center gap-6">
                     <div
                         class="px-6 py-3 rounded-full bg-slate-800 border border-slate-700 text-white font-bold font-mono">
@@ -61,17 +61,17 @@
                         </div>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. Internal Navigation -->
-        <TutorialSection id="internal" title="內部導航" icon="heroicons:arrow-right-circle" separator>
+        <DocsSection id="internal" title="內部導航" icon="heroicons:arrow-right-circle" separator>
             <p>
                 對於內部連結，Nuxt 會攔截點擊事件，透過 JavaScript 更新 URL 並渲染新頁面，而不會重新載入整頁。
                 這提供了如原生 App 般的流暢體驗。
             </p>
 
-            <AppCodeBlock code="<template>
+            <UiCodeBlock code="<template>
   <nav>
     <!-- 字串語法 -->
     <NuxtLink to=&quot;/&quot;>首頁</NuxtLink>
@@ -87,26 +87,26 @@
     </NuxtLink>
   </nav>
 </template>" lang="vue" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. External Navigation -->
-        <TutorialSection id="external" title="外部連結" icon="heroicons:globe-alt" separator>
+        <DocsSection id="external" title="外部連結" icon="heroicons:globe-alt" separator>
             <p>
                 當偵測到外部連結時，它會自動退化為標準的 <code class="text-white">&lt;a&gt;</code> 標籤，
                 並自動加上 <code class="text-emerald-400">rel="noopener noreferrer"</code> 以確保安全性（當使用 <code
                     class="text-white">target="_blank"</code> 時）。
             </p>
 
-            <AppCodeBlock code="<template>
+            <UiCodeBlock code="<template>
   <!-- 自動處理為 <a href=... target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;> -->
   <NuxtLink to=&quot;https://nuxt.com&quot; target=&quot;_blank&quot;>
     Nuxt 官網
   </NuxtLink>
 </template>" lang="vue" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Styling -->
-        <TutorialSection id="styling" title="樣式與狀態" icon="heroicons:paint-brush" separator>
+        <DocsSection id="styling" title="樣式與狀態" icon="heroicons:paint-brush" separator>
             <p>
                 NuxtLink 會自動為當前活躍的連結加上 CSS class。
             </p>
@@ -135,17 +135,17 @@
             </div>
 
             <div class="mt-4">
-                <AppCodeBlock code="<style scoped>
+                <UiCodeBlock code="<style scoped>
 .router-link-active {
   color: #10b981; /* emerald-500 */
   font-weight: bold;
 }
 </style>" lang="css" />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 5. Prefetching -->
-        <TutorialSection id="prefetching" title="預取機制" icon="heroicons:bolt">
+        <DocsSection id="prefetching" title="預取機制" icon="heroicons:bolt">
             <p>
                 為了極致的效能，NuxtLink 預設會在連結<strong>進入視口 (Viewport)</strong> 時，
                 自動在背景預先下載目標頁面的 JavaScript 程式碼 (Payload)。
@@ -163,12 +163,12 @@
                 </div>
             </div>
 
-            <AppCodeBlock code="<template>
+            <UiCodeBlock code="<template>
   <NuxtLink to=&quot;/heavy-page&quot; :prefetch=&quot;false&quot;>
     不預取的連結
   </NuxtLink>
 </template>" lang="vue" class="mt-4" />
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

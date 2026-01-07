@@ -28,7 +28,7 @@
 </script>
 
 <template>
-    <AppWindow :title="filename" :icon="icon" :no-padding="true" type="code">
+    <UiWindow :title="filename" :icon="icon" :no-padding="true" type="code">
         <template #header>
             <button @click="handleCopy"
                 class="flex items-center gap-1.5 rounded px-2 py-1 text-xs font-medium text-slate-500 transition-colors hover:bg-slate-800 hover:text-slate-300">
@@ -40,5 +40,5 @@
         <div class="relative p-4 text-sm font-mono leading-relaxed">
             <Shiki :code="code" :lang="lang" class="whitespace-pre-wrap break-words" />
         </div>
-    </AppWindow>
+    </UiWindow>
 </template>

@@ -26,7 +26,7 @@
                 <div class="px-4 py-2 border-b border-slate-800 bg-slate-900 flex items-center justify-between">
                     <span class="text-xs font-bold text-slate-500 uppercase">nuxt.config.ts</span>
                     <span
-                        class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Default
+                        class="text-xs px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Default
                         Values</span>
                 </div>
                 <div class="p-4 font-mono text-xs text-slate-400 leading-relaxed">
@@ -50,18 +50,18 @@
                 <div class="px-4 py-2 border-b border-slate-800 bg-slate-900 flex items-center justify-between">
                     <span class="text-xs font-bold text-emerald-400 uppercase">.env / Environment Variables</span>
                     <span
-                        class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950/30 text-emerald-400 border border-emerald-500/20">Overrides
+                        class="text-xs px-1.5 py-0.5 rounded bg-emerald-950/30 text-emerald-400 border border-emerald-500/20">Overrides
                         Defaults</span>
                 </div>
                 <div class="p-4 space-y-4">
                     <div class="space-y-1">
-                        <label class="text-[10px] font-bold text-slate-500 uppercase">NUXT_API_SECRET</label>
+                        <label class="text-xs font-bold text-slate-500 uppercase">NUXT_API_SECRET</label>
                         <input v-model="envSecret" type="text"
                             class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs font-mono text-white focus:ring-1 focus:ring-emerald-500 outline-none transition-all"
                             placeholder="Leave empty to use default" />
                     </div>
                     <div class="space-y-1">
-                        <label class="text-[10px] font-bold text-slate-500 uppercase">NUXT_PUBLIC_API_BASE</label>
+                        <label class="text-xs font-bold text-slate-500 uppercase">NUXT_PUBLIC_API_BASE</label>
                         <input v-model="envBase" type="text"
                             class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-xs font-mono text-white focus:ring-1 focus:ring-emerald-500 outline-none transition-all"
                             placeholder="Leave empty to use default" />
@@ -82,7 +82,7 @@
                     <div
                         class="flex items-center justify-between p-3 rounded bg-slate-800/50 border border-slate-700/50">
                         <div class="flex flex-col">
-                            <span class="text-[10px] text-slate-500 font-mono">config.apiSecret</span>
+                            <span class="text-xs text-slate-500 font-mono">config.apiSecret</span>
                             <span class="text-sm font-mono text-white break-all">{{ resolvedConfig.apiSecret }}</span>
                         </div>
                         <Icon name="heroicons:lock-closed" class="w-4 h-4 text-red-400 opacity-50" />
@@ -90,7 +90,7 @@
                     <div
                         class="flex items-center justify-between p-3 rounded bg-slate-800/50 border border-slate-700/50">
                         <div class="flex flex-col">
-                            <span class="text-[10px] text-slate-500 font-mono">config.public.apiBase</span>
+                            <span class="text-xs text-slate-500 font-mono">config.public.apiBase</span>
                             <span class="text-sm font-mono text-white break-all">{{ resolvedConfig.public.apiBase
                                 }}</span>
                         </div>
@@ -109,7 +109,7 @@
                     <div
                         class="flex items-center justify-between p-3 rounded bg-slate-800/50 border border-slate-700/50 opacity-50 grayscale">
                         <div class="flex flex-col">
-                            <span class="text-[10px] text-slate-500 font-mono">config.apiSecret</span>
+                            <span class="text-xs text-slate-500 font-mono">config.apiSecret</span>
                             <span class="text-sm font-mono text-slate-500">undefined</span>
                         </div>
                         <Icon name="heroicons:no-symbol" class="w-4 h-4 text-red-500" />
@@ -117,7 +117,7 @@
                     <div
                         class="flex items-center justify-between p-3 rounded bg-slate-800/50 border border-slate-700/50">
                         <div class="flex flex-col">
-                            <span class="text-[10px] text-slate-500 font-mono">config.public.apiBase</span>
+                            <span class="text-xs text-slate-500 font-mono">config.public.apiBase</span>
                             <span class="text-sm font-mono text-white break-all">{{ resolvedConfig.public.apiBase
                                 }}</span>
                         </div>

@@ -16,7 +16,7 @@
 </script>
 
 <template>
-    <TutorialPage title="Nuxt 文件導覽" description="這是一個參考 Nuxt 官方文件版面所製作的繁體中文教學站，重點是清楚的資訊層級與好讀的暗色介面。"
+    <DocsPage title="Nuxt 文件導覽" description="這是一個參考 Nuxt 官方文件版面所製作的繁體中文教學站，重點是清楚的資訊層級與好讀的暗色介面。"
         :badges="[{ label: 'Nuxt 4', color: 'primary' }, { label: 'Tutorial', color: 'neutral' }]">
 
         <div v-for="group in sidebarGroups" :key="group.id" :id="group.id" class="mb-16 scroll-mt-24">
@@ -49,5 +49,5 @@
                 </NuxtLink>
             </div>
         </div>
-    </TutorialPage>
+    </DocsPage>
 </template>

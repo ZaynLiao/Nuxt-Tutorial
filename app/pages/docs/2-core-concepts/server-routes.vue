@@ -20,19 +20,19 @@
 </script>
 
 <template>
-    <TutorialPage title="伺服器路由"
+    <DocsPage title="伺服器路由"
         description="Nuxt 不僅僅是前端框架，它內建了強大的伺服器引擎 (Nitro)。你可以在 server/ 目錄下直接撰寫後端 API，無需額外架設 Express 或 Koa 伺服器。"
         :badges="[{ label: 'Nitro Engine', color: 'primary' }, { label: 'Full Stack', color: 'neutral' }]">
 
         <!-- 1. Concept: Nitro Engine -->
-        <TutorialSection id="concept" title="Nitro 引擎" icon="heroicons:cpu-chip" separator>
+        <DocsSection id="concept" title="Nitro 引擎" icon="heroicons:cpu-chip" separator>
             <p>
                 Nuxt 的後端由 <a href="https://nitro.unjs.io/" target="_blank"
                     class="text-emerald-400 hover:underline">Nitro</a> 驅動。
                 它是一個極速、輕量且可移植的伺服器引擎。
             </p>
 
-            <AppWindow title="Nitro Architecture" icon="heroicons:server-stack" class="w-full">
+            <UiWindow title="Nitro Architecture" icon="heroicons:server-stack" class="w-full">
                 <div class="p-8 bg-slate-950 flex flex-col items-center gap-8">
                     <!-- Top: Client -->
                     <div class="flex items-center gap-4">
@@ -85,20 +85,20 @@
                             class="px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-500">Docker</span>
                     </div>
                 </div>
-            </AppWindow>
-        </TutorialSection>
+            </UiWindow>
+        </DocsSection>
 
         <!-- 2. Create API -->
-        <TutorialSection id="create-api" title="建立 API" icon="heroicons:plus-circle" separator>
+        <DocsSection id="create-api" title="建立 API" icon="heroicons:plus-circle" separator>
             <p>
                 在 <code class="text-emerald-400">server/api/</code> 目錄下的檔案會自動映射為 API 端點。
                 使用 <code class="text-white">defineEventHandler</code> 來定義處理邏輯。
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
-                <AppWindow title="File Structure" type="code" class="h-full">
+                <UiWindow title="File Structure" type="code" class="h-full">
                     <div class="p-2">
-                        <AppFileTree :files="[
+                        <UiFileTree :files="[
                             {
                                 name: 'server/',
                                 icon: 'heroicons:folder-open',
@@ -124,13 +124,13 @@
                             }
                         ]" />
                     </div>
-                </AppWindow>
+                </UiWindow>
 
                 <div class="space-y-2">
                     <div class="flex items-center justify-between px-2">
                         <span class="text-xs font-bold text-emerald-500 uppercase">server/api/hello.ts</span>
                     </div>
-                    <AppCodeBlock code="export default defineEventHandler((event) => {
+                    <UiCodeBlock code="export default defineEventHandler((event) => {
   return {
     message: 'Hello Nitro!',
     timestamp: new Date()
@@ -149,12 +149,12 @@
                     我們已經在後端建立了一個 <code class="text-emerald-400">/api/demo</code> 端點。
                     試著發送 GET 或 POST 請求，觀察伺服器的回應。
                 </p>
-                <ApiPlayground />
+                <DemoApiPlayground />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 2.5 HTTP Methods -->
-        <TutorialSection id="http-methods" title="HTTP 方法 (Methods)" icon="heroicons:arrows-right-left" separator>
+        <DocsSection id="http-methods" title="HTTP 方法 (Methods)" icon="heroicons:arrows-right-left" separator>
             <p>
                 Nuxt 允許你透過檔案後綴來限制 API 支援的 HTTP 方法，這讓路由定義更語意化。
             </p>
@@ -192,7 +192,7 @@
                         <Icon name="heroicons:code-bracket" class="text-slate-500" />
                         範例程式碼
                     </h4>
-                    <AppCodeBlock code="// server/api/auth.post.ts
+                    <UiCodeBlock code="// server/api/auth.post.ts
 export default defineEventHandler(async (event) => {
   // 這個處理函式只會回應 POST 請求
   const body = await readBody(event)
@@ -200,10 +200,10 @@ export default defineEventHandler(async (event) => {
 })" lang="ts" filename="server/api/auth.post.ts" />
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3. Utilities -->
-        <TutorialSection id="utilities" title="請求處理工具" icon="heroicons:wrench-screwdriver" separator>
+        <DocsSection id="utilities" title="請求處理工具" icon="heroicons:wrench-screwdriver" separator>
             <p>
                 Nuxt (透過 H3) 提供了一系列工具函式來處理請求內容。
                 這些函式可以直接從 <code class="text-emerald-400">h3</code> 自動引入。
@@ -264,7 +264,7 @@ export default defineEventHandler(async (event) => {
             </div>
 
             <div class="mt-6">
-                <AppCodeBlock code="export default defineEventHandler(async (event) => {
+                <UiCodeBlock code="export default defineEventHandler(async (event) => {
   // 1. 讀取 Body
   const body = await readBody(event)
   
@@ -276,16 +276,16 @@ export default defineEventHandler(async (event) => {
   return { success: true }
 })" lang="ts" filename="server/api/submit.post.ts" />
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 3.5 Error Handling -->
-        <TutorialSection id="error-handling" title="錯誤處理" icon="heroicons:exclamation-triangle" separator>
+        <DocsSection id="error-handling" title="錯誤處理" icon="heroicons:exclamation-triangle" separator>
             <p>
                 在伺服器端，我們應該使用 <code class="text-emerald-400">createError</code> 來拋出異常。
                 Nuxt 會自動將這些錯誤轉換為標準的 JSON 回應，並設定正確的 HTTP 狀態碼。
             </p>
 
-            <AppCodeBlock code="export default defineEventHandler((event) => {
+            <UiCodeBlock code="export default defineEventHandler((event) => {
   const id = getRouterParam(event, 'id')
 
   if (!id) {
@@ -315,10 +315,10 @@ export default defineEventHandler(async (event) => {
                     </p>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- 4. Type Safety -->
-        <TutorialSection id="type-safety" title="型別安全" icon="heroicons:shield-check">
+        <DocsSection id="type-safety" title="型別安全" icon="heroicons:shield-check">
             <p>
                 這是 Nuxt 最強大的功能之一。當你在 Vue 頁面中使用 <code class="text-emerald-400">useFetch</code> 呼叫內部 API 時，
                 Nuxt 會自動推斷回傳值的型別，無需手動定義介面。
@@ -333,7 +333,7 @@ export default defineEventHandler(async (event) => {
                         <!-- Server Code -->
                         <div class="flex-1">
                             <div class="text-xs font-bold text-slate-500 mb-2 uppercase">Server</div>
-                            <AppCodeBlock code="// server/api/user.ts
+                            <UiCodeBlock code="// server/api/user.ts
 export default defineEventHandler(() => {
   return { 
     name: 'Zayn', 
@@ -350,7 +350,7 @@ export default defineEventHandler(() => {
                         <!-- Client Code -->
                         <div class="flex-1">
                             <div class="text-xs font-bold text-slate-500 mb-2 uppercase">Client</div>
-                            <AppCodeBlock code="// app.vue
+                            <UiCodeBlock code="// app.vue
 const { data } = await useFetch('/api/user')
 
 // TypeScript 自動知道 data.value 是:
@@ -360,7 +360,7 @@ console.log(data.value?.name)" lang="ts" />
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

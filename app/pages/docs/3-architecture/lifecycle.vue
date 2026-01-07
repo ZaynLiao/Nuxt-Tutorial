@@ -18,12 +18,12 @@
 </script>
 
 <template>
-    <TutorialPage title="生命週期 (Lifecycle)"
+    <DocsPage title="生命週期 (Lifecycle)"
         description="Nuxt 應用程式的生命週期橫跨了伺服器端 (Server) 與客戶端 (Client)。理解這些階段對於資料獲取、插件執行順序以及效能優化至關重要。"
         :badges="[{ label: 'Core Concept', color: 'primary' }, { label: 'Advanced', color: 'neutral' }]">
 
         <!-- Section 1: Overview -->
-        <TutorialSection id="overview" title="生命週期概覽" icon="heroicons:clock" separator>
+        <DocsSection id="overview" title="生命週期概覽" icon="heroicons:clock" separator>
             <p class="text-slate-400 leading-relaxed mb-6">
                 Nuxt 的生命週期可以分為三個主要階段：
             </p>
@@ -66,16 +66,16 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: App Hooks -->
-        <TutorialSection id="app-hooks" title="App Hooks (Runtime)" icon="heroicons:cog-6-tooth" separator>
+        <DocsSection id="app-hooks" title="App Hooks (Runtime)" icon="heroicons:cog-6-tooth" separator>
             <p class="text-slate-400 mb-6">
                 您可以在 <code class="text-emerald-400">plugins/</code> 或 <code class="text-emerald-400">app.vue</code> 中使用
                 <code class="text-emerald-400">useNuxtApp().hook()</code> 來監聽這些事件。
             </p>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtPlugin((nuxtApp) => {
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtPlugin((nuxtApp) => {
   // 當 Nuxt App 實例建立完成時
   nuxtApp.hook('app:created', (vueApp) => {
     console.log('App created!')
@@ -91,10 +91,10 @@
     console.error('Global error:', err)
   })
 })`" filename="plugins/lifecycle.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: Component Hooks -->
-        <TutorialSection id="component-hooks" title="Component Hooks" icon="heroicons:cube" separator>
+        <DocsSection id="component-hooks" title="Component Hooks" icon="heroicons:cube" separator>
             <p class="text-slate-400 mb-6">
                 在 Vue 元件中，理解 SSR 與 CSR 的差異至關重要。
             </p>
@@ -147,15 +147,15 @@
                     </div>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: Nitro Hooks -->
-        <TutorialSection id="nitro-hooks" title="Nitro Hooks" icon="heroicons:server-stack">
+        <DocsSection id="nitro-hooks" title="Nitro Hooks" icon="heroicons:server-stack">
             <p class="text-slate-400 mb-6">
                 Nitro 也有自己的生命週期 Hooks (位於 Server 端)，主要用於擴充伺服器功能或攔截請求。
             </p>
 
-            <AppCodeBlock language="typescript" :code="`// server/plugins/nitro.ts
+            <UiCodeBlock language="typescript" :code="`// server/plugins/nitro.ts
 export default defineNitroPlugin((nitroApp) => {
   // 攔截所有請求
   nitroApp.hooks.hook('request', (event) => {
@@ -167,7 +167,7 @@ export default defineNitroPlugin((nitroApp) => {
     // 可以添加自定義 Headers
   })
 })`" filename="server/plugins/nitro.ts" />
-        </TutorialSection>
+        </DocsSection>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

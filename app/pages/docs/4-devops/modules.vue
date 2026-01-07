@@ -18,11 +18,11 @@
 </script>
 
 <template>
-    <TutorialPage title="Nuxt 模組 (Modules)" description="Nuxt 擁有強大的模組生態系，讓您能像組裝積木一樣快速擴充專案功能。"
+    <DocsPage title="Nuxt 模組 (Modules)" description="Nuxt 擁有強大的模組生態系，讓您能像組裝積木一樣快速擴充專案功能。"
         :badges="[{ label: 'Ecosystem', color: 'primary' }, { label: 'Extensibility', color: 'primary' }]">
 
         <!-- Section 1: 什麼是模組 -->
-        <TutorialSection id="what-is-module" title="什麼是模組？" icon="heroicons:question-mark-circle" separator>
+        <DocsSection id="what-is-module" title="什麼是模組？" icon="heroicons:question-mark-circle" separator>
             <p class="text-slate-400 leading-relaxed">
                 Nuxt 模組 (Modules) 是 Nuxt 框架的核心擴充機制。不同於一般的 Vue Plugin，Nuxt 模組可以在應用程式的生命週期中介入，自動設定路由、註冊元件、注入中間件，甚至修改
                 Webpack/Vite 設定。
@@ -33,32 +33,32 @@
                     如果您發現自己在重複做某些設定（例如設定 Tailwind、設定 PWA、設定 Google Analytics），那麼很可能已經有一個 Nuxt 模組幫您做好了。
                 </p>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 2: 安裝與使用 -->
-        <TutorialSection id="installation" title="安裝與使用" icon="heroicons:arrow-down-tray" separator>
+        <DocsSection id="installation" title="安裝與使用" icon="heroicons:arrow-down-tray" separator>
             <p class="text-slate-400">
                 在 Nuxt 4 中，安裝模組非常簡單。我們推薦使用 <code class="text-emerald-400">nuxi</code> CLI 工具來安裝，它會自動更新您的 <code
                     class="text-slate-300">package.json</code> 和 <code class="text-slate-300">nuxt.config.ts</code>。
             </p>
 
-            <AppCodeBlock language="bash" code="npx nuxi@latest module add image" filename="Terminal" />
+            <UiCodeBlock language="bash" code="npx nuxi@latest module add image" filename="Terminal" />
 
             <p class="text-slate-400 mt-6">
                 上述指令會安裝 <code class="text-emerald-400">@nuxt/image</code> 並自動將其加入設定檔。如果您偏好手動安裝：
             </p>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtConfig({
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@pinia/nuxt',
     '@nuxt/ui'
   ]
 })`" filename="nuxt.config.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 3: 常用模組 -->
-        <TutorialSection id="popular-modules" title="常用模組推薦" icon="heroicons:star" separator>
+        <DocsSection id="popular-modules" title="常用模組推薦" icon="heroicons:star" separator>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div
                     class="p-8 rounded-3xl bg-slate-950 border border-slate-800/50 hover:border-emerald-500/30 transition-colors group">
@@ -112,15 +112,15 @@
                     <code class="text-xs bg-slate-900 px-2 py-1 rounded text-emerald-400">@nuxtjs/seo</code>
                 </div>
             </div>
-        </TutorialSection>
+        </DocsSection>
 
         <!-- Section 4: 模組設定 -->
-        <TutorialSection id="configuration" title="模組設定" icon="heroicons:cog-6-tooth" separator>
+        <DocsSection id="configuration" title="模組設定" icon="heroicons:cog-6-tooth" separator>
             <p class="text-slate-400">
                 大多數模組都可以在 <code class="text-slate-300">nuxt.config.ts</code> 中進行設定。通常模組會使用其名稱作為設定鍵值。
             </p>
 
-            <AppCodeBlock language="typescript" :code="`export default defineNuxtConfig({
+            <UiCodeBlock language="typescript" :code="`export default defineNuxtConfig({
   modules: ['@nuxt/image'],
 
   // Image 模組的設定
@@ -129,7 +129,7 @@
     format: ['webp', 'avif']
   }
 })`" filename="nuxt.config.ts" />
-        </TutorialSection>
+        </DocsSection>
 
         <div class="mt-12 p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800">
             <h3 class="text-xl font-bold text-white mb-2">探索更多模組</h3>
@@ -143,5 +143,5 @@
             </NuxtLink>
         </div>
 
-    </TutorialPage>
+    </DocsPage>
 </template>

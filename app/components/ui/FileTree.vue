@@ -118,7 +118,7 @@
             </div>
 
             <!-- Recursion -->
-            <AppFileTree v-if="item.children" :files="item.children" :root="false" :interactive="interactive"
+            <UiFileTree v-if="item.children" :files="item.children" :root="false" :interactive="interactive"
                 :model-value="modelValue" @update:model-value="$emit('update:modelValue', $event)"
                 @select="$emit('select', $event)" />
         </li>

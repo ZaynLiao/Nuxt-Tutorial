@@ -74,8 +74,8 @@
                     class="absolute -top-12 -right-12 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none">
                 </div>
 
-                <div class="relative transition-transform duration-500 ease-out hover:scale-[1.02]">
-                    <AppWindow title="learning-progress" type="code"
+                <div class="relative transition-transform duration-500 ease-out hover:scale-105">
+                    <UiWindow title="learning-progress" type="code"
                         class="shadow-2xl shadow-emerald-900/20 ring-1 ring-white/10">
                         <template #default>
                             <div class="font-mono text-sm leading-relaxed space-y-2">
@@ -121,11 +121,11 @@
                                 </div>
                             </div>
                         </template>
-                    </AppWindow>
+                    </UiWindow>
 
                     <!-- Floating Badge -->
                     <div
-                        class="absolute -bottom-6 -left-6 bg-slate-900/90 backdrop-blur border border-slate-800 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow">
+                        class="absolute -bottom-6 -left-6 bg-slate-900/90 backdrop-blur border border-slate-800 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce">
                         <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
                             <Icon name="heroicons:rocket-launch" class="w-6 h-6 text-emerald-400" />
                         </div>

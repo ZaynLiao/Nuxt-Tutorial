@@ -6,8 +6,8 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Nuxt Tutorial",
-      titleTemplate: "%s - Nuxt Tutorial",
+      title: "Nuxt-Tutorial",
+      titleTemplate: "%s - Nuxt-Tutorial",
       htmlAttrs: {
         lang: "zh-Hant-TW",
         class: "dark",

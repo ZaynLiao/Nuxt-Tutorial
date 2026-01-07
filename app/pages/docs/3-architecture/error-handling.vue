@@ -1,40 +1,38 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'docs',
-  toc: [
-    { id: 'overview', label: '錯誤處理流程' },
-    { id: 'throwing', label: '拋出錯誤' },
-    { id: 'boundary', label: '錯誤邊界' },
-    { id: 'error-page', label: '全域錯誤頁面' }
-  ]
-})
+  definePageMeta({
+    layout: 'docs',
+    toc: [
+      { id: 'overview', label: '錯誤處理流程' },
+      { id: 'throwing', label: '拋出錯誤' },
+      { id: 'boundary', label: '錯誤邊界' },
+      { id: 'error-page', label: '全域錯誤頁面' }
+    ]
+  })
 
-useHead({
-  title: '錯誤處理 (Error Handling)',
-  meta: [
-    { name: 'description', content: 'Nuxt 4 錯誤處理全攻略：從 API 錯誤到客戶端崩潰，掌握 createError, showError 與 NuxtErrorBoundary。' }
-  ]
-})
+  useHead({
+    title: '錯誤處理 (Error Handling)',
+    meta: [
+      { name: 'description', content: 'Nuxt 4 錯誤處理全攻略：從 API 錯誤到客戶端崩潰，掌握 createError, showError 與 NuxtErrorBoundary。' }
+    ]
+  })
 </script>
 
 <template>
-  <TutorialPage 
-    title="錯誤處理" 
+  <DocsPage title="錯誤處理"
     description="在全端應用程式中，錯誤可能發生在伺服器端 (API, Middleware) 或客戶端 (Vue Components)。Nuxt 提供了一套完整的機制來捕捉並優雅地處理這些錯誤。"
-    :badges="[{ label: 'Resilience', color: 'primary' }, { label: 'UX', color: 'neutral' }]"
-  >
+    :badges="[{ label: 'Resilience', color: 'primary' }, { label: 'UX', color: 'neutral' }]">
 
     <!-- 1. Overview -->
-    <TutorialSection id="overview" title="錯誤處理流程" icon="heroicons:arrow-path-rounded-square" separator>
+    <DocsSection id="overview" title="錯誤處理流程" icon="heroicons:arrow-path-rounded-square" separator>
       <p class="mb-6">
         理解錯誤發生的位置至關重要。伺服器端錯誤通常需要顯示全頁錯誤畫面 (Full Page Error)，而客戶端錯誤則可以透過錯誤邊界 (Error Boundary) 進行局部處理，避免整個頁面崩潰。
       </p>
-      
-      <ErrorFlow class="mb-8" />
-    </TutorialSection>
+
+      <DemoErrorFlow class="mb-8" />
+    </DocsSection>
 
     <!-- 2. Throwing Errors -->
-    <TutorialSection id="throwing" title="拋出錯誤" icon="heroicons:exclamation-triangle" separator>
+    <DocsSection id="throwing" title="拋出錯誤" icon="heroicons:exclamation-triangle" separator>
       <p>
         使用 <code class="text-emerald-400">createError</code> 來建立錯誤物件。這在 API 路由或 Middleware 中特別有用。
       </p>
@@ -44,7 +42,7 @@ useHead({
           <div class="flex items-center justify-between px-2">
             <span class="text-xs font-bold text-slate-500 uppercase">server/api/test.ts</span>
           </div>
-          <AppCodeBlock code="export default defineEventHandler((event) => {
+          <UiCodeBlock code="export default defineEventHandler((event) => {
   const id = getRouterParam(event, 'id')
 
   if (!id) {
@@ -72,15 +70,15 @@ useHead({
           </div>
         </div>
       </div>
-    </TutorialSection>
+    </DocsSection>
 
     <!-- 3. Error Boundary -->
-    <TutorialSection id="boundary" title="錯誤邊界" icon="heroicons:shield-check" separator>
+    <DocsSection id="boundary" title="錯誤邊界" icon="heroicons:shield-check" separator>
       <p>
         <code class="text-emerald-400">&lt;NuxtErrorBoundary&gt;</code> 允許你捕捉元件樹中的錯誤，並顯示備用 UI (Fallback)，而不是讓整個應用程式崩潰。
       </p>
 
-      <AppCodeBlock code="<template>
+      <UiCodeBlock code="<template>
   <NuxtErrorBoundary>
     <!-- 可能出錯的元件 -->
     <VideoPlayer />
@@ -92,18 +90,18 @@ useHead({
         <button @click=&quot;clearError&quot;>重試</button>
       </div>
     </template>
-  </NuxtErrorBoundary>
+</NuxtErrorBoundary>
 </template>" lang="vue" />
-    </TutorialSection>
+    </DocsSection>
 
     <!-- 4. Error Page -->
-    <TutorialSection id="error-page" title="全域錯誤頁面" icon="heroicons:document-minus">
+    <DocsSection id="error-page" title="全域錯誤頁面" icon="heroicons:document-minus">
       <p>
         當發生未捕獲的致命錯誤 (Fatal Error) 時，Nuxt 會渲染 <code class="text-white">error.vue</code>。
         這是一個位於專案根目錄的特殊頁面。
       </p>
 
-      <AppCodeBlock code="<script setup lang=&quot;ts&quot;>
+      <UiCodeBlock code="<script setup lang=&quot;ts&quot;>
 import type { NuxtError } from '#app'
 
 const props = defineProps<{
@@ -122,7 +120,7 @@ const handleError = () => clearError({ redirect: '/' })
     </button>
   </div>
 </template>" lang="vue" filename="error.vue" />
-    </TutorialSection>
+    </DocsSection>
 
-  </TutorialPage>
+  </DocsPage>
 </template>

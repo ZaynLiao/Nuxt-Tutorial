@@ -35,12 +35,14 @@
 <template>
     <div class="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-slate-950" aria-hidden="true">
         <!-- Ambient Gradients -->
-        <div class="absolute top-0 left-0 w-full h-full bg-glow-primary animate-pulse-slow"></div>
-        <div class="absolute bottom-0 right-0 w-full h-full bg-glow-secondary animate-pulse-slow-delayed"></div>
+        <div class="absolute top-0 left-0 w-full h-full animate-pulse bg-glow-primary">
+        </div>
+        <div class="absolute bottom-0 right-0 w-full h-full animate-pulse delay-1000 bg-glow-secondary">
+        </div>
 
         <!-- Fireflies -->
         <div v-for="fly in fireflies" :key="fly.id"
-            class="absolute rounded-full bg-emerald-300 blur-[1px] shadow-lg shadow-emerald-500/30 animate-float opacity-0"
+            class="absolute rounded-full bg-emerald-300 blur-sm shadow-lg shadow-emerald-500/30 animate-pulse opacity-20"
             :style="fly.style"></div>
     </div>
 </template>

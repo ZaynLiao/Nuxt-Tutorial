@@ -80,12 +80,12 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
 </script>
 
 <template>
-  <TutorialPage title="資料獲取"
+  <DocsPage title="資料獲取"
     description="Nuxt 4 提供了強大的資料獲取組合式函數 (Composables)，完美解決了 SSR 環境下的重複請求 (Double Fetching) 與水合不一致 (Hydration Mismatch) 問題。"
     :badges="[{ label: 'Core', color: 'primary' }, { label: 'SSR Ready', color: 'primary' }]">
 
     <!-- 1. Why useFetch -->
-    <TutorialSection id="why-usefetch" title="為什麼不能直接用 fetch？" icon="heroicons:question-mark-circle" separator>
+    <DocsSection id="why-usefetch" title="為什麼不能直接用 fetch？" icon="heroicons:question-mark-circle" separator>
       <div class="space-y-12">
         <p>
           在傳統的 Vue SPA 中，我們習慣在 <code class="text-emerald-400">onMounted</code> 鉤子中呼叫 API。
@@ -286,15 +286,15 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
           </div>
         </div>
       </div>
-    </TutorialSection>
+    </DocsSection>
 
     <!-- 2. Basic Usage -->
-    <TutorialSection id="basic-usage" title="基本用法" icon="heroicons:code-bracket-square">
+    <DocsSection id="basic-usage" title="基本用法" icon="heroicons:code-bracket-square">
       <p class="text-lg">
         <code class="text-emerald-400 font-bold">useFetch</code> 是 Nuxt 提供的全能型工具，它自動處理了上述所有問題。你只需要一行程式碼，就能獲得響應式的資料與請求狀態。
       </p>
 
-      <AppCodeBlock :code="basicUsageCode" lang="ts" filename="app.vue" />
+      <UiCodeBlock :code="basicUsageCode" lang="ts" filename="app.vue" />
 
       <div class="grid sm:grid-cols-2 gap-4 mt-6">
         <!-- Data -->
@@ -349,10 +349,10 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
           </div>
         </div>
       </div>
-    </TutorialSection>
+    </DocsSection>
 
     <!-- 3. Advanced Features -->
-    <TutorialSection id="advanced-features" title="進階特性" icon="heroicons:adjustments-horizontal" separator>
+    <DocsSection id="advanced-features" title="進階特性" icon="heroicons:adjustments-horizontal" separator>
       <!-- Lazy Loading -->
       <div class="flex flex-col gap-8">
         <div class="space-y-4">
@@ -367,7 +367,7 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
             後，頁面會<strong>立即切換</strong>，並在背景載入資料。這時你需要透過 <code class="text-sky-400">status</code> 來顯示 Loading 骨架屏。
           </p>
         </div>
-        <AppCodeBlock :code="lazyCode" lang="vue" />
+        <UiCodeBlock :code="lazyCode" lang="vue" />
       </div>
 
       <div class="h-px bg-slate-800/50 w-full"></div>
@@ -386,12 +386,12 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
             ref。或者，你也可以使用 <code class="text-amber-400">watch</code> 選項來明確指定要監聽的變數。
           </p>
         </div>
-        <AppCodeBlock :code="watchCode" lang="ts" />
+        <UiCodeBlock :code="watchCode" lang="ts" />
       </div>
-    </TutorialSection>
+    </DocsSection>
 
     <!-- 3.5 useAsyncData -->
-    <TutorialSection id="useasyncdata" title="useAsyncData 的使用時機" icon="heroicons:circle-stack" separator>
+    <DocsSection id="useasyncdata" title="useAsyncData 的使用時機" icon="heroicons:circle-stack" separator>
       <div class="space-y-6">
         <p>
           <code class="text-emerald-400">useFetch</code> 其實是 <code class="text-emerald-400">useAsyncData</code> 加上 <code
@@ -410,7 +410,7 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
           </li>
         </ul>
 
-        <AppCodeBlock :code="asyncDataCode" lang="ts" />
+        <UiCodeBlock :code="asyncDataCode" lang="ts" />
 
         <div class="p-4 rounded-lg bg-amber-500/10 border border-amber-500/20 flex gap-3">
           <Icon name="heroicons:exclamation-triangle" class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
@@ -421,10 +421,10 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
           </div>
         </div>
       </div>
-    </TutorialSection>
+    </DocsSection>
 
     <!-- 4. $fetch vs useFetch -->
-    <TutorialSection id="fetch-vs-usefetch" title="$fetch vs useFetch" icon="heroicons:arrows-right-left">
+    <DocsSection id="fetch-vs-usefetch" title="$fetch vs useFetch" icon="heroicons:arrows-right-left">
       <p>Nuxt 提供了兩個長得很像的工具，初學者常混淆。請記住以下原則：</p>
 
       <div class="grid md:grid-cols-2 gap-6">
@@ -489,10 +489,10 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
           </div>
         </div>
       </div>
-    </TutorialSection>
+    </DocsSection>
 
     <!-- 5. Live Demo -->
-    <TutorialSection id="live-demo" title="實戰演練" icon="heroicons:play" separator>
+    <DocsSection id="live-demo" title="實戰演練" icon="heroicons:play" separator>
       <p>
         以下範例展示了如何從 JSONPlaceholder API 獲取使用者列表。我們使用了 <code class="text-emerald-400">lazy</code> 模式來優化載入體驗，並透過 <code
           class="text-emerald-400">transform</code> 只保留前 4 筆資料。
@@ -502,13 +502,13 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
         <!-- Demo Component -->
         <div class="space-y-3">
           <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Live Preview</div>
-          <DataFetchingDemo />
+          <DemoDataFetching />
         </div>
 
         <!-- Code Snippet -->
         <div class="space-y-3">
           <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Core Logic</div>
-          <AppCodeBlock :code="demoScriptCode" lang="ts" filename="DataFetchingDemo.vue" />
+          <UiCodeBlock :code="demoScriptCode" lang="ts" filename="DataFetching.vue" />
 
           <div class="p-4 rounded-lg bg-slate-800/30 border border-slate-700/30 text-sm text-slate-400 flex gap-3">
             <Icon name="heroicons:light-bulb" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
@@ -520,7 +520,7 @@ const { data: users, status, error, refresh } = await useFetch<User[]>(
           </div>
         </div>
       </div>
-    </TutorialSection>
+    </DocsSection>
 
-  </TutorialPage>
+  </DocsPage>
 </template>
