@@ -18,7 +18,7 @@
                     <Icon name="logos:nuxt-icon" class="w-6 h-6" aria-label="Nuxt Logo" />
                 </div>
                 <span class="text-lg tracking-tight font-bold hidden sm:block">Nuxt-Tutorial</span>
-                <NuxtBadge color="primary" size="xs" class="font-bold ring-1 ring-emerald-500/20">v4
+                <NuxtBadge color="primary" size="sm" class="font-bold ring-1 ring-emerald-500/20">v4
                 </NuxtBadge>
             </NuxtLink>
 

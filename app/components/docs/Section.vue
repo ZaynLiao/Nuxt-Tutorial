@@ -11,7 +11,7 @@
 <template>
     <section :id="id" class="space-y-8 scroll-mt-32 mb-24">
         <h2 class="text-2xl font-bold text-white flex items-center gap-3 group">
-            <div v-if="icon" class="items-center flex" :class="iconColor || 'text-emerald-400'">
+            <div v-if="icon" class="items-center flex justify-center" :class="iconColor || 'text-emerald-400'">
                 <Icon :name="icon" class="w-6 h-6" />
             </div>
             {{ title }}

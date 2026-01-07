@@ -147,10 +147,10 @@
 
                     <div class="flex items-center gap-3">
                         <div
-                            class="p-2 rounded-lg bg-slate-800 text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-colors flex items-center justify-center">
+                            class="rounded-lg text-slate-400 group-hover:text-emerald-400 transition-colors flex items-center justify-center">
                             <Icon :name="prev.icon" size="20" />
                         </div>
-                        <div class="text-lg font-bold text-slate-200 group-hover:text-white transition-colors">
+                        <div class="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">
                             {{ prev.label }}
                         </div>
                     </div>
@@ -169,10 +169,10 @@
 
                     <div class="flex flex-row-reverse items-center gap-3">
                         <div
-                            class="p-2 rounded-lg bg-slate-800 text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-colors  flex items-center justify-center">
+                            class="rounded-lg text-slate-400 group-hover:text-emerald-400 transition-colors  flex items-center justify-center">
                             <Icon :name="next.icon" size="20" />
                         </div>
-                        <div class="text-lg font-bold text-slate-200 group-hover:text-white transition-colors">
+                        <div class="text-lg font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">
                             {{ next.label }}
                         </div>
                     </div>
